@@ -1,0 +1,351 @@
+body {
+  font-family: ProximaNova,Helvetica,Arial,sans-serif;
+  font-style: normal;
+  color: #202428;
+}
+.template-auth {
+  min-height: 710px;
+}
+.border-light {
+  border: 1px solid #e8e8e8;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+/* .pure-g {
+  letter-spacing: -.32em;
+  text-rendering: optimizespeed;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  display: -webkit-flex;
+  display: flex;
+} */
+
+.layout-auth-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.pure-u-2-5{
+  width: 40%;
+  box-sizing: border-box;
+    display: inline-block;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+.layout-auth-title {
+  font-family: ProximaNova,Helvetica,Arial,sans-serif;
+  color: #000;
+}
+.layout-auth-action {
+  color: #8c8c8c;
+  /* margin-top: 1px; */
+}
+.layout-auth-action a {
+  font-weight: 600;
+  color: #fb1b26;
+}
+a {
+  /* color: #202428;
+  font-weight: 400; */
+  text-decoration: none;
+  cursor: pointer;
+}
+.btnOutline--full {
+  width: 80%;
+  display: block;
+  text-align: center;
+  
+}
+.btnOutline--grey {
+  border-color: #d9d9d9;
+}
+.btnOutline {
+  font-weight: 400;
+  border-color: #202428;
+  color: #202428;
+  padding: 5;
+}
+/* .btnOutline {
+
+  vertical-align: middle;
+ 
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 16px;
+  line-height: 24px;
+  outline: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-decoration: none;
+ 
+  background: 0 0;
+  position: relative;
+} */
+
+.button{
+  width: 100%;
+  color: black;
+  text-transform: none;
+  margin-bottom : 1px;
+  border-color: #d9d9d9;
+}
+
+
+
+.button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.layout-auth-subtitle {
+  font-family: ProximaNova,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+iframe{
+  display: none;
+}
+
+.pure-u-1 {
+  width: 80%;
+}
+.pure-u-2{
+  width: 40%;
+}
+.mt10{
+  margin-top: 1px;
+}
+.btn-flat.red {
+  background-color: #fb1b26;
+}
+/* .btn-flat.red.:hover{
+  background-color: #fb1b26;
+} */
+.btn-full {
+  width: 50%;
+  box-sizing: border-box;
+}
+.btn-flat--big {
+  font-size: 18px;
+  line-height: 0px;
+  /* padding: 12px 15px; */
+}
+.btn-flat {
+  /* font-weight: 100; */
+  /* padding: 9px 12px; */
+  border-radius: 8px;
+  color: #fff;
+  background-color: #fb1b26;
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+}
+button, select {
+  text-transform: none;
+}
+button {
+  overflow: visible
+}
+.layout-auth-notice {
+  font-size: 13px;
+  line-height: 19px;
+  color: #8c8c8c;
+  display: block;
+  margin-top: 5px;
+}
+.btnOutline {
+  font-weight: 400;
+  border-color: #202428;
+  color: #202428;
+}
+.css-1wu8h1t-MuiButtonBase-root-MuiButton-root:hover{
+    border: 1px solid #d9d9d9;
+}
+.css-16sb7fh-MuiButtonBase-root-MuiButton-root:hover{
+  border: 1px solid #d9d9d9;
+}
+.css-1p1frc5-MuiButtonBase-root-MuiButton-root:hover{
+  border: 1px solid #d9d9d9;
+}
+.css-q8hpuo-MuiFormControl-root{
+  width: 40% !important;
+  margin-top: 9px !important;
+}
+/* .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  margin-left: 45%;
+} */
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+  margin-right: 40% !important;
+  margin-top: -8% !important;
+}
+.css-6eycvs-MuiPaper-root-MuiCard-root {
+  width: 80%;
+}
+.css-i4bv87-MuiSvgIcon-root{
+  color: #000;
+}
+.css-yc8qyv{
+  justify-content: right !important;
+}
+.homeHeading{
+  height: 384px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  /* position: relative */
+}
+.homeHeading_background{
+  /* position: absolute; */
+  /* left: 0; */
+  height: 100%;
+  /* z-index: -1; */
+  width: 100%;
+}
+
+.galary {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+.imgA1 {
+  z-index: 1;
+  border: 2px solid black;
+ border-bottom: none;
+}
+.imgB1 {
+  z-index: 3;
+  border: 2px solid black;
+  margin-top: 5%;
+  left: 56%;
+  height: 250px;
+  width:150px;
+}
+.websitesComponent__cardItem {
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  border-radius: .5rem;
+  cursor: pointer;
+  position: relative;
+}
+#sample .swiper-slide{
+  width: auto !important;
+  margin-right: 5px;
+}
+.wrapper{
+  width: 100%;
+  margin: 20px auto;
+}
+nav{
+  position: absolute;
+  /* background: #262626; */
+  font-size: 12px;
+}
+nav > ul{
+  position: relative;
+  /* display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex; */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+nav Link{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav ul li {
+  color: #fff;
+  list-style: none;
+  transition: 0.5s;
+}
+ul img {
+  width: 85%;
+}
+nav > ul > li > Link{
+  padding: 5px 5px;
+}
+nav ul > li.dropdown > Link:after{
+  position: relative;
+  float: right;
+  content: '';
+  margin-left: 10px;
+  margin-top: 8px;
+}
+nav > ul > li:hover{
+  /* background: #668fc5; */
+  border-bottom: 3px solid red;
+}
+nav ul.menu-area{
+  padding: 40px 40px 0 40px;
+  background: #fff;
+  text-align: left;
+  border-top: 5px solid #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.6);
+  z-index: 1;
+  position: absolute;
+  /* display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex; */
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  top: -9999px;
+  left: 0;
+}
+nav ul li:hover ul.menu-area{
+  top: 100%;
+}
+nav ul.menu-area ul {
+  width: 15%;
+  margin-bottom: 40px;
+  color: #262626;
+}
+nav ul.menu-area h4{
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+nav ul.menu-area ul li{
+  display: block;
+}
+nav ul.menu-area ul li Link{
+  margin-top: 10px;
+  color: #000;
+  text-transform: none;
+}
+nav ul.menu-area ul li Link:hover{
+  color: #164c82;
+}.css-1cmksfb-MuiTypography-root-MuiLink-root{
+  padding: 0px 8px !important;
+  color: #000 !important;
+}
+.css-mhc70k-MuiGrid-root{
+  margin-top: 0px !important;
+}
+.foottop{
+  font-size: 12px;
+  white-space: nowrap;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.MuiListItem-root{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
