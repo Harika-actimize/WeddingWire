@@ -349,3 +349,10 @@ nav ul.menu-area ul li Link:hover{
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
+.swiper-button-next, .swiper-button-prev{
+  color: #fff !important;
+}
+.swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: white !important;
+}

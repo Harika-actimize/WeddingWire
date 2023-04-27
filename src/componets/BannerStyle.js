@@ -43,7 +43,7 @@ export const BannerImage = styled("img")(({ src, theme }) => ({
   },
   [theme.breakpoints.down("sm")]: {
     width: "320px",
-    height: "300px",
+    height: "150px",
   },
 }));
 export const BannerTitle = styled(Typography)(({ matches, theme }) => ({
