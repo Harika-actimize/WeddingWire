@@ -24,9 +24,9 @@ export const Gallary = () => {
 
     const cardData = [
         
-        { id: 1, image: "https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/dark_deco_md.jpg", name:'Plainthing Studio',location:'Kakinada',country:'India'},
-        { id: 2, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/block_print_md.jpg" ,name:'Sameer',location:'Switzerland',country:'Australia'},
-        { id: 3, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/midnight_florals_md.jpg" ,name:'Lakshman',location:'Omnivar',country:'Canada'},
+        { id: 1, image: "https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/tangerine_dream_md.jpg", name:'Plainthing Studio',location:'Kakinada',country:'India'},
+        { id: 2, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/midnight_florals_md.jpg" ,name:'Sameer',location:'Switzerland',country:'Australia'},
+        { id: 3, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/block_print_md.jpg" ,name:'Lakshman',location:'Omnivar',country:'Canada'},
         { id: 4, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/tangerine_dream_md.jpg",name:'Srikanth',location:'Cape Town',country:'South Africa'},
 
         { id: 5, image: "https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/beloved_floral_md.jpg", name:'Odama',location:'Karachi',country:'Pakistan'},

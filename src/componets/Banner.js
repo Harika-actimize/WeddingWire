@@ -94,7 +94,7 @@ export default function Banner() {
 }}>
         Search over 71,000 local professionals with reviews, pricing, and more
         </BannerDescription>
-        <Grid  component="nav"
+        <Grid
         aria-label="Device settings"
         sx={{ bgcolor: 'background.paper',display:'flex'}}>
 {matches ? (<>
@@ -103,7 +103,7 @@ backgroundColor:'red',
 transition:'all .15s',
 backgroundPosition:'center',
 display:'flex',
-alignItems:'center',
+textAlign:'center',
 justifyContent:'center',
 padding:'.69rem 1rem',
 fontWeight:'600',
@@ -117,7 +117,7 @@ border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>
         <BannerTextfiled
   variant="outlined"
   placeholder='Search for'
-  sx={{width:'100%'}}
+  // sx={{width:'100%'}}
   // button
   // id="lock-button"
   // aria-haspopup="listbox"
@@ -171,7 +171,7 @@ border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>
 <BannerTextfiled
   variant="outlined"
   placeholder='in (E.g.Delhi)'
-  sx={{width:'100%'}} 
+  // sx={{width:'100%'}} 
 />
 <Button variant="contained" color='error' sx={{textTransform:'none'}}>
       Find
@@ -183,7 +183,7 @@ border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>
        </BannerContent>
 </Grid>
       <Grid item xs={20} md={10} sm={20}>
-        {/* <div className='banner'></div> */}
+                  {/* <div className='banner'></div> */}
       <BannerImage src="https://cdn1.weddingwire.in/assets/img/home/bg_home1.jpg" className='banner' />
       </Grid>
           </Grid>

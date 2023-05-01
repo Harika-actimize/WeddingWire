@@ -77,7 +77,7 @@ export default function QuiltedImageList() {
               </ImageList>
               <CardContent sx={{ textAlign: 'left' }}>
                 <Typography sx={{ fontFamily: 'ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold' }}>Suminder & Deepika</Typography>
-                <Typography variant='caption'>37 photos · Dera Bassi, Zirakpur</Typography>
+                <Typography variant='caption' noWrap>37 photos · Dera Bassi, Zirakpur</Typography>
               </CardContent>
             </Card>
             </SwiperSlide>
@@ -102,7 +102,7 @@ export default function QuiltedImageList() {
                 </ImageList>
                 <CardContent sx={{ textAlign: 'left' }}>
                   <Typography sx={{ fontFamily: 'ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold' }}>Sachee & Himanshu</Typography>
-                  <Typography variant='caption'>35 photos · Samalka, South Delhi
+                  <Typography variant='caption' noWrap>35 photos · Samalka, South Delhi
 </Typography>
                 </CardContent>
               </Card>
@@ -128,7 +128,7 @@ export default function QuiltedImageList() {
                 </ImageList>
                 <CardContent sx={{ textAlign: 'left' }}>
                   <Typography sx={{ fontFamily: 'ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold' }}>Mayuri & Ajit</Typography>
-                  <Typography variant='caption'>30 photos · Akota, Vadodara</Typography>
+                  <Typography variant='caption' noWrap>30 photos · Akota, Vadodara</Typography>
                 </CardContent>
               </Card>
             </SwiperSlide>
@@ -153,7 +153,7 @@ export default function QuiltedImageList() {
                 </ImageList>
                 <CardContent sx={{ textAlign: 'left' }}>
                   <Typography sx={{ fontFamily: 'ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold' }}>Varsha & Salil</Typography>
-                  <Typography variant='caption'>16 photos · Rajajinagar - Malleshwaram, Bangalore</Typography>
+                  <Typography variant='caption' noWrap>16 photos · Rajajinagar - Malleshwaram, Bangalore</Typography>
                 </CardContent>
               </Card>
             </SwiperSlide>

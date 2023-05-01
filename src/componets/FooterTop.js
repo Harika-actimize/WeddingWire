@@ -25,49 +25,45 @@ function FooterTop() {
 
                 </Grid>
 
-                <Grid item xs={16} md={4} sm={8} lg={4} >
+                <Grid xs={16}>
                     <Typography sx={{ display: 'block', clear: 'both', margin: '10px 0 5px', fontSize: '1rem' }}>Wedding Venues</Typography>
-                    <Grid sx={{display:'flex'}}>
-                    <Typography sx={{fontSize:'12px'}}>Banquet Halls </Typography>
-                    <Typography sx={{fontSize:'12px'}}>. Hotels </Typography>
-                    <Typography sx={{fontSize:'12px'}}>. Marriage Gardens </Typography>
-                    <Typography sx={{fontSize:'12px'}}>. Kalyana mandapams </Typography>
-                    <Typography sx={{fontSize:'12px'}}>. Wedding Resorts </Typography>
-                    <Typography sx={{fontSize:'12px'}}>. Wedding Lawns Farmhouses </Typography>
+                    <Grid sx={{display:'flex',fontSize:'12px'}}>
+                    <Typography >Banquet&nbsp;Halls </Typography>
+                    <Typography >. Hotels </Typography>
+                    <Typography >. Marriage Gardens </Typography>
+                    <Typography >. Kalyana mandapams </Typography>
+                    <Typography >. Wedding Resorts </Typography>
+                    <Typography >. Wedding Lawns Farmhouses </Typography>
                     </Grid>
                     <Typography sx={{ display: 'block', clear: 'both', margin: '10px 0 5px', fontSize: '1rem' }}>Wedding Vendors</Typography>
-                    <Grid sx={{display:'flex'}}>
-                    <Typography sx={{fontSize:'12px'}}>Caterers</Typography>
-                    <Typography className="foottop">. Wedding Invitations </Typography>
-                    <Typography  className="foottop">.  Wedding Gifts  </Typography>
-                    <Typography className="foottop">.  Wedding Photographers  </Typography>
-                    <Typography className="foottop">.  Wedding Music  </Typography>
-                    <Typography className="foottop">. Wedding Transportation  </Typography>
-                    <Typography className="foottop">. Tent House </Typography>
-                    <Typography className="foottop">. Wedding Entertainment  </Typography>
-                    <Typography className="foottop">. Florists   </Typography>
+                    <Grid sx={{display:'flex',fontSize:'12px',justifyContent:'space-between'}}>
+                    <Typography >Caterers</Typography>
+                    <Typography >. Wedding&nbsp;Invitations </Typography>
+                    <Typography >.  Wedding&nbsp;Gifts  </Typography>
+                    <Typography >.  Wedding&nbsp;Photographers  </Typography>
+                    <Typography >.  Wedding&nbsp;Music  </Typography>
+                    <Typography >. Wedding&nbsp;Transportation  </Typography>
+                    <Typography >. Tent&nbsp;House </Typography>
+                    <Typography >. Wedding&nbsp;Entertainment  </Typography>
+                    <Typography >. Florists</Typography>
                     </Grid>
-                    <Grid sx={{display:'flex'}}>
-                    <Typography className="foottop">.  Wedding Planners   </Typography>
-                    <Typography className="foottop">.  Wedding Videography   </Typography>
-                    <Typography className="foottop">. Honeymoon   </Typography>
-                    <Typography className="foottop">. Wedding Decorators  </Typography>
-                    <Typography className="foottop">.   Wedding Cakes   </Typography>
-                    <Typography className="foottop">.  Wedding DJ  </Typography>
-                    <Typography className="foottop">.  Pandits   </Typography>
-                    <Typography className="foottop">.  Photobooth  </Typography>
-                    <Typography className="foottop">.  Astrologers  </Typography>
-                    <Typography className="foottop">.  Party Places </Typography>
-                    <Typography className="foottop">. Wedding Choreographers </Typography>
+                    <Grid sx={{display:'flex',fontSize:'12px'}}>
+                    <Typography >.  Wedding Planners   </Typography>
+                    <Typography >.  Wedding Videography   </Typography>
+                    <Typography >. Honeymoon   </Typography>
+                    <Typography >. Wedding Decorators  </Typography>
+                    <Typography >.   Wedding Cakes   </Typography>
+                    <Typography >.  Wedding DJ  </Typography>
+                    <Typography >.  Pandits   </Typography>
+                    <Typography >.  Photobooth  </Typography>
+                    <Typography >.  Astrologers  </Typography>
+                    <Typography >.  Party Places </Typography>
+                    <Typography >. Wedding Choreographers </Typography>
 </Grid>
-                </Grid>
+                </Grid> */}
                 <Grid item xs={2}>
 
                 </Grid>
-
- */}
- 
-
                 <Grid item xs={2}>
 
                 </Grid>

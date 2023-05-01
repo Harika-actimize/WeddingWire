@@ -87,8 +87,8 @@ export default function Bannerresponsive() {
         {/* <div className='banner'></div> */}
       <BannerImage src="https://cdn1.weddingwire.in/assets/img/home/bg_home1.jpg" className='banner' />
       </Grid>
-    <Grid item xs={20} md={10} sm={20} lg={10} xl={10} >
-<BannerContent>
+    <Grid item xs={20} md={10} sm={20} lg={10} xl={10} className="textcenter" >
+<BannerContent >
         <BannerTitle sx={{
   fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif",marginTop:'3%',mb:'1%'
         }}>Discover everything you need to plan your big day
@@ -99,7 +99,7 @@ export default function Bannerresponsive() {
         Search over 71,000 local professionals with reviews, pricing, and more
         </BannerDescription>
         <BannerShopButton>
-        <Grid  component="nav"
+        <Grid
         aria-label="Device settings"
         sx={{ bgcolor: 'background.paper',display:'flex'}}>
 {matches ? (<>
@@ -108,7 +108,7 @@ backgroundColor:'red',
 transition:'all .15s',
 backgroundPosition:'center',
 display:'flex',
-alignItems:'center',
+textAlign:'center',
 justifyContent:'center',
 padding:'.69rem 1rem',
 fontWeight:'600',

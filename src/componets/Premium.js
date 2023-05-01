@@ -124,7 +124,7 @@ function Premium() {
 											<Typography sx={{ fontSize: '17px', lineHeight: '27px', marginLeft: '15px', marginBottom: '5px' }}>{itmes.name}</Typography>
 											<Box sx={{ display: 'flex', marginLeft: '15px', marginBottom: '5px' }}>
 												<StarIcon sx={{ color: '#fabb00', fontSize: '18px' }}></StarIcon><Typography variant='caption' >{itmes.star_rating}({itmes.outof})</Typography>
-												<Typography variant='caption'>{itmes.area}.{itmes.cityname}</Typography>
+												<Typography variant='caption' noWrap>{itmes.area}.{itmes.cityname}</Typography>
 											</Box>
 											<Box sx={{ display: 'flex', marginLeft: '15px', marginBottom: '15px' }}>
 												<BrunchDiningOutlinedIcon sx={{ fontSize: '18px', marginRight: '5px' }}></BrunchDiningOutlinedIcon><Typography variant='caption' >from ₹ {itmes.food}</Typography>

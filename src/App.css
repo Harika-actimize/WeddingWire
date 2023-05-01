@@ -339,12 +339,12 @@ nav ul.menu-area ul li Link:hover{
 .css-mhc70k-MuiGrid-root{
   margin-top: 0px !important;
 }
-.foottop{
+/* .foottop{
   font-size: 12px;
   white-space: nowrap;
   margin-left: 10px;
   margin-right: 10px;
-}
+} */
 .MuiListItem-root{
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -383,6 +383,12 @@ nav ul.menu-area ul li Link:hover{
   .itemLoc li span{
     font-size: 13px!important;
   }
+  .hide{
+    display: none;
+  }
+  .css-1xv1wig{
+    max-width: initial;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -391,6 +397,9 @@ nav ul.menu-area ul li Link:hover{
   }
   .itemLoc li span{
     font-size: 12px!important;
+  }
+  .textcenter{
+    text-align: -webkit-center;
   }
 }
 
@@ -401,6 +410,9 @@ nav ul.menu-area ul li Link:hover{
   .itemLoc li span{
     font-size: 9px!important;
   }
+  .hidebutton{
+    display: none !important;
+  }
 }
 @media only screen and (max-width: 320px) {
   .itemLoc li{
@@ -409,4 +421,7 @@ nav ul.menu-area ul li Link:hover{
   .itemLoc li span{
     font-size: 12px!important;
   }
+}
+.avararalign {
+  text-align: -webkit-center;
 }

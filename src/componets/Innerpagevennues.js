@@ -5,6 +5,12 @@ import InteractiveList from './Navbar';
 import { Grid } from '@mui/material';
 import Questions from './Questions';
 import InnerpageQuetions from './InnerpageQuetions';
+import InnerPageBanner from './InnerPageBanner';
+import Location from './Location';
+import Banner from './Banner'
+import Bannerresponsive from './Bannerresponsive';
+import SmallBanner from './SmallBanner';
+import SwiperCard from './SwiperCard';
 
 const data = [
     {location:"Andheri East",venue_count:10},
@@ -56,11 +62,19 @@ function Innerpagevennues() {
     return (
         <div>
             <InteractiveList/>
+<InnerPageBanner/>
+
             <Grid container columns={20}>
 <Grid xs={2}> 
 
 </Grid>
 <Grid xs={16} md={16} sm={16}> 
+<Location/>
+{/* <SmallBanner/> */}
+<SwiperCard location = "hyderabad"/>
+<SwiperCard location = "bangalore"/>
+<SwiperCard location = "mumbai"/>
+<SwiperCard location = "chennai"/>
 <InnerpageQuetions/>
 <Mumbaibyzone location="Wedding vennus in mumbai by zone" data={data}/>
 </Grid>

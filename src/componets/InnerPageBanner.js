@@ -7,6 +7,7 @@ import {
   BannerImage,
   BannerShopButton,
   BannerTitle,
+  BannerInnerImg
 } from "./BannerStyle";
 import {
     FormControl,
@@ -82,34 +83,28 @@ export default function InnerPageBanner() {
   
   return (
   <>
-    <BannerContainer sx={{marginTop:'5px',borderTop:'1px solid rgba(0, 0, 0, 0.12)',borderBottom:'1px solid rgba(0, 0, 0, 0.12)'}} >
+  <Grid container columns={20} sx={{flex:1}}>
+  <Grid item xs={20} md={10} sm={20} lg={10} xl={10} sx={{textAlign:'-webkit-center'}}>
       <BannerContent>
       <Breadcrumbs>
         <Link underline="hover" color="inherit" href="/">
-          MUI
+          Wedding
         </Link>
         <Link
           underline="hover"
           color="inherit"
           href="/material-ui/getting-started/installation/"
         >
-          Core
-        </Link>
-        <Link
-          underline="hover"
-          color="text.primary"
-          href="/material-ui/react-breadcrumbs/"
-        >
-          Breadcrumbs
+          Wedding Venues
         </Link>
       </Breadcrumbs>
         
         <BannerTitle sx={{
   fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif",marginTop:'3%',mb:'1%'
-        }}>Discover everything you need to plan your big day
+        }}>Wedding Venues
 </BannerTitle>
 
-        <Grid  component="nav"
+        <Grid
         aria-label="Device settings"
         sx={{ bgcolor: 'background.paper',display:'flex'}}>
 {matches ? (<>
@@ -130,7 +125,7 @@ border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>
   <>
         <TextField
   variant="outlined"
-  placeholder='Search for'
+  placeholder='Wedding'
   button
   id="lock-button"
   aria-haspopup="listbox"
@@ -190,15 +185,16 @@ border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>
     </Button>
     </>)}
 </Grid>
-
-
       </BannerContent>
+      </Grid>
+      <Grid item xs={20} md={10} sm={20}>
         {/* <div className='banner'></div> */}
-      <BannerImage src="https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-banquetes.jpg" className='banner' />
+      <BannerInnerImg src="https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-banquetes.jpg" className='banner' />
       {/* <div className='homeHeading_content'>
 
       </div> */}
-    </BannerContainer>
+      </Grid>
+ </Grid>
     </>
   );
 }

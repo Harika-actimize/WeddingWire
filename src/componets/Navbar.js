@@ -276,7 +276,7 @@ const goTologin =()=>{
                 <Typography variant='subtitle2'>COMPLETE YOUR WEDDING TEAM</Typography>
           </ul>
         </li>
-        <li className="dropdown"><Link href="#" underline="none">BRIDES</Link>
+        <li className="dropdown hide"><Link href="#" underline="none">BRIDES</Link>
           <ul className="menu-area">
           <ul>
               <Typography variant='subtitle1'>Brides</Typography>
@@ -298,7 +298,7 @@ const goTologin =()=>{
         </li>
 
 
-        <li className="dropdown"><Link href="#" underline="none">GROOMS</Link>
+        <li className="dropdown hide"><Link href="#" underline="none">GROOMS</Link>
           <ul className="menu-area">
           <ul>
               <Typography variant='subtitle1'>Couples</Typography>
@@ -351,7 +351,7 @@ const goTologin =()=>{
         </li>
 
 
-        <li><Link href="#" underline="none">COMMUNITY</Link>
+        <li className="hide"><Link href="#" underline="none">COMMUNITY</Link>
         <ul className="menu-area">
           <ul>
               <Typography variant='subtitle1'>Community</Typography>
@@ -419,7 +419,7 @@ const goTologin =()=>{
   </div>
   </Grid>
 
-  <Grid item xs={3}>
+  <Grid item xs={5}>
     <Link href='#' underline='none' sx={{fontSize:'12px', color:'black'}} onClick={goToVendor} ><WorkOutlineOutlinedIcon sx={{fontSize:'12px', color:'black'}}
     ></WorkOutlineOutlinedIcon> ARE YOU AVENDOR?</Link><br></br> 
 <Link href="#" underline="none" onClick={goTologin} sx={{color:'red',fontSize:'12px'}}>LOG IN</Link>

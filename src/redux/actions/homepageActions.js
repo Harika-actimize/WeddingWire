@@ -21,6 +21,7 @@ export const getHomePageInitiate = () => {
         dispatch(loadHomePageStart());
         homePageApi()
             .then(async (res) => {
+                
                 dispatch(loadHomePageSuccess(res));
             })
             .catch((error) => dispatch(loadHomePageError(error.message)))

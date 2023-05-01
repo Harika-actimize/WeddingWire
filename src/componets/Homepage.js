@@ -28,15 +28,7 @@ import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 const Homepage = () => {
 	const homepagedata = useSelector((state) => state.homepagedata.data?.data);
 	console.log('homepagedata', homepagedata);
-
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		// alert("homepage ui");
-		dispatch(getHomePageInitiate());
-	}, []);
-
-
+	
 	const getData = [];
 	for (let key in homepagedata) {
 		getData.push({ id: key, ...homepagedata[key] });
