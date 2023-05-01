@@ -29,13 +29,23 @@ import Seeall from './Seeall';
 import Footer from './Footer';
 import ScrollDialog from './test'
 import FooterTop from './FooterTop';
+import {useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/system";
+import Bannerresponsive from './Bannerresponsive';
 
 export default function Pages() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
+  
   return (
     <div>
       {/* <ScrollDialog/> */}
       <InteractiveList />
-      <Banner />
+      {matches ? (<>
+          <Bannerresponsive/>
+      </>):(<>
+        <Banner />
+      </>)}
       <ColumnsGrid/>
       <Couples/>
             <Homepage />

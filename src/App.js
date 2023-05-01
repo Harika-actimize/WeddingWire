@@ -8,6 +8,9 @@ import Notification from './componets/Notification';
 import Pages from './componets/Pages'
 import ColumnsGrid from './componets/test1'
 import Innerpage from './componets/InnerPage';
+import Areyouvendor from './componets/Areyouvendor';
+import Innerpagevennues from './componets/Innerpagevennues';
+import InteractiveList from './componets/Navbar';
 
 
 function App() {
@@ -19,10 +22,12 @@ function App() {
      <Routes>
           <Route path="/" element={ <Pages/> }/>
           <Route path="signup"  exact element={ <Signup/> } />
+          <Route path="signup"  exact element={ <InteractiveList/> } />
           <Route path="login"  exact element={ <Login/> } />
+          <Route path="login"  exact element={ <InteractiveList/> } />
           <Route path='welcomepage' exact element={<Welcomepage/>}/>
-          <Route path='weddingvenues' exact element={<Innerpage/>}/>
-          
+          <Route path='weddingvenues' exact element={<Innerpagevennues/>}/>
+          <Route path='areyouvendor' exact element={<Areyouvendor/>}/>
         </Routes>
     </>
     // <div className="App">

@@ -69,8 +69,10 @@ function CommunityCard() {
                                     src="../avatarcom.webp"
                                     sx={{ width: 56, height: 56 }}
                                 />
+                                <Box>
                                 <Typography sx={{ marginLeft: '10px', fontFamily: 'font-family: ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold', fontSize: '16px' }}>AaGaM</Typography>
-                                <Typography variant='caption'>The 30 March, 2023 at 17:38</Typography>
+                                <Typography variant='caption' sx={{marginLeft:'10px'}}>The 30 March, 2023 at 17:38</Typography>
+                                </Box>
                             </Box>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -93,7 +95,10 @@ function CommunityCard() {
                                     src="../avatarcom1.webp"
                                     sx={{ width: 56, height: 56 }}
                                 />
+                                <Box>
                                 <Typography sx={{ marginLeft: '10px', fontFamily: 'font-family: ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold', fontSize: '16px' }}>Sailee</Typography>
+                                <Typography variant='caption' sx={{marginLeft:'10px'}}>The 30 March, 2023 at 17:38</Typography>
+                            </Box>    
                             </Box>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -115,7 +120,10 @@ function CommunityCard() {
                                     src="../avatarcom2.webp"
                                     sx={{ width: 56, height: 56 }}
                                 />
+                                <Box>
                                 <Typography sx={{ marginLeft: '10px', fontFamily: 'font-family: ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold', fontSize: '16px' }}>Riya</Typography>
+                                <Typography variant='caption' sx={{marginLeft:'10px'}}>The 30 March, 2023 at 17:38</Typography>
+                                    </Box>           
                             </Box>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -137,7 +145,10 @@ function CommunityCard() {
                                     src="../avatarcom3.webp"
                                     sx={{ width: 56, height: 56 }}
                                 />
+                                <Box>
                                 <Typography sx={{ marginLeft: '10px', fontFamily: 'font-family: ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold', fontSize: '16px' }}>Manali</Typography>
+                                <Typography variant='caption' sx={{marginLeft:'10px'}}>The 30 March, 2023 at 17:38</Typography>
+                                  </Box>     
                             </Box>
                         </SwiperSlide>
 

@@ -1,63 +1,125 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Typography from '@mui/material'
+import { Container } from "@mui/system";
+import React from "react";
+import Navbar from "./Navbar";
+import { makeStyles } from '@material-ui/core/styles';
+import theme from "./Theme"
+import {ThemeProvider} from "@material-ui/core";
+import { red } from '@mui/material/colors';
+import {  Link } from "react-router-dom";
+import { Box, Button, styled, Typography } from "@mui/material";
+import { Icon } from '@iconify/react';
 
-export default function ScrollDialog() {
-  const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState('paper');
 
-  const handleClickOpen = (scrollType) => () => {
-    setOpen(true);
-    setScroll(scrollType);
-  };
+// import heroImg from "../media/hero_illustration.png";
+// import CustomButton from "./CustomButton";
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+const Banner = () => {
+  const CustomBox = styled(Box)(({ theme }) => ({
+    display: "flex",
+    justifyContent: "center",
+    gap: theme.spacing(5),
+    marginTop: theme.spacing(3),
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+      alignItems: "center",
+      textAlign: "center",
+    },
+  }));
 
-  const descriptionElementRef = React.useRef(null);
-  React.useEffect(() => {
-    if (open) {
-      const { current: descriptionElement } = descriptionElementRef;
-      if (descriptionElement !== null) {
-        descriptionElement.focus();
-      }
-    }
-  }, [open]);
+  const Title = styled(Typography)(({ theme }) => ({
+    fontSize: "64px",
+    color: "white",
+    fontWeight: "bold",
+    margin: theme.spacing(4, 0, 4, 0),
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "40px",
+    },
+  }));
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(red[500]),
+    backgroundColor: red[500],
+    '&:hover': {
+      backgroundColor: red[700],
+    },
+  }));
 
-  return (
-    <div>
-      <Button onClick={handleClickOpen('paper')}>scroll=paper</Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        scroll={scroll}
-        aria-labelledby="scroll-dialog-title"
-        aria-describedby="scroll-dialog-description"
-      >
-        <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
-          <DialogContentText
-            id="scroll-dialog-description"
-            ref={descriptionElementRef}
-            tabIndex={-1}
-          >
-            {[...new Array(50)]
-              .map(
-                () => `hariii                                   `,
-              )
-              .join('\n')}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
+
+  return ( 
+    <ThemeProvider theme={theme}>
+    <Box sx={{ backgroundImage: `url(https://www.weddingwire.in/assets/img/admin-emp/bg_access-header.jpg)`,backgroundSize:'cover',backgroundPosition:'center',
+    maxWidth:'1200px',minWidth:'950px',margin:'auto',display:'block' }}
+    // sx={{ backgroundImage: "#E6F0FF", minHeight: "80vh" }}
+    >
+      <Container>
+        {/* <Navbar /> */}
+        <CustomBox>
+          <Box sx={{ flex: "1" }}>
+            <Typography
+              variant="body2"
+              sx={{
+                webkitFontSmoothing:'antialiased',
+                fontFamily:'Merriweather,"Times New Roman",Times,serif',
+                fontSize: "30px",
+                color: "white",
+                lineHeight:'42px',
+                fontWeight: "700",
+                pt: 6,
+                mb: '20px',
+              }}
+            >
+            Grow your business with WeddingWire!
+
+            </Typography>
+            <Box sx={{display:'flex'}}>
+            <Icon icon="ic:baseline-check" color="#48964d" width="22" height="22" />
+             <Typography
+
+              sx={{ fontSize:'18px',color:'#fff',margin:'0 0 10px',lineHeight:'26px',paddingLeft:1}}>
+             Showcase your services on our industry leading site!
+            </Typography>
+       </Box>
+       <Box sx={{display:'flex'}}>
+            <Icon icon="ic:baseline-check" color="#48964d" width="22" height="22" />
+             <Typography
+
+              sx={{ fontSize:'18px',color:'#fff',margin:'0 0 10px',lineHeight:'26px',paddingLeft:1}}>
+ Reach local engaged couples and book more weddings.
+            </Typography>
+       </Box>
+       <Box sx={{display:'flex'}}>
+            <Icon icon="ic:baseline-check" color="#48964d" width="22" height="22" />
+             <Typography
+
+              sx={{ fontSize:'18px',color:'#fff',margin:'0 0 10px',lineHeight:'26px',paddingLeft:1}}>
+ Trusted by over 71,000 professionals
+            </Typography>
+       </Box>
+          
+          
+            <Link  to="/findevent" 
+              
+                >
+               <ColorButton  sx={{ my: 7}}
+              type="submit"
+            //   fullWidth
+            backgroundColor="red"
+              variant="contained"
+            //   size="large"
+            
+            //   className={classes.btngoggle}
+            >
+          Find your next event
+            </ColorButton>
+                </Link>
          
-        </DialogActions>
-      </Dialog>
-    </div>
+          </Box>
+
+         
+        </CustomBox>
+      </Container>
+    </Box>
+    </ThemeProvider>
   );
-}
+};
+
+export default Banner;

@@ -98,12 +98,24 @@ import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
 import CardGiftcardOutlinedIcon from '@mui/icons-material/CardGiftcardOutlined';
+import { useNavigate } from 'react-router-dom'
 import Couples from './Couples';
 import ViewMore from './ViewMore';
 
 export default function InteractiveList() {
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  const navigate = useNavigate()
+const goToVendor = () => {
+  navigate("/areyouvendor");
+
+};
+const goTosignup =()=>{
+  navigate("/signup")
+}
+const goTologin =()=>{
+  navigate("/login")
+}
   return (
     <React.Fragment>
       <Toolbar>
@@ -408,10 +420,10 @@ export default function InteractiveList() {
   </Grid>
 
   <Grid item xs={3}>
-    <Link href='#' underline='none' sx={{fontSize:'12px', color:'black'}}><WorkOutlineOutlinedIcon sx={{fontSize:'12px', color:'black'}}
+    <Link href='#' underline='none' sx={{fontSize:'12px', color:'black'}} onClick={goToVendor} ><WorkOutlineOutlinedIcon sx={{fontSize:'12px', color:'black'}}
     ></WorkOutlineOutlinedIcon> ARE YOU AVENDOR?</Link><br></br> 
-<Link href="#" underline="none" sx={{color:'red',fontSize:'12px'}}>LOG IN</Link>
-<Link href="#" underline="none" sx={{color:'red',fontSize:'12px',marginLeft:'8px'}}>FREE SIGN UP</Link>
+<Link href="#" underline="none" onClick={goTologin} sx={{color:'red',fontSize:'12px'}}>LOG IN</Link>
+<Link href="#" underline="none"onClick={goTosignup} sx={{color:'red',fontSize:'12px',marginLeft:'8px'}}>FREE SIGN UP</Link>
 
 </Grid>
   <Grid item xs={2}>

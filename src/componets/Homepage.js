@@ -93,7 +93,7 @@ const Homepage = () => {
 	</Box> */}
 
 							<Box>
-								{getData.map((itmes, index) => {
+							{getData.filter((item)=>item.featured !== 'premium').map((itmes, index) => {
 									// console.log("catdata",itmes);
 									return (
 										<SwiperSlide key={index}>

@@ -99,9 +99,9 @@ function Premium() {
 	</Box> */}
 
 						<Box>
-							{getData.map((itmes, index) => {
+						{getData.filter((item)=>item.featured === 'premium').map((itmes, index) => {
 								// console.log("catdata",itmes);
-								if (itmes.featured === 'premium') {
+								// if (itmes.featured === 'premium') {
 
 
 									return (
@@ -142,7 +142,7 @@ function Premium() {
 									{/* <img variant="top" /> */ }
 										</SwiperSlide>
 									)
-								}
+								// }
 
 							})}
 						</Box>
