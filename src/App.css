@@ -248,7 +248,7 @@ button {
   margin: 20px auto;
 }
 nav{
-  position: absolute;
+  /* position: absolute; */
   /* background: #262626; */
   font-size: 12px;
 }
@@ -389,6 +389,12 @@ nav ul.menu-area ul li Link:hover{
   .css-1xv1wig{
     max-width: initial;
   }
+  .websitesComponent__sliderItem{
+    width: 100%;
+  }
+  .scrollSnap--fullBleed>.scrollSnap__container>.scrollSnap__item:first-child{
+    margin-left: 0;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -400,6 +406,29 @@ nav ul.menu-area ul li Link:hover{
   }
   .textcenter{
     text-align: -webkit-center;
+  }
+  .css-1i7jkzf{
+    display:none !important;
+  }
+  .websitesComponent__sliderItem{
+    height: 260px;
+  }
+  .websitesComponent__sliderItem{
+    height: 260px;
+  }
+  .websitesComponent__cardItem--vertical{
+    padding: 1.34rem 6.89rem 0 3.31rem;
+
+  }
+  .websitesComponent__cardItem--vertical .websitesComponent__image--desktopThumb {
+    height: 19.75rem;
+  }
+  .websitesComponent__cardItem--vertical .websitesComponent__image--mobileThumb{
+    width: 6.05rem;
+    height: 13rem;
+    right: 3.31rem;
+    bottom: .5rem;
+
   }
 }
 
@@ -424,4 +453,82 @@ nav ul.menu-area ul li Link:hover{
 }
 .avararalign {
   text-align: -webkit-center;
+}
+.avatarimage img:hover {
+  transform: translate3d(0,-2px,0) scale3d(1.1,1.1,1.1);
+}
+.venues{
+  list-style-type: none;
+  padding: 0;
+  }
+.nameres{
+  display: inline;
+  padding: 5px 0;
+  margin: 0;
+  padding: 0;
+  line-height: 2rem;
+  /* text-align: -webkit-match-parent; */
+
+
+}
+.subname{
+  display: block;
+  font-weight: 600;
+  clear: both;
+  margin: 10px 0 5px;
+  text-align: -webkit-match-parent;
+
+}
+.nameres:after{
+  content: "\b7";
+  margin: 0 .5rem;
+}
+.headcolor{
+  color:black;
+  font-size: 15px;
+}
+.bodyres{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.websitesComponent__cardContainer{
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.scrollSnap{
+  position: relative;
+}
+.scrollSnap--fullBleed>.scrollSnap__container>.scrollSnap__item:first-child{
+  margin-left: 0;
+}
+.scrollSnap__item{
+  flex: none;
+  box-sizing: content-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+}
+.websitesComponent__cardItem{
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  border-radius: .5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.websitesComponent__image{
+  border-radius: .25rem;
+  border: 2px solid #222;
+  object-fit: cover;
+  object-position: center top;
+  width: 100%;
+  display: block;
+  max-width: 100%;
+}
+.websitesComponent__cardItem--vertical .websitesComponent__image--mobileThumb{
+  position: absolute;
 }

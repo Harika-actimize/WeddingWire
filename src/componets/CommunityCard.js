@@ -85,7 +85,7 @@ function CommunityCard() {
                                 <CardContent>
                                     <Typography sx={{ fontWeight: 'bold', color: 'black' }}>
                                         Hashtag suggestions pleeeeeeeeeeease </Typography>
-                                    <Typography variant='caption'>Hi all, desperately (yes, that’s right) seeking for some fun, cute hashtags for the wedding. Below mentioned are the bride and groom’s names.</Typography>
+                                    <Typography variant='caption'>Hi all, desperately (yes, that’s right) seeking for some fun, cute hashtags for the wedding.</Typography>
                                 </CardContent>
                             </Box>
 

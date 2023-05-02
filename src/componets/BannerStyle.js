@@ -41,7 +41,7 @@ export const BannerImage = styled("img")(({ src, theme }) => ({
   src: `url(${src})`,
   backgroundImage: `url(${src})`,
   backgroundPosition: "top center",
-  width:'calc((100vw - 100%)/2 + 52%)',
+  width:'calc((100vw - 100%)/2 + 49%)',
   backgroundSize:'cover',
   height: 'calc(100% + 0px)',
   right:'50%',

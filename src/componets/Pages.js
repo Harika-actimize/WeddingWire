@@ -32,20 +32,11 @@ import FooterTop from './FooterTop';
 import {useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import Bannerresponsive from './Bannerresponsive';
-import { useSelector, useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
-import { getHomePageInitiate } from '../redux/actions/homepageActions';
 
 export default function Pages() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
-  const dispatch = useDispatch();
-
-	useEffect(() => {
-		// alert("homepage ui");
-		dispatch(getHomePageInitiate());
-	}, []);
-
+ 
   return (
     <div>
       {/* <ScrollDialog/> */}
@@ -72,7 +63,7 @@ export default function Pages() {
             <CommunityCard/>
             <Discussion/>
             <WeddingWebsite/>
-            {/* <Gallary/> */}
+            <Gallary/>
             <Designs/>
             <Planwedding/>
             <Weddingplan/>

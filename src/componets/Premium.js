@@ -37,26 +37,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 function Premium() {
-	const homepagedata = useSelector((state) => state.homepagedata.data?.data);
-	console.log('homepagedata', homepagedata);
-
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		// alert("homepage ui");
-		dispatch(getHomePageInitiate());
-	}, []);
-
-
-	const getData = [];
-	for (let key in homepagedata) {
-
-		getData.push({ id: key, ...homepagedata[key] });
-	}
-	console.log('getData', getData);
-
-
-	return (
+	const getData = useSelector((state) => state.homepagedata.data);	return (
 		<div>
 			<Grid container spacing={2} columns={20}>
 				<Grid item xs={2}>
@@ -121,7 +102,7 @@ function Premium() {
 													padding:'0px 8px',
 													transform: 'translateX(-50%)'
 												}} >premium</Button>
-											<Typography sx={{ fontSize: '17px', lineHeight: '27px', marginLeft: '15px', marginBottom: '5px' }}>{itmes.name}</Typography>
+											<Typography sx={{ fontSize: '17px', lineHeight: '27px', marginLeft: '15px', marginBottom: '5px' }} noWrap>{itmes.name}</Typography>
 											<Box sx={{ display: 'flex', marginLeft: '15px', marginBottom: '5px' }}>
 												<StarIcon sx={{ color: '#fabb00', fontSize: '18px' }}></StarIcon><Typography variant='caption' >{itmes.star_rating}({itmes.outof})</Typography>
 												<Typography variant='caption' noWrap>{itmes.area}.{itmes.cityname}</Typography>

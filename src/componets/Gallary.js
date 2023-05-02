@@ -24,181 +24,27 @@ export const Gallary = () => {
 
     const cardData = [
         
-        { id: 1, image: "https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/tangerine_dream_md.jpg", name:'Plainthing Studio',location:'Kakinada',country:'India'},
-        { id: 2, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/midnight_florals_md.jpg" ,name:'Sameer',location:'Switzerland',country:'Australia'},
-        { id: 3, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/block_print_md.jpg" ,name:'Lakshman',location:'Omnivar',country:'Canada'},
-        { id: 4, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/tangerine_dream_md.jpg",name:'Srikanth',location:'Cape Town',country:'South Africa'},
+        { id: 1, image: "https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/block_print_md.jpg", image1:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb_mobile/in/block_print.jpg"},
+        { id: 2, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/dark_deco_md.jpg" ,image1:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb_mobile/in/dark_deco.jpg"},
+        { id: 3, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/beloved_floral_md.jpg" ,image1:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb_mobile/in/beloved_floral.jpg"},
+        { id: 4, image:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/tangerine_dream_md.jpg",image1:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb_mobile/in/tangerine_dream.jpg"},
 
-        { id: 5, image: "https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/beloved_floral_md.jpg", name:'Odama',location:'Karachi',country:'Pakistan'},
-        { id: 6, image:"https://cdn0.weddingwire.in/website/fotos/templates/259_thumb_md.jpg?v=61bfb",name:'Harika',location:'London',country:'UK'},
+        { id: 5, image: "https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/midnight_florals_md.jpg",image1:"https://cdn1.weddingwire.in/assets/img/wedsites/thumb_mobile/in/midnight_florals.jpg"},
+        { id: 6, image:"https://cdn0.weddingwire.in/website/fotos/templates/259_thumb_md.jpg?v=f1ace",image1:'https://cdn0.weddingwire.in/website/fotos/templates/259_thumb_mobile.jpg?v=f1ace'},
     ];
   return (
-    <div>
-      <Grid container spacing={2}>
-        <Grid item xs={3} md={2.4} sx={{display:'grid'}}>
-        <Card sx={{ maxWidth: 400 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          // height="140"
-          image="https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/dark_deco_md.jpg"
-          alt="green iguana"
-          className="galary imgA1"
-        />
-                <CardMedia
-          component="img"
-          // height="140"
-          image="https://cdn1.weddingwire.in/assets/img/wedsites/thumb_mobile/in/dark_deco.jpg"
-          alt="green iguana"
-          className="galary imgB1"
-        />
-        
-      </CardActionArea>
-    </Card>
+    <div className="websitesComponent__cardContainer scrollSnap scrollSnap--fullBleed">
+      <div className='websitesComponent__sliderItem scrollSnap__item app-websites-tile app-websites-link'>
+        <div className='websitesComponent__sliderItem scrollSnap__item app-websites-tile app-websites-link'>
+          <div className="websitesComponent__cardItem websitesComponent__cardItem--vertical">
+            <img src='https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/block_print_md.jpg' className='websitesComponent__image websitesComponent__image--desktopThumb lazyloaded'></img>
+         <img src="https://cdn1.weddingwire.in/assets/img/wedsites/thumb_mobile/in/block_print@2x.jpg" className="websitesComponent__image websitesComponent__image--mobileThumb ls-is-cached lazyloaded"></img>
+          </div>
+        </div>
 
-        </Grid>
-        <Grid item xs={3} md={12} sx={{display:'grid'}}>
-        <Card sx={{ maxWidth: 400 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          // height="140"
-          image="https://cdn1.weddingwire.in/assets/img/wedsites/thumb/in/dark_deco_md.jpg"
-          alt="green iguana"
-          className="galary imgA1"
-        />
-                <CardMedia
-          component="img"
-          // height="140"
-          image="https://cdn1.weddingwire.in/assets/img/wedsites/thumb_mobile/in/dark_deco.jpg"
-          alt="green iguana"
-          className="galary imgB1"
-        />
-        
-      </CardActionArea>
-    </Card>
-
-        </Grid>
-
-        <Grid item xs={3} md={12}>
-        <Card sx={{ maxWidth: 400 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-
-        </Grid>
-        <Grid item xs={3} md={12}>
-        <Card sx={{ maxWidth: 400 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-
-        </Grid>
-
-      </Grid>
-
-      {/* <Grid container columns={20}>
-        <Grid item xs={2}></Grid>
-        <Grid item xs={5.3}>
-        <Card sx={{ maxWidth: 400 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-
-        </Grid>
-        <Grid item xs={5.3}>
-        <Card sx={{ maxWidth: 400 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-
-        </Grid>
-        <Grid item xs={5.3}>
-        <Card sx={{ maxWidth: 400 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-
-        </Grid>
-
-<Grid item xs={2}></Grid>
-      </Grid> */}
-    </div>
+      </div>
+     
+        </div>
   
   );
 }

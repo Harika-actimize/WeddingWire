@@ -15,7 +15,9 @@ import Zone from './Zone';
 import Mumbaibyzone from './Mumbaibyzone';
 import { Gallary } from './Gallary';
 import CustomImageList from './RealWedding'
-
+import InnerPageBannerRes from './InnerPageBannerRes';
+import {useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/system";
 
 const data = [
   {location:"Andheri East",venue_count:10},
@@ -72,11 +74,15 @@ const area = [
   
 ]
 export default function Innerpage() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <div>
       {/* <ScrollDialog/> */}
       <InteractiveList />
-    {/* <InnerPageBanner/> */}
+        <InnerPageBanner/>
+    <InnerPageBanner/>
       <Grid container columns={20}>
 <Grid xs={2}> 
 

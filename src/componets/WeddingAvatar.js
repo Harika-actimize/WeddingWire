@@ -8,6 +8,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/free-mode";
 
+const data = [
+  {location:"Before the wedding",venue_count:388,image:'../avatar.jpg'},
+  {location:"The wedding ceremony",venue_count:703,image:'../avatar1.jpg'},
+  {location:"The wedding banquet",venue_count:849,image:'../avatar2.jpg'},
+  {location:"The services for your wedding",venue_count:308,image:'../avatar3.jpg'},
+  {location:"Wedding fashion",venue_count:1773,image:'../avatar4.jpg'},
+  {location:"Health and beauty",venue_count:418,image:'../avatar5.jpg'},
+]
 
 function WeddingAvatar() {
     return (
@@ -48,51 +56,18 @@ function WeddingAvatar() {
           >
 
             <Stack direction="row" spacing={2} sx={{}}>
+            {data.map((item,index) =>(
               <SwiperSlide>
                   <Avatar
-        // alt="Remy Sharp"
-        src="../avatar.jpg"
-        sx={{ width: 100, height: 100 }}
+         className="avatarimage"
+        src={item.image}
+        sx={{ width: 100, height: 100,":hover":{
+          transform: 'scale(1.0)',
+      }}}
       />
-      <Typography>Before the wedding</Typography>
-      </SwiperSlide>
-              <SwiperSlide><Avatar
-        // alt="Remy Sharp"
-        src="../avatar1.jpg"
-        sx={{ width: 100, height: 100 }}
-      />
-      <Typography>The wedding ceremony</Typography>
-      </SwiperSlide>
-              <SwiperSlide><Avatar
-        // alt="Remy Sharp"
-        src="../avatar2.jpg"
-        sx={{ width: 100, height: 100 }}
-      />
-      <Typography>The wedding banquet</Typography>
-      </SwiperSlide>
-              <SwiperSlide><Avatar
-        // alt="Remy Sharp"
-        src="../avatar3.jpg"
-        sx={{ width: 100, height: 100 }}
-      />
-      <Typography>The services for your wedding</Typography>
-      </SwiperSlide>
-              <SwiperSlide><Avatar
-        // alt="Remy Sharp"
-        src="../avatar4.jpg"
-        sx={{ width: 100, height: 100 }}
-      />
-      <Typography>Wedding fashion</Typography>
-      </SwiperSlide>
-              <SwiperSlide><Avatar
-        // alt="Remy Sharp"
-        src="../avatar5.jpg"
-        sx={{ width: 100, height: 100 }}
-      />
-      <Typography>Health and beauty</Typography>
-      </SwiperSlide>
-              
-
+      <Typography>{item.location}</Typography> 
+      </SwiperSlide>       
+              ))}
             </Stack>
           </Swiper>
         </Grid>

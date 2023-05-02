@@ -9,6 +9,7 @@ const initialState = {
     getHomePageData: {
         users: [],
         loading: false,
+        data:[]
     },
 };
 

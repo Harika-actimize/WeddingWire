@@ -74,11 +74,14 @@ function LightBox() {
                         }}
                     >
                         <SwiperSlide>
-                            <Card sx={{marginBottom:1}}>
+                            <Card sx={{marginBottom:1}} className="avatarimage"  >
                                 <CardMedia
-                                    sx={{ height: 200, width:'100%' }}
                                     image='https://cdn0.weddingwire.in/article/6337/3_2/640/jpg/107336-marriage-dates-2024.webp'
-
+                                     sx={{ height: 200, width:'100%',
+                                    ":hover":{
+                                        transform: 'scale(1.0)',
+                                    }
+                                 }}
                                 />
                             </Card>
                             <Typography sx={{marginBottom:1}} variant='caption'>BEFORE THE WEDDING</Typography>

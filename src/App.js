@@ -11,9 +11,20 @@ import Innerpage from './componets/InnerPage';
 import Areyouvendor from './componets/Areyouvendor';
 import Innerpagevennues from './componets/Innerpagevennues';
 import InteractiveList from './componets/Navbar';
+import { useSelector, useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { getHomePageInitiate } from './redux/actions/homepageActions';
+
 
 
 function App() {
+  const dispatch = useDispatch();
+
+	useEffect(() => {
+		// alert("homepage ui");
+		dispatch(getHomePageInitiate());
+	}, []);
+
   return (
     <>
     {/* <ColumnsGrid/> */}

@@ -68,8 +68,11 @@ function Location() {
               <SwiperSlide className="avararalign">
                   <Avatar
         // alt="Remy Sharp"
+        className="avatarimage"
         src={item.image}
-        sx={{ width:'145px', height: '145px',}}
+        sx={{ width:'145px', height: '145px',":hover":{
+            transform: 'scale(1.0)',
+        }}}
       />
       <Typography  sx={{textAlign:'center',fontSize:'1.125rem',objectFit:'cover',":hover":{
           color:'red',

@@ -26,16 +26,7 @@ import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 
 
 const SwiperCard = ({location}) => {
-	const homepagedata = useSelector((state) => state.homepagedata.data?.data);
-	console.log('homepagedata', homepagedata);
-
-	const getData = [];
-	for (let key in homepagedata) {
-		getData.push({ id: key, ...homepagedata[key] });
-	}
-	console.log('getData', getData);
-
-
+	const getData = useSelector((state) => state.homepagedata.data);
 	return (
 		<>
 			{/* <Grid container spacing={2} columns={20}>

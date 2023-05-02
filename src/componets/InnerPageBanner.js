@@ -108,19 +108,63 @@ export default function InnerPageBanner() {
         aria-label="Device settings"
         sx={{ bgcolor: 'background.paper',display:'flex'}}>
 {matches ? (<>
-<Button sx={{color:'#fff',
-backgroundColor:'red',
-transition:'all .15s',
-backgroundPosition:'center',
-display:'flex',
-alignItems:'center',
-justifyContent:'center',
-padding:'.69rem 1rem',
-fontWeight:'600',
-width:'300px',
-marginBottom:'0',
-borderRadius:'.5rem',
-border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>
+  <TextField
+  variant="outlined"
+  placeholder='Wedding'
+  button
+  id="lock-button"
+  aria-haspopup="listbox"
+  aria-controls="lock-menu"
+  aria-label="when device is locked"
+  value={options[selectedIndex]}
+  aria-expanded={open ? 'true' : undefined}
+  onClick={handleClickListItem}
+  InputProps={{
+    startAdornment: (
+      <InputAdornment>
+        <IconButton>
+          <SearchIcon />
+        </IconButton>
+      </InputAdornment>
+    )
+  }}
+/>
+<Menu
+        id="lock-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'lock-button',
+          role: 'listbox',
+        }}
+      >
+        {options.map((option, index) => (
+          <MenuItem
+            key={option}
+            onClick={(event) => handleMenuItemClick(event, index)}
+          >
+             <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2} columns={12}>
+        <Grid item xs={4}>
+        </Grid>
+        <Grid item xs={4}>
+            {option}
+        </Grid>
+        <Grid item xs={4}>
+        </Grid>
+
+      </Grid>
+    </Box>
+
+          </MenuItem>
+        ))}
+      </Menu>
+
+<TextField
+  variant="outlined"
+  placeholder='in (E.g.Delhi)' 
+/>
 </>) :(
   <>
         <TextField

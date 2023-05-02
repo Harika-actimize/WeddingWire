@@ -26,16 +26,7 @@ import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 
 
 const Homepage = () => {
-	const homepagedata = useSelector((state) => state.homepagedata.data?.data);
-	console.log('homepagedata', homepagedata);
-	
-	const getData = [];
-	for (let key in homepagedata) {
-		getData.push({ id: key, ...homepagedata[key] });
-	}
-	console.log('getData', getData);
-
-
+	const getData = useSelector((state) => state.homepagedata.data);
 	return (
 		<>
 			{/* <Grid container spacing={2} columns={20}>
@@ -96,10 +87,10 @@ const Homepage = () => {
 
 												/>
 												
-													<Typography sx={{ fontSize: '17px', lineHeight: '27px',marginLeft:'15px',marginBottom:'5px' }}>{itmes.name}</Typography>
+													<Typography sx={{ fontSize: '17px', lineHeight: '27px',marginLeft:'15px',marginBottom:'5px' }} noWrap>{itmes.name}</Typography>
 													<Box sx={{display:'flex',marginLeft:'15px',marginBottom:'5px'}}>
 													<StarIcon sx={{ color: '#fabb00', fontSize: '18px' }}></StarIcon><Typography variant='caption' >{itmes.star_rating}({itmes.outof})</Typography>
-													<Typography variant='caption'>{itmes.area}.{itmes.cityname}</Typography>					
+													<Typography variant='caption' noWrap>{itmes.area}.{itmes.cityname}</Typography>					
 												</Box>
 												<Box sx={{display:'flex',marginLeft:'15px',marginBottom:'5px'}}>
 												<LocalOfferOutlinedIcon sx={{fontSize: '18px' }}></LocalOfferOutlinedIcon><Typography variant='caption' >1 promotion</Typography>

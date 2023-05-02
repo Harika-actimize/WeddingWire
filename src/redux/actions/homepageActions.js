@@ -21,8 +21,11 @@ export const getHomePageInitiate = () => {
         dispatch(loadHomePageStart());
         homePageApi()
             .then(async (res) => {
-                
-                dispatch(loadHomePageSuccess(res));
+                const getData = [];
+                for (let key in res.data) {
+                    getData.push({ id: key, ...res.data[key] });
+                }
+                dispatch(loadHomePageSuccess(getData));                
             })
             .catch((error) => dispatch(loadHomePageError(error.message)))
     }
