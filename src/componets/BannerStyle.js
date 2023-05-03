@@ -52,14 +52,14 @@ export const BannerImage = styled("img")(({ src, theme }) => ({
   [theme.breakpoints.down("md")]: {
     height: "250px",
     left:'-1.5rem',
-    width:'100vw',
+    width:'98vw',
     marginTop:'-16px',
     backgroundPosition:'center top',
     backgroundSize:'cover'
 
       },
   [theme.breakpoints.down("sm")]: {
-    width: "100vw",
+    width: "97vw",
     height: "176px",
     marginTop:'-16px',
     backgroundPosition:'center top',
@@ -82,14 +82,14 @@ export const BannerInnerImg = styled("img")(({ src, theme }) => ({
   [theme.breakpoints.down("md")]: {
     height: "250px",
     left:'-1.5rem',
-    width:'100vw',
+    width:'98vw',
     marginTop:'-16px',
     backgroundPosition:'center top',
     backgroundSize:'cover'
 
       },
   [theme.breakpoints.down("sm")]: {
-    width: "100vw",
+    width: "98vw",
     height: "176px",
     marginTop:'-16px',
     backgroundPosition:'center top',

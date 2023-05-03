@@ -40,7 +40,7 @@ export default function Pages() {
   return (
     <div>
       {/* <ScrollDialog/> */}
-      <InteractiveList />
+      {/* <InteractiveList /> */}
       {matches ? (<>
           <Bannerresponsive/>
       </>):(<>
