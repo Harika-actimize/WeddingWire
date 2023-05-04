@@ -70,7 +70,7 @@ function Innerpagevennues() {
 </Grid>
 <Grid xs={16} md={16} sm={16}> 
 <Location/>
-{/* <SmallBanner/> */}
+<SmallBanner/>
 <SwiperCard location = "hyderabad"/>
 <SwiperCard location = "bangalore"/>
 <SwiperCard location = "mumbai"/>

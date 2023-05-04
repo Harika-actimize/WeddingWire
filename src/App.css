@@ -214,7 +214,7 @@ button {
 }
 
 .galary {
-  position: absolute;
+  position:relative;
   top: 25px;
   left: 25px;
 }
@@ -230,7 +230,8 @@ button {
   z-index: 3;
   border: 2px solid black;
   margin-top: 10%;
-  left: 65%;
+  left: -15px;
+  top: 0;
   height: 250px;
   width:150px;
 }
@@ -423,8 +424,11 @@ nav ul.menu-area ul li Link:hover{
   .imgB1{
     width: 6.05rem;
     height: 13rem;
-    right: 3.31rem;
-    bottom: .5rem;
+    left: 65%;
+    top:40px;
+    position: absolute;
+    /* right: 3.31rem;
+    bottom: .5rem; */
   }
 }
 @media only screen and (max-width: 1440px) {
@@ -507,4 +511,7 @@ max-width:'800px';
 .css-n08m63-JoyGrid-root {
   --Grid-columns: 0;
 
+}
+.smallbanner{
+  border-radius: 5px;
 }

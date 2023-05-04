@@ -1,18 +1,6 @@
 import React from 'react';
-import CardCover from '@mui/joy/CardCover';
-import CardContent from '@mui/joy/CardContent';
-// import Typography from '@mui/joy/Typography';
-import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
-import AspectRatio from '@mui/joy/AspectRatio';
-import Box from '@mui/joy/Box';
-import Button from '@mui/joy/Button';
-import Card from '@mui/joy/Card';
-import IconButton from '@mui/joy/IconButton';
-import Typography from '@mui/joy/Typography';
-import BookmarkAdd from '@mui/icons-material/BookmarkAddOutlined';
+import {Card,Grid } from '@mui/material';
 import { styled } from '@mui/joy/styles';
-import Sheet from '@mui/joy/Sheet';
-import Grid from '@mui/joy/Grid';
 import { useMediaQuery} from "@mui/material";
 import { useTheme } from "@mui/system";
 import { FreeMode } from "swiper";
@@ -22,13 +10,13 @@ import "swiper/css/free-mode";
 
 
 export const Gallary = () => {
-    const Item = styled(Sheet)(({ theme }) => ({
-        ...theme.typography.body2,
-        padding: theme.spacing(1),
-        textAlign: 'center',
-        backgroundColor:'pink',
-        color: theme.vars.palette.text.tertiary,
-    }));
+    // const Item = styled(Sheet)(({ theme }) => ({
+    //     ...theme.typography.body2,
+    //     padding: theme.spacing(1),
+    //     textAlign: 'center',
+    //     backgroundColor:'pink',
+    //     color: theme.vars.palette.text.tertiary,
+    // }));
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down("md"));  
 
@@ -44,7 +32,7 @@ export const Gallary = () => {
   ];
   return (
     <div>
-         <Grid container  spacing={5} xs={16} md={12} sx={{width:'100%', justifyContent: 'center',}}>
+         <Grid container xs={16} md={12} sx={{width:'100%', justifyContent: 'center',}}>
                      <Grid item xs={18} sx={{display:"contents"}}>
          {matches ? (<>   
          <Swiper
@@ -104,7 +92,7 @@ export const Gallary = () => {
 ))}
               
           </Swiper></>):(cardData.map((item,index) => (
-    <Card variant="outlined" sx={{ width: 400,maxWidth:'800px', margin: '10px', minHeight: '280px',backgroundColor:'#f8f8f8' }} key={index}>
+    <Card variant="outlined" sx={{margin: '10px', minHeight: '280px',backgroundColor:'#f8f8f8' }} key={index}>
                 <img
                 src={item.image}
                 style={{height:'250px',width:"300px"}}
