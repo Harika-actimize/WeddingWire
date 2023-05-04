@@ -42,8 +42,8 @@ const CustomizedMenu = (props) => {
 
   return (
     <div>
-      <Link  aria-controls="customized-menu" underline="none"
-        aria-haspopup="true" variant="contained" onMouseOver={handleClick} >PLANNING TOOLS
+      <Link  aria-controls="customized-menu" underline="none" sx={{fontSize:'12px',padding:0}}
+        aria-haspopup="true" variant="contained" onClick={handleClick} >PLANNING TOOLS
     </Link>
     <Menu
       PopoverClasses={{paper: props.classes.popoverPaper}}

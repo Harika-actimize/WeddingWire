@@ -1,4 +1,4 @@
-import { Typography,Button,Box,useMediaQuery, Grid } from "@mui/material";
+import { Typography,Button,Box,useMediaQuery, Grid, Divider } from "@mui/material";
 import { useTheme } from "@mui/system";
 import {
   BannerContainer,
@@ -83,9 +83,11 @@ export default function InnerPageBanner() {
   
   return (
   <>
+{matches ? (<>
+  <Divider></Divider>
   <Grid container columns={20} sx={{flex:1}}>
   <Grid item xs={20} md={10} sm={20} lg={10} xl={10} sx={{textAlign:'-webkit-center'}}>
-      <BannerContent>
+      <BannerContent sx={{marginTop:'15px'}}>
       <Breadcrumbs>
         <Link underline="hover" color="inherit" href="/">
           Wedding
@@ -100,7 +102,7 @@ export default function InnerPageBanner() {
       </Breadcrumbs>
         
         <BannerTitle sx={{
-  fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif",marginTop:'3%',mb:'1%'
+  fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif",marginTop:'3%',mb:'3%'
         }}>Wedding Venues
 </BannerTitle>
 
@@ -108,137 +110,231 @@ export default function InnerPageBanner() {
         aria-label="Device settings"
         sx={{ bgcolor: 'background.paper',display:'flex'}}>
 {matches ? (<>
-  <TextField
-  variant="outlined"
-  placeholder='Wedding'
-  button
-  id="lock-button"
-  aria-haspopup="listbox"
-  aria-controls="lock-menu"
-  aria-label="when device is locked"
-  value={options[selectedIndex]}
-  aria-expanded={open ? 'true' : undefined}
-  onClick={handleClickListItem}
-  InputProps={{
-    startAdornment: (
-      <InputAdornment>
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-      </InputAdornment>
-    )
-  }}
-/>
-<Menu
-        id="lock-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'lock-button',
-          role: 'listbox',
-        }}
-      >
-        {options.map((option, index) => (
-          <MenuItem
-            key={option}
-            onClick={(event) => handleMenuItemClick(event, index)}
-          >
-             <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2} columns={12}>
-        <Grid item xs={4}>
-        </Grid>
-        <Grid item xs={4}>
-            {option}
-        </Grid>
-        <Grid item xs={4}>
-        </Grid>
-
-      </Grid>
-    </Box>
-
-          </MenuItem>
-        ))}
-      </Menu>
-
-<TextField
-  variant="outlined"
-  placeholder='in (E.g.Delhi)' 
-/>
+  
 </>) :(
   <>
-        <TextField
-  variant="outlined"
-  placeholder='Wedding'
-  button
-  id="lock-button"
-  aria-haspopup="listbox"
-  aria-controls="lock-menu"
-  aria-label="when device is locked"
-  value={options[selectedIndex]}
-  aria-expanded={open ? 'true' : undefined}
-  onClick={handleClickListItem}
-  InputProps={{
-    startAdornment: (
-      <InputAdornment>
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-      </InputAdornment>
-    )
-  }}
+      <TextField
+variant="outlined"
+placeholder='Wedding'
+button
+id="lock-button"
+aria-haspopup="listbox"
+aria-controls="lock-menu"
+aria-label="when device is locked"
+value={options[selectedIndex]}
+aria-expanded={open ? 'true' : undefined}
+onClick={handleClickListItem}
+InputProps={{
+  startAdornment: (
+    <InputAdornment>
+      <IconButton>
+        <SearchIcon />
+      </IconButton>
+    </InputAdornment>
+  )
+}}
 />
 <Menu
-        id="lock-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'lock-button',
-          role: 'listbox',
-        }}
-      >
-        {options.map((option, index) => (
-          <MenuItem
-            key={option}
-            onClick={(event) => handleMenuItemClick(event, index)}
-          >
-             <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2} columns={12}>
-        <Grid item xs={4}>
-        </Grid>
-        <Grid item xs={4}>
-            {option}
-        </Grid>
-        <Grid item xs={4}>
-        </Grid>
-
+      id="lock-menu"
+      anchorEl={anchorEl}
+      open={open}
+      onClose={handleClose}
+      MenuListProps={{
+        'aria-labelledby': 'lock-button',
+        role: 'listbox',
+      }}
+    >
+      {options.map((option, index) => (
+        <MenuItem
+          key={option}
+          onClick={(event) => handleMenuItemClick(event, index)}
+        >
+           <Box sx={{ flexGrow: 1 }}>
+    <Grid container spacing={2} columns={12}>
+      <Grid item xs={4}>
       </Grid>
-    </Box>
+      <Grid item xs={4}>
+          {option}
+      </Grid>
+      <Grid item xs={4}>
+      </Grid>
 
-          </MenuItem>
-        ))}
-      </Menu>
+    </Grid>
+  </Box>
+
+        </MenuItem>
+      ))}
+    </Menu>
 
 <TextField
-  variant="outlined"
-  placeholder='in (E.g.Delhi)' 
+variant="outlined"
+placeholder='in (E.g.Delhi)' 
 />
 <Button variant="contained" color='error' sx={{textTransform:'none'}}>
-      Find
-    </Button>
-    </>)}
+    Find
+  </Button>
+  </>)}
 </Grid>
-      </BannerContent>
-      </Grid>
-      <Grid item xs={20} md={10} sm={20}>
-        {/* <div className='banner'></div> */}
-      <BannerInnerImg src="https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-banquetes.jpg" className='banner' />
-      {/* <div className='homeHeading_content'>
+    </BannerContent>
+    </Grid>
+    <Grid item xs={20} md={10} sm={20}>
+      {/* <div className='banner'></div> */}
+    <BannerInnerImg src="https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-banquetes.jpg" className='banner' />
+    {/* <div className='homeHeading_content'>
 
-      </div> */}
+    </div> */}
+    </Grid>
+</Grid>
+<Divider></Divider>
+</>):(<>
+<Divider></Divider>
+<Grid container columns={20} sx={{flex:1}}>
+<Grid item xs={20} md={10} sm={20} lg={10} xl={10} sx={{textAlign:'-webkit-center'}}>
+    <BannerContent sx={{marginTop:'15px'}}>
+    <Breadcrumbs>
+      <Link underline="hover" color="inherit" href="/">
+        Wedding
+      </Link>
+      <Link
+        underline="hover"
+        color="inherit"
+        href="/material-ui/getting-started/installation/"
+      >
+        Wedding Venues
+      </Link>
+    </Breadcrumbs>
+      
+      <BannerTitle sx={{
+fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif",marginTop:'3%',mb:'3%'
+      }}>Wedding Venues
+</BannerTitle>
+
+      <Grid
+      aria-label="Device settings"
+      sx={{ bgcolor: 'background.paper',display:'flex'}}>
+{matches ? (<>
+<TextField
+variant="outlined"
+placeholder='Wedding'
+button
+id="lock-button"
+aria-haspopup="listbox"
+aria-controls="lock-menu"
+aria-label="when device is locked"
+value={options[selectedIndex]}
+aria-expanded={open ? 'true' : undefined}
+onClick={handleClickListItem}
+InputProps={{
+  startAdornment: (
+    <InputAdornment>
+      <IconButton>
+        <SearchIcon />
+      </IconButton>
+    </InputAdornment>
+  )
+}}
+/>
+<Menu
+      id="lock-menu"
+      anchorEl={anchorEl}
+      open={open}
+      onClose={handleClose}
+      MenuListProps={{
+        'aria-labelledby': 'lock-button',
+        role: 'listbox',
+      }}
+    >
+      {options.map((option, index) => (
+        <MenuItem
+          key={option}
+          onClick={(event) => handleMenuItemClick(event, index)}
+        >
+           <Box sx={{ flexGrow: 1 }}>
+    <Grid container spacing={2} columns={12}>
+      <Grid item xs={4}>
       </Grid>
- </Grid>
-    </>
-  );
-}
+      <Grid item xs={4}>
+          {option}
+      </Grid>
+      <Grid item xs={4}>
+      </Grid>
+
+    </Grid>
+  </Box>
+
+        </MenuItem>
+      ))}
+    </Menu>
+
+<TextField
+variant="outlined"
+placeholder='in (E.g.Delhi)' 
+/>
+</>) :(
+<>
+      <TextField
+variant="outlined"
+placeholder='Wedding'
+button
+id="lock-button"
+aria-haspopup="listbox"
+aria-controls="lock-menu"
+aria-label="when device is locked"
+value={options[selectedIndex]}
+aria-expanded={open ? 'true' : undefined}
+onClick={handleClickListItem}
+InputProps={{
+  startAdornment: (
+    <InputAdornment>
+      <IconButton>
+        <SearchIcon />
+      </IconButton>
+    </InputAdornment>
+  )
+}}
+/>
+<Menu
+      id="lock-menu"
+      anchorEl={anchorEl}
+      open={open}
+      onClose={handleClose}
+      MenuListProps={{
+        'aria-labelledby': 'lock-button',
+        role: 'listbox',
+      }}
+    >
+      {options.map((option, index) => (
+        <MenuItem
+          key={option}
+          onClick={(event) => handleMenuItemClick(event, index)}
+        >
+           <Box sx={{ flexGrow: 1 }}>
+    <Grid container spacing={2} columns={12}>
+      <Grid item xs={4}>
+      </Grid>
+      <Grid item xs={4}>
+          {option}
+      </Grid>
+      <Grid item xs={4}>
+      </Grid>
+
+    </Grid>
+  </Box>
+
+        </MenuItem>
+      ))}
+    </Menu>
+
+<TextField
+variant="outlined"
+placeholder='in (E.g.Delhi)' 
+/>
+<Button variant="contained" color='error' sx={{textTransform:'none'}}>
+    Find
+  </Button>
+  </>)}
+</Grid>
+    </BannerContent>
+    </Grid>
+</Grid>
+</>)} </>)}

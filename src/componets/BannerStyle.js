@@ -71,7 +71,7 @@ export const BannerInnerImg = styled("img")(({ src, theme }) => ({
   src: `url(${src})`,
   backgroundImage: `url(${src})`,
   backgroundPosition: "left top,center center",
-  width:'calc((100vw - 100%)/2 + 50%)',
+  width:'calc((100vw - 100%)/2 + 48%)',
   backgroundSize:'4em,cover',
   height: 'calc(100% + 0px)',
   right:'50%',
@@ -89,7 +89,7 @@ export const BannerInnerImg = styled("img")(({ src, theme }) => ({
 
       },
   [theme.breakpoints.down("sm")]: {
-    width: "98vw",
+    width: "96vw",
     height: "176px",
     marginTop:'-16px',
     backgroundPosition:'center top',

@@ -80,7 +80,7 @@ export default function Innerpage() {
   return (
     <div>
       {/* <ScrollDialog/> */}
-      <InteractiveList />
+      {/* <InteractiveList /> */}
         <InnerPageBanner/>
     <InnerPageBanner/>
       <Grid container columns={20}>

@@ -61,7 +61,7 @@ const data = [
 function Innerpagevennues() {
     return (
         <div>
-            <InteractiveList/>
+            {/* <InteractiveList/> */}
 <InnerPageBanner/>
 
             <Grid container columns={20}>

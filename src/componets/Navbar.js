@@ -64,8 +64,8 @@ const goTologin =()=>{
             <Grid item xs={2}>
               <CustomizedMenu />
             </Grid>
-            <Grid item xs={2}>
-              <CustomizedMenu />
+            <Grid item xs={2} className="hide">
+              <CustomizedMenu  />
             </Grid>
             </Grid>
         </Grid>
