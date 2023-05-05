@@ -11,6 +11,10 @@ import Banner from './Banner'
 import Bannerresponsive from './Bannerresponsive';
 import SmallBanner from './SmallBanner';
 import SwiperCard from './SwiperCard';
+import VenuesHydrabad from './VenuesHydrabad';
+import VenuesBanglore from './VenuesBanglore';
+import VenuesMumbai from './VenuesMumbai';
+import VenuesChennai from './VenuesChennai';
 
 const data = [
     {location:"Andheri East",venue_count:10},
@@ -70,11 +74,15 @@ function Innerpagevennues() {
 </Grid>
 <Grid xs={16} md={16} sm={16}> 
 <Location/>
-<SmallBanner/>
-<SwiperCard location = "hyderabad"/>
-<SwiperCard location = "bangalore"/>
-<SwiperCard location = "mumbai"/>
-<SwiperCard location = "chennai"/>
+{/* <SmallBanner/> */}
+<SwiperCard location = "hyderabad" heading="Venues in Hyderabad"/>
+<VenuesHydrabad/>
+<SwiperCard location = "bangalore" heading="Venues in Bangalore"/>
+<VenuesBanglore/>
+<SwiperCard location = "mumbai" heading="Venues in Mumbai"/>
+<VenuesMumbai/>
+<SwiperCard location = "chennai" heading="Venues in Chennai"/>
+<VenuesChennai/>
 <InnerpageQuetions/>
 <Mumbaibyzone location="Wedding vennus in mumbai by zone" data={data}/>
 </Grid>

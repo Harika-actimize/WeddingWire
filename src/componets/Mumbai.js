@@ -44,7 +44,7 @@ const getData = [];
       <Grid sx={{ display: 'flex',flexDirection:'row',justifyContent:'center',flexWrap:'wrap' }}>
         {getData.map((item) => {
 return(
-          <Card style={{ maxWidth: 300,margin:'15px' }} key={item.id}>
+          <Card style={{ maxWidth: 250,margin:'15px' }} key={item.id}>
             <Swiper
               spaceBetween={1}
               effect={"fade"}

@@ -82,12 +82,12 @@ export default function Innerpage() {
       {/* <ScrollDialog/> */}
       {/* <InteractiveList /> */}
         <InnerPageBanner/>
-    <InnerPageBanner/>
+    {/* <InnerPageBanner/> */}
       <Grid container columns={20}>
 <Grid xs={2}> 
 
 </Grid>
-<Grid xs={16} md={16} sm={16}> 
+<Grid xs={18} md={16} sm={16}> 
 <Mumbai/>
 <Promtions/>
 <Exclusive/>

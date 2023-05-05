@@ -18,7 +18,7 @@ function Mumbaibydivider({location,data}) {
 {/* <Grid item xs={2}></Grid> */}
 
 {/* <Grid item xs={2}></Grid> */}
-<Grid item xs={18}>
+<Grid item xs={20}>
 <div className="itemLoc">
     <ul style={{padding:"0px"}}>
         {data.map(item=>(<>

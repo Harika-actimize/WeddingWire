@@ -27,7 +27,7 @@ export default function QuiltedImageList() {
         <Grid item xs={2}>
 
         </Grid>
-        <Grid item xs={16} sx={{ display: 'flex' }}>
+        <Grid item xs={20} sx={{ display: 'flex' }}>
           <Swiper
             freeMode={true}
             grabCursor={true}
@@ -59,7 +59,7 @@ export default function QuiltedImageList() {
           >
             <SwiperSlide> <Card sx={{ textAlign: '-webkit-center', height: 'auto' }}>
               <ImageList
-                sx={{ width: 300, height: 300 }}
+              sx={{margin:0}}
                 variant="quilted"
                 cols={3}
                 rowHeight={90}
@@ -85,7 +85,7 @@ export default function QuiltedImageList() {
             <SwiperSlide>
               <Card sx={{ textAlign: '-webkit-center' }}>
                 <ImageList
-                  sx={{ width: 300, height: 300 }}
+                  sx={{margin:0}}
                   variant="quilted"
                   cols={3}
                   rowHeight={90}
@@ -111,7 +111,7 @@ export default function QuiltedImageList() {
             <SwiperSlide>
               <Card sx={{ textAlign: '-webkit-center' }}>
                 <ImageList
-                  sx={{ width: 300, height: 300 }}
+                  sx={{margin:0}}
                   variant="quilted"
                   cols={3}
                   rowHeight={90}
@@ -136,7 +136,7 @@ export default function QuiltedImageList() {
             <SwiperSlide>
               <Card sx={{ textAlign: '-webkit-center' }}>
                 <ImageList
-                  sx={{ width: 300, height: 300 }}
+                  sx={{margin:0}}
                   variant="quilted"
                   cols={3}
                   rowHeight={90}

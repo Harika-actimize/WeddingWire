@@ -515,3 +515,11 @@ max-width:'800px';
 .smallbanner{
   border-radius: 5px;
 }
+.innerheading{
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  font-family: Merriweather,Merriweather-fallback-TimesNewRoman,times,serif;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+
+}

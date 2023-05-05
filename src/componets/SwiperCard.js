@@ -23,9 +23,11 @@ import { Grid } from "@mui/material";
 import CardMedia from '@mui/material/CardMedia';
 import  AiOutlineTag  from "react-icons/bs";
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
+import { Icon } from '@iconify/react';
 
 
-const SwiperCard = ({location}) => {
+
+const SwiperCard = ({location,heading}) => {
 	const getData = useSelector((state) => state.homepagedata.data);
 	return (
 		<>
@@ -35,11 +37,12 @@ const SwiperCard = ({location}) => {
 		<Typography variant='caption'>Explore winners in your area.</Typography>
 		</Grid> */}
 			<div>
-				<Grid container spacing={2} columns={20}>
+				<Grid columns={20}>
 					<Grid item xs={2}>
 
 					</Grid>
-					<Grid item xs={16}>
+					<Grid item xs={20}>
+					<Typography variant='h5'sx={{mb:'1.5rem',fontWeight:'700',fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif'}}>{heading}</Typography>
 						<Swiper
 							freeMode={true}
 							grabCursor={true}
@@ -83,13 +86,20 @@ const SwiperCard = ({location}) => {
 												<CardMedia
 													sx={{ height: 200 }}
 													image={itmes.main_image}
-
 												/>
+												<Icon style={{position: 'absolute',
+													color: 'white',
+													top: 12,
+													right: '5%',
+													padding:'0px 8px',
+                          cursor:'pointer',
+													transform: 'translateX(-50%)'}} height='22' width='22' icon="streamline:interface-favorite-heart-reward-social-rating-media-heart-it-like-favorite-love" />
+
 												
 													<Typography sx={{ fontSize: '17px', lineHeight: '27px',marginLeft:'15px',marginBottom:'5px' }} noWrap >{itmes.name}</Typography>
 													<Box sx={{display:'flex',marginLeft:'15px',marginBottom:'5px'}}>
 													<StarIcon sx={{ color: '#fabb00', fontSize: '18px' }}></StarIcon><Typography variant='caption' >{itmes.star_rating}({itmes.outof})</Typography>
-													<Typography variant='caption'>{itmes.area}.{itmes.cityname}</Typography>					
+													<Typography variant='caption' noWrap>{itmes.area}.{itmes.cityname}</Typography>					
 												</Box>
 												<Box sx={{display:'flex',marginLeft:'15px',marginBottom:'5px'}}>
 												<LocalOfferOutlinedIcon sx={{fontSize: '18px' }}></LocalOfferOutlinedIcon><Typography variant='caption' >1 promotion</Typography>
@@ -97,7 +107,27 @@ const SwiperCard = ({location}) => {
 													{/* <AiOutlineTag></AiOutlineTag> */}
 												</Box>
 												<Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}>from{itmes.package_amount}</Typography>
-											</Card>
+												<Button sx={{
+              ":hover": {
+                color: '#b5141b',
+            },
+    borderRadius:' .5rem',
+    border: 'none',
+    display: 'flex',
+    height: '48px',
+    padding: '0 2rem',
+    cursor: 'pointer',
+    lineHeight: 'normal',
+    color:'#ff0000',
+	textAlign:'left',
+    textTransform:'none',
+    width:'90%',
+    margin:'5%',
+    
+    }}>
+        Request pricing
+        </Button>
+												</Card>
 											{/* <Card>
 													<img width="640px" variant="top" src={itmes.main_image} />
 													<Typography variant="h6">{itmes.name}</Typography>

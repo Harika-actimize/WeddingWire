@@ -14,6 +14,7 @@ import InteractiveList from './componets/Navbar';
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { getHomePageInitiate } from './redux/actions/homepageActions';
+import VenuesMumbai from './componets/VenuesMumbai';
 
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="login"  exact element={ <InteractiveList/> } />
           <Route path='welcomepage' exact element={<Welcomepage/>}/>
           <Route path='weddingvenues' exact element={<Innerpagevennues/>}/>
+          <Route path='weddingvenues/mumbai' exact element={<Innerpage/>}/>
           <Route path='areyouvendor' exact element={<Areyouvendor/>}/>
         </Routes>
     </>
