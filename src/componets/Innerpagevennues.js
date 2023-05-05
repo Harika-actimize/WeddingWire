@@ -15,6 +15,14 @@ import VenuesHydrabad from './VenuesHydrabad';
 import VenuesBanglore from './VenuesBanglore';
 import VenuesMumbai from './VenuesMumbai';
 import VenuesChennai from './VenuesChennai';
+import Innerpaper from './Innerpaper';
+import Promtions from './Promtions';
+import InnerExclusive from './InnerExclusive';
+import SeeAllPromotions from './SeeAllPromotions';
+import Factors from './Factors';
+import Nearyou from './Nearyou';
+import InnerAllWedding from './InnerAllWedding';
+
 
 const data = [
     {location:"Andheri East",venue_count:10},
@@ -74,7 +82,7 @@ function Innerpagevennues() {
 </Grid>
 <Grid xs={16} md={16} sm={16}> 
 <Location/>
-{/* <SmallBanner/> */}
+<SmallBanner/>
 <SwiperCard location = "hyderabad" heading="Venues in Hyderabad"/>
 <VenuesHydrabad/>
 <SwiperCard location = "bangalore" heading="Venues in Bangalore"/>
@@ -83,8 +91,15 @@ function Innerpagevennues() {
 <VenuesMumbai/>
 <SwiperCard location = "chennai" heading="Venues in Chennai"/>
 <VenuesChennai/>
+<Innerpaper/>
+<Promtions/>
+<InnerExclusive/>
+<SeeAllPromotions/>
+<Factors/>
+<Nearyou/>
 <InnerpageQuetions/>
 <Mumbaibyzone location="Wedding vennus in mumbai by zone" data={data}/>
+<InnerAllWedding/>
 </Grid>
 
 <Grid xs={2}> 

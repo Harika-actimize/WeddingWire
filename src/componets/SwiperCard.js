@@ -115,15 +115,16 @@ const SwiperCard = ({location,heading}) => {
     border: 'none',
     display: 'flex',
     height: '48px',
-    padding: '0 2rem',
+    padding: '0 2rem 2rem 0',
     cursor: 'pointer',
     lineHeight: 'normal',
     color:'#ff0000',
 	textAlign:'left',
     textTransform:'none',
     width:'90%',
-    margin:'5%',
-    
+    margin:'10% 5% 0 15px',
+	justifyContent:'flex-start',
+    fontSize:'inherit'
     }}>
         Request pricing
         </Button>

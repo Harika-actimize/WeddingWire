@@ -10,7 +10,7 @@ function Featured() {
 
                 </Grid>
                 <Grid item xs={16}>
-                    <Typography sx={{fontSize:'24px',marginBottom:'16px',marginTop:'50px',   fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif'}}>Featured wedding vendors</Typography>
+                    <Typography sx={{fontSize:'24px',marginBottom:'16px',marginTop:'50px',fontWeight:'700',   fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif'}}>Featured wedding vendors</Typography>
 
                 </Grid>
                 <Grid item xs={2}>

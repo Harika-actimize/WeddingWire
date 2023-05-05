@@ -85,7 +85,7 @@ function Exclusive() {
                                         marginBottom: '15px'
                                     }}>5% discount for WeddingWire.in couples</Typography>
                                     <Divider></Divider>
-                                    <Typography sx={{
+                                    <Typography noWrap sx={{
                                         fontSize: '15px',
                                         fontWeight: '600',
                                         marginLeft: '15px',

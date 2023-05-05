@@ -432,8 +432,8 @@ nav ul.menu-area ul li Link:hover{
   }
 }
 @media only screen and (max-width: 1440px) {
-  .css-1tb4ett-JoyCard-root{
-    width: 350px !important;
+  .css-clvyeo{
+    width: 100% !important;
   }
 }
 
@@ -508,10 +508,6 @@ max-width:'800px';
  margin: '10px'; min-height: '280px';
  background-color:'#f8f8f8'
 }
-.css-n08m63-JoyGrid-root {
-  --Grid-columns: 0;
-
-}
 .smallbanner{
   border-radius: 5px;
 }
@@ -525,4 +521,36 @@ max-width:'800px';
 }
 .css-clvyeo{
   width: 91% !important;
+}
+.findcard{
+  width: 43%;
+  padding: 2rem;
+  box-shadow: 0 5px 12px #0003;
+  background-color: #fff;
+  border-radius: .5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.findtitle{
+  font-size: 1.63rem;
+  line-height: 2.5rem;
+font-family: Merriweather,Merriweather-fallback-TimesNewRoman,times,serif;
+font-weight: 700;
+margin-bottom: .5rem;
+}
+.smallbaner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: .5rem;
+  overflow: hidden;
+  position: relative;
+
+}
+.Bannneralign{
+  margin-bottom: calc(1.5rem - 5px);
+  position: relative;
+
 }

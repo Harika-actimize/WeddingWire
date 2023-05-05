@@ -12,10 +12,10 @@ function Couples() {
                 <Grid sx={{marginLeft:'16px'}}>
                     <img src='https://cdn1.weddingwire.in/img/badges/2023/badge-weddingawards_en_IN_small.jpg' height='88px' width='88px'></img>
                 </Grid>
-                <Grid item xs={16} sx={{marginLeft:'10%'}}>
-                    <Typography variant='h5'sx={{fontSize:'24px',fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif',fontWeight:'400',marginBottom:'20px'}} >Couples’ Choice Awards</Typography>
+                <Grid item xs={16} sx={{}}>
+                    <Typography variant='h5'sx={{fontSize:'24px',fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif',fontWeight:'700',marginBottom:'20px'}} >Couples’ Choice Awards</Typography>
                     <Typography variant='caption' sx={{fontFamily:'ProximaNova,ProximaNova-fallback-Arial,sans-serif'}}>Explore winners in your area.</Typography>
-                    <Button variant="outlined" className='hidebutton' sx={{borderColor:'#d9d9d9',color:'#222',textTransform:'none',marginRight:'10%',float:'right'}}>View all winners<ArrowForwardIcon></ArrowForwardIcon></Button>
+                    <Button variant="outlined" className='hidebutton' sx={{borderColor:'#d9d9d9',color:'#222',textTransform:'none',marginRight:'10%',mb:'15px', float:'right'}}>View all winners<ArrowForwardIcon></ArrowForwardIcon></Button>
                 </Grid>
                 <Grid item xs={2}>
 

@@ -9,7 +9,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 function InnerpageQuetions() {
     return (
         <div>
-<Accordion>
+         <Typography sx={{fontSize:'25px',fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif',fontWeight:'700',marginBottom:'20px'}} >Frequently Asked Questions in Wedding Venues</Typography>
+        <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
