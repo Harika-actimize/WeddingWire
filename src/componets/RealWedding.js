@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
+import { getYearPickerUtilityClass } from '@mui/x-date-pickers';
+import { SanitizerSharp } from '@mui/icons-material';
 
 
 
@@ -27,7 +29,7 @@ export default function QuiltedImageList() {
         <Grid item xs={2}>
 
         </Grid>
-        <Grid item xs={20} sx={{ display: 'flex' }}>
+        <Grid item xs={16} sx={{ display: 'flex' }}>
           <Swiper
             freeMode={true}
             grabCursor={true}
