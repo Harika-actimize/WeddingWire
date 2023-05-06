@@ -22,6 +22,7 @@ import SeeAllPromotions from './SeeAllPromotions';
 import Factors from './Factors';
 import Nearyou from './Nearyou';
 import InnerAllWedding from './InnerAllWedding';
+// import Paragraphs from './Paragraphs';
 
 
 const data = [
@@ -95,11 +96,12 @@ function Innerpagevennues() {
 <Promtions/>
 <InnerExclusive/>
 <SeeAllPromotions/>
+{/* <Paragraphs/> */}
 <Factors/>
 <Nearyou/>
 <InnerpageQuetions/>
 <Mumbaibyzone location="Wedding vennus in mumbai by zone" data={data}/>
-<InnerAllWedding/>
+<InnerAllWedding heading="All wedding vendors"/>
 </Grid>
 
 <Grid xs={2}> 

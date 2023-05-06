@@ -1,4 +1,4 @@
-import { Typography,Button,Box,useMediaQuery, Grid } from "@mui/material";
+import { Typography,Button,Box,useMediaQuery, Grid, Divider } from "@mui/material";
 import { useTheme } from "@mui/system";
 import {
   BannerContainer,
@@ -84,6 +84,7 @@ export default function Banner() {
   <Grid container columns={20} sx={{flex:1}}>
     {/* <BannerContainer sx={{marginTop:'5px',borderTop:'1px solid rgba(0, 0, 0, 0.12)',borderBottom:'1px solid rgba(0, 0, 0, 0.12)'}} > */}
     <Grid item xs={20} md={10} sm={20} lg={10} xl={10} sx={{textAlign:'-webkit-center'}}>
+      <Divider></Divider>
 <BannerContent>
         <BannerTitle sx={{
   fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif",marginTop:'3%',mb:'1%'
@@ -187,6 +188,8 @@ border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>
       <BannerImage src="https://cdn1.weddingwire.in/assets/img/home/bg_home1.jpg" className='banner' />
       </Grid>
           </Grid>
+      <Divider></Divider>
+
     </>
   );
 }

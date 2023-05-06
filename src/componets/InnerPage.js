@@ -3,7 +3,6 @@ import InteractiveList from './Navbar';
 import Footer from './Footer';
 import Mumbai from './Mumbai';
 import { Grid } from '@mui/material';
-import InnerPageBanner from './InnerPageBanner';
 import Promtions from './Promtions';
 import Exclusive from './Exclusive';
 import SeeAllPromotions from './SeeAllPromotions';
@@ -18,6 +17,8 @@ import CustomImageList from './RealWedding'
 import InnerPageBannerRes from './InnerPageBannerRes';
 import {useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
+import InnerAllWedding from './InnerAllWedding';
+import Paragraphs from './Paragraphs';
 
 const data = [
   {location:"Andheri East",venue_count:10},
@@ -81,7 +82,7 @@ export default function Innerpage() {
     <div>
       {/* <ScrollDialog/> */}
       {/* <InteractiveList /> */}
-        <InnerPageBanner/>
+      <InnerPageBannerRes/>
     {/* <InnerPageBanner/> */}
       <Grid container columns={20}>
 <Grid xs={2}> 
@@ -92,15 +93,17 @@ export default function Innerpage() {
 <Promtions/>
 <Exclusive/>
 <SeeAllPromotions/>
+<Paragraphs/>
 <Freqentily/>
 <Questions/>
 <Innerpagereal/>
 {/* <grid> */}
 {/* <Mumbaibyarea/> */}
-<CustomImageList/>
+{/* <CustomImageList/> */}
 <Mumbaibydivider location="Wedding vennus in mumbai by area" data={area}/>
 {/* <Zone/> */}
 <Mumbaibyzone location="Wedding vennus in mumbai by zone" data={data}/>
+<InnerAllWedding heading="Other vendors in Mumbai for your wedding"/>
 </Grid>
 
 <Grid xs={2}> 

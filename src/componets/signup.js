@@ -237,7 +237,7 @@ const Signup = () => {
             <img
               // component="img"
               width={'90%'}
-              height={'100%'}
+              height={'91%'}
               alt="The house from the offer."
               src="https://cdn1.weddingwire.in/assets/img/layer-alta/default_en-IN.jpg"
               style={{ objectFit: "cover" }}

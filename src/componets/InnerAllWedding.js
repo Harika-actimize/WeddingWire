@@ -2,11 +2,11 @@ import React from 'react'
 import { Typography,Grid } from '@mui/material'
 
 
-function InnerAllWedding() {
+function InnerAllWedding({heading}) {
     return (
         <div>
                             <Grid item xs={16} >
-                            <Typography sx={{fontSize:'25px',fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif',fontWeight:'700',marginBottom:'20px'}} >All wedding vendors</Typography>
+                            <Typography sx={{fontSize:'25px',fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif',fontWeight:'700',marginBottom:'20px'}} >{heading}</Typography>
                     <ul className='venues'>
                         <li className='subname'>
                          <a href='#' className="headcolor" >Wedding Venues</a></li>

@@ -19,6 +19,11 @@ import { useNavigate } from 'react-router-dom'
 import Couples from './Couples';
 import ViewMore from './ViewMore';
 import CustomizedMenu from "./Megamenu"
+import NavWeddingVenues from "./NavWeddingVenues"
+import WeddingVendor from "./WeddingVendor"
+import Brides from "./Brides";
+import Grooms from "./Grooms";
+import Blogs from "./Blogs";
 
 export default function InteractiveList() {
   const theme = useTheme();
@@ -36,36 +41,40 @@ const goTologin =()=>{
 }
   return (
     <React.Fragment>
+       <Toolbar>
       <div style={{marginBottom:"10px"}}>
-      <Grid container columns={20} xs={{padding:"20px 10px"}}>
+      <Grid container columns={20} sx={{padding:"20px 10px"}}>
+      {isMatch ?( 
+              <>
+                  <PermIdentityIcon onClick={goTosignup} />
+
+                <DrawerComp/>
+                <img src="https://www.weddingwire.in/assets/img/logos/gen_logoHeader.svg"></img>
+              </>) :( 
+            <>
         <Grid item xs={4}>
           <img src="https://www.weddingwire.in/assets/img/logos/gen_logoHeader.svg"></img>
-            {isMatch && 
-              <>
-                <PermIdentityIcon />
-                <DrawerComp />
-              </>
-            }
         </Grid>
+            
         <Grid item xs={12}>
           <Grid container spacing={1}>
             <Grid item xs={2}>
               <CustomizedMenu />
             </Grid>
             <Grid item xs={2}>
-              <CustomizedMenu />
+              <NavWeddingVenues />
             </Grid>
             <Grid item xs={2}>
-              <CustomizedMenu />
+              <WeddingVendor />
             </Grid>
             <Grid item xs={2}>
-              <CustomizedMenu />
+              <Brides />
             </Grid>
             <Grid item xs={2}>
-              <CustomizedMenu />
+              <Grooms />
             </Grid>
             <Grid item xs={2} className="hide">
-              <CustomizedMenu  />
+              <Blogs/>
             </Grid>
             </Grid>
         </Grid>
@@ -75,9 +84,11 @@ const goTologin =()=>{
           <Link href="#" underline="none" onClick={goTologin} sx={{color:'red',fontSize:'12px'}}>LOG IN</Link>
           <Link href="#" underline="none"onClick={goTosignup} sx={{color:'red',fontSize:'12px',marginLeft:'8px'}}>FREE SIGN UP</Link>
         </Grid>
-      </Grid>
-      <Divider></Divider>
+    
+             </> )}
+             </Grid>
       </div>
+      </Toolbar>
   </React.Fragment>
 );
 }
