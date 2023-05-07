@@ -378,7 +378,7 @@ const Signup = () => {
               variant="standard"
             />
             {/* EVENT LOCATION */}
-            <Grid sx={{display:'inline-block'}}>
+            <Grid sx={{width:'100%',paddingLeft:'10%',display:'block'}}>
             <TextField
               sx={{ mt: 1, ml: 1 }}
               className="pure-u-2"
@@ -420,7 +420,23 @@ const Signup = () => {
               </Select>
             </FormControl>
             </Grid>
-            <Grid sx={{display:'inline-block'}}>
+            <Grid sx={{width:"100%",paddingLeft:'10%',display:"inline-flex"}}>
+            {/* DatePicker FIELD */}
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker
+                label="Event date"
+                // sx={{mt:'-6%',ml: '10%'}}
+                sx={{ mr: '40%', mt: '-6%' }}
+                className="pure-u-2"
+                variant="standard"
+                value={date}
+                onChange={newValue => {
+                  // console.log('newvalue', newValue)
+                  setData({ ...data, date: newValue })
+                }}
+                renderInput={params => <TextField {...params} />}
+              />
+            </LocalizationProvider>
             <TextField
               sx={{
                 ml: '45%',
@@ -441,22 +457,6 @@ const Signup = () => {
               }}
               onChange={handleChange}
             />
-            {/* DatePicker FIELD */}
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DatePicker
-                label="Event date"
-                // sx={{mt:'-6%',ml: '10%'}}
-                sx={{ mr: '40%', mt: '-6%' }}
-                className="pure-u-2"
-                variant="standard"
-                value={date}
-                onChange={newValue => {
-                  // console.log('newvalue', newValue)
-                  setData({ ...data, date: newValue })
-                }}
-                renderInput={params => <TextField {...params} />}
-              />
-            </LocalizationProvider>
             </Grid>
             {/* BRIDE GROOM  */}
             <Grid

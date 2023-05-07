@@ -185,10 +185,7 @@ button {
 /* .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   margin-left: 45%;
 } */
-.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
-  margin-right: 40% !important;
-  margin-top: -8% !important;
-}
+
 .css-6eycvs-MuiPaper-root-MuiCard-root {
   width: 80%;
 }
@@ -572,4 +569,7 @@ margin-bottom: .5rem;
   margin-bottom: calc(1.5rem - 5px);
   position: relative;
 
+}
+.feildres{
+  margin-left: 0 !important;
 }
