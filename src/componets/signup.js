@@ -378,7 +378,7 @@ const Signup = () => {
               variant="standard"
             />
             {/* EVENT LOCATION */}
-            <Grid sx={{width:'100%',paddingLeft:'10%',display:'block'}}>
+            <Grid sx={{width:'100%',paddingLeft:'10%',display:'inline-flex'}}>
             <TextField
               sx={{ mt: 1, ml: 1 }}
               className="pure-u-2"
@@ -426,7 +426,7 @@ const Signup = () => {
               <DatePicker
                 label="Event date"
                 // sx={{mt:'-6%',ml: '10%'}}
-                sx={{ mr: '40%', mt: '-6%' }}
+                // sx={{ mr: '40%', mt: '-6%' }}
                 className="pure-u-2"
                 variant="standard"
                 value={date}
@@ -438,10 +438,10 @@ const Signup = () => {
               />
             </LocalizationProvider>
             <TextField
-              sx={{
-                ml: '45%',
-                mt: '2%',
-              }}
+              // sx={{
+              //   ml: '45%',
+              //   mt: '2%',
+              // }}
               label="Phone number"
               type="text"
               value={phonenumber}
