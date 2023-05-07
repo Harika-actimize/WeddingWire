@@ -277,7 +277,7 @@ nav Link{
 nav ul li {
   color: #fff;
   list-style: none;
-  transition: 0.5s;
+  transition: 0s;
 }
 ul img {
   width: 85%;
@@ -313,6 +313,7 @@ nav ul.menu-area{
   width: 100%;
   top: -9999px;
   left: 0;
+  margin-top: 10px;
 }
 nav ul li:hover ul.menu-area{
   top: 100%;
@@ -396,6 +397,12 @@ nav ul.menu-area ul li Link:hover{
   .css-1tb4ett-JoyCard-root{
     width: 350px !important;
   }
+  .menu-area{
+    width: 115% !important;
+  }
+  .navcardres{
+    width: 250px !important;
+  }
 }
 
 
@@ -430,6 +437,9 @@ nav ul.menu-area ul li Link:hover{
     /* right: 3.31rem;
     bottom: .5rem; */
   }
+  .rescard{
+    width: 250px !important;
+  }
 }
 @media only screen and (max-width: 1440px) {
   .css-clvyeo{
@@ -454,6 +464,15 @@ nav ul.menu-area ul li Link:hover{
   }
   .itemLoc li span{
     font-size: 12px!important;
+  }
+  .imageshow {
+    display: none;
+  }
+  .socialloginblock {
+    max-width: 100% !important;
+  }
+  .sociallogin {
+    display: block !important
   }
 }
 .avararalign {

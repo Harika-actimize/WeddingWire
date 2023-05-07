@@ -3,7 +3,7 @@ import Homepage from './Homepage';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import ChoiceAwards from './ChoiceAwards';
-import InteractiveList from './Navbar';
+import InteractiveList from './Navtest';
 import Banner from './Banner';
 import Premium from './Premium';
 import ColumnsGrid from './test1';
@@ -32,10 +32,14 @@ import FooterTop from './FooterTop';
 import {useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import Bannerresponsive from './Bannerresponsive';
+import MessageInfo from './message';
+import { useSelector } from 'react-redux';
 
 export default function Pages() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
+  const user = useSelector((state)=>state.userData.activeuser)
+
  
   return (
     <div>
@@ -48,6 +52,7 @@ export default function Pages() {
       </>)}
       <ColumnsGrid/>
       <Couples/>
+            <MessageInfo />
             <Homepage />
             <Featured/>
             <Premium/>

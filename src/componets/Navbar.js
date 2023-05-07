@@ -41,15 +41,20 @@ const goTologin =()=>{
 }
   return (
     <React.Fragment>
-       <Toolbar>
+       {/* <Toolbar> */}
       <div style={{marginBottom:"10px"}}>
-      <Grid container columns={20} sx={{padding:"20px 10px"}}>
+      <Grid container columns={20} sx={{padding:"20px 10px",justifyContent:'space-between'}}>
       {isMatch ?( 
               <>
+              <Grid>
                   <PermIdentityIcon onClick={goTosignup} />
-
-                <DrawerComp/>
+                  </Grid>
+                  <Grid>
                 <img src="https://www.weddingwire.in/assets/img/logos/gen_logoHeader.svg"></img>
+                </Grid>
+                <Grid>
+                <DrawerComp/>
+                </Grid>
               </>) :( 
             <>
         <Grid item xs={4}>
@@ -57,7 +62,7 @@ const goTologin =()=>{
         </Grid>
             
         <Grid item xs={12}>
-          <Grid container spacing={1}>
+          <Grid container>
             <Grid item xs={2}>
               <CustomizedMenu />
             </Grid>
@@ -88,7 +93,7 @@ const goTologin =()=>{
              </> )}
              </Grid>
       </div>
-      </Toolbar>
+      {/* </Toolbar> */}
   </React.Fragment>
 );
 }

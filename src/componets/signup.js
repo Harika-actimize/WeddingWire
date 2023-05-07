@@ -1,45 +1,32 @@
-import * as React from 'react'
-import '../App.css'
-import { styled } from '@mui/material/styles'
-import Box from '@mui/material/Box'
-import Paper from '@mui/material/Paper'
-import Grid from '@mui/material/Grid'
-import TextField from '@mui/material/TextField'
-import { Button, Divider, Typography } from '@mui/material'
-import { useDispatch, useSelector } from 'react-redux'
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import FormControl from '@mui/material/FormControl'
-import FormLabel from '@mui/material/FormLabel'
-import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone'
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday'
+import { Icon } from '@iconify/react'
 import MailOutlineIcon from '@mui/icons-material/MailOutline'
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone'
+import { Button, Divider, Typography } from '@mui/material'
+import Box from '@mui/material/Box'
+import FormControl from '@mui/material/FormControl'
+import Grid from '@mui/material/Grid'
 import InputAdornment from '@mui/material/InputAdornment'
-import axios from 'axios'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
-import NativeSelect from '@mui/material/NativeSelect'
-import { registerInitiate } from '../redux/actions/userActions'
-import { registerStart, registerSuccess, registerError, } from '../redux/actions/registerActions'
-import dayjs from 'dayjs'
-import Stack from '@mui/material/Stack'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import { DatePicker } from '@mui/x-date-pickers/DatePicker'
-import CssBaseline from "@mui/material/CssBaseline";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { fbSignInInitiate, loginInitiate, googleSignInInitiate, } from '../redux/actions/userActions'
+import Paper from '@mui/material/Paper'
 import Select from '@mui/material/Select'
-import { Icon } from '@iconify/react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import { createTheme, styled } from '@mui/material/styles'
+import TextField from '@mui/material/TextField'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import axios from 'axios'
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import * as React from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import '../App.css'
+import { auth } from "../firebase"
+import { fbSignInInitiate, googleSignInInitiate } from '../redux/actions/userActions'
+import { registerUserApi } from '../redux/api/registerApi'
+import MessageInfo from './message';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -81,11 +68,20 @@ const CustomTypo = styled(Typography)(({ theme }) => ({
 
 }));
 
+const emailValidator = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
+const passwordValidator = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
 const Signup = () => {
   // console.log("auth", auth)
   // console.log('===========================')
   // console.log('getauth', getAuth())
+  const errorObject = {
+    email:{valid:true, helperText:"Email required"},
+    name:{valid:true, helperText:"Name required" },
+    password:{valid:true, helperText:"Password required"}
+  }
+  
+  const [errorObj, updateErrorObj] = useState(errorObject)
   const [data, setData] = useState({
     name: '',
     email: '',
@@ -120,31 +116,54 @@ const Signup = () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
+
+   const formValid = ()=>{
+    //  debugger;
+     let isValid = true
+     let obj={...errorObj}
+     if(email === ''){
+        obj.email.valid = false
+        isValid = false
+     }else{
+      let re = new RegExp(emailValidator);
+      obj.email.valid = re.test(email)
+      obj.email.helperText = !re.test(email)?"Invalid Email":obj.email.helperText
+      isValid = re.test(email)
+     }
+     if(password === ''){
+      obj.password.valid = false
+     isValid = false
+    }else{
+      let re = new RegExp(passwordValidator);
+      obj.password.valid = re.test(password)
+      obj.password.helperText = !re.test(password)?"Invalid Password":obj.password.helperText
+      isValid = re.test(password)
+    }
+    if(name === ''){
+      obj.name.valid = false
+     isValid = false
+    }else{
+     obj.name.valid = true
+    }
+     updateErrorObj(obj)
+     return isValid
+   }
   const handleSubmit = async e => {
     e.preventDefault()
-    // console.log('nnnnnnnnnnnnnnnnnnnn', data)
-    dispatch(registerStart(data))
+    let valid = formValid()
+    if(valid){
     try {
-      let register = registerInitiate(email, password, name)
-      console.log('register', register)
-      console.log(' email, password,name', email, password, name)
-      dispatch(registerSuccess(email, password, name))
-      if (email || password) {
-        navigate('/login')
+      await registerUserApi({email, password, name,location,eventlocation,phonenumber,date})
+      await createUserWithEmailAndPassword(auth,email, password, name)
+      dispatch({ type: 'ALERT', payload: { open: true, severity: 'success', message: "User created successfully" } })
 
-      }
-      if (email || password) {
-        dispatch(registerInitiate(email, password, name))
-
-      }
+      navigate('/login')
     } catch (error) {
-      // console.log('///////////', error)
-      dispatch(registerError())
+      dispatch({ type: 'ALERT', payload: { open: true, severity: 'error', message: "Unable to create account, please try again" } })
 
-
-
+      console.log('///////////', error)
     }
-
+    
     setData({
       name: '',
       email: '',
@@ -154,26 +173,25 @@ const Signup = () => {
       location: '',
       eventlocation: '',
     })
-    // navigate("/login")
   }
-  //  dispatch(registerInitiate( email, password,name));
+
+  }
   const handleChange = e => {
     let { name, value } = e.target
-    console.log(';;;;;;;;;;;;;;;', name, value, data)
+    if(name === "email"||name === 'password'||name==="name"){
+      fieldValidation(name)
+    }
     setData({ ...data, [name]: value })
   }
-  // const { currentUser } = useSelector((state) => state.user);
 
   const goToLogin = () => {
     navigate('/login')
   }
   const handleGoogleSignIn = () => {
-    alert('/////////////////')
     dispatch(googleSignInInitiate())
   }
 
   const handleFBSignIn = () => {
-    alert(',,,,,,,,,,,,,,,,,,,')
     dispatch(fbSignInInitiate())
   }
   function weather() {
@@ -201,7 +219,7 @@ const Signup = () => {
         },
       })
       .then(res => {
-        console.log('res.data', res.data)
+        // console.log('res.data', res.data)
       })
       .catch(error => error.message)
     // console.log("result//////",result1.data);
@@ -218,6 +236,14 @@ const Signup = () => {
     // });
   }
 
+  const fieldValidation = (input)=>{
+    let obj={...errorObj}
+    if(input&&input!==''){
+      obj[input].valid = true
+    }
+    updateErrorObj(obj)
+  }
+
   return (
     <>
      <Box sx={{textAlign:'center',mb:'2pc',mt:'2pc'}}>
@@ -232,8 +258,8 @@ const Signup = () => {
         }} 
         src='https://www.weddingwire.in/assets/img/logos/gen_logoHeader.svg'></img>
         </Box>
-                <Grid container sx={{ marginLeft:'10%', marginRight:'10%', maxWidth: '860px', margin: 'auto', maxHeight: '800px', position: "relative", border: '1px solid grey' }} >
-          <Grid xs={5} className="layout-auth-cover pure-u-2-5">
+                <Grid container sx={{ marginLeft:'10%', marginRight:'10%', maxWidth: '860px', margin: 'auto', maxHeight: '800px', position: "relative", border: '1px solid grey' }} className="sociallogin" >
+          <Grid xs={5} className="layout-auth-cover pure-u-2-5 imageshow">
             <img
               // component="img"
               width={'90%'}
@@ -243,7 +269,8 @@ const Signup = () => {
               style={{ objectFit: "cover" }}
             ></img>
           </Grid>
-          <Grid xs={7} sx={{ textAlign: "center", alignItems: "center", marginTop: '20px' }}>
+          <Grid xs={7} sx={{ textAlign: "center", alignItems: "center", marginTop: '20px' }} className="socialloginblock">
+            <MessageInfo/>
             <Button
               className="btnOutline btnOutline--grey btnOutline--full"
               sx={{
@@ -297,6 +324,9 @@ const Signup = () => {
               id="standard-basic"
               label="Name and Surename"
               variant="standard"
+              helperText={!errorObj.name.valid&&errorObj.name.helperText}
+              error={!errorObj.name.valid}
+              required
               name="name"
               type="text"
               sx={{ mt: 1 }}
@@ -315,6 +345,9 @@ const Signup = () => {
             <TextField
               id="input-with-icon-textfield"
               name="email"
+              helperText={!errorObj.email.valid&&errorObj.email.helperText}
+              error={!errorObj.email.valid}
+              required
               type="email"
               sx={{ mt: 1 }}
               InputProps={{
@@ -334,6 +367,9 @@ const Signup = () => {
             <TextField
               name="password"
               type="password"
+              helperText={!errorObj.password.valid&&errorObj.password.helperText}
+              error={!errorObj.password.valid}
+              required
               sx={{ mt: 1 }}
               className="pure-u-1 mt10"
               value={password}
@@ -412,7 +448,7 @@ const Signup = () => {
                 variant="standard"
                 value={date}
                 onChange={newValue => {
-                  console.log('newvalue', newValue)
+                  // console.log('newvalue', newValue)
                   setData({ ...data, date: newValue })
                 }}
                 renderInput={params => <TextField {...params} />}

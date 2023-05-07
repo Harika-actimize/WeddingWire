@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from './Footer';
 import Mumbaibyzone from './Mumbaibyzone';
-import InteractiveList from './Navbar';
+import InteractiveList from './Navtest';
 import { Grid } from '@mui/material';
 import Questions from './Questions';
 import InnerpageQuetions from './InnerpageQuetions';
@@ -74,7 +74,7 @@ const data = [
 function Innerpagevennues() {
     return (
         <div>
-            {/* <InteractiveList/> */}
+            <InteractiveList/>
 <InnerPageBanner/>
 
             <Grid container columns={20}>

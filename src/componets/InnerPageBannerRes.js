@@ -95,7 +95,7 @@ export default function InnerPageBannerRes() {
       <Link
         underline="hover"
         color="inherit"
-        href="/material-ui/getting-started/installation/"
+        href="/weddingvenues"
       >
         Wedding Venues
       </Link>
@@ -246,7 +246,7 @@ placeholder='in (E.g.Delhi)'
         <Link
           underline="hover"
           color="inherit"
-          href="/material-ui/getting-started/installation/"
+          href="/weddingvenues"
         >
           Wedding Venues
         </Link>

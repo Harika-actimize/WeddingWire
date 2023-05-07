@@ -44,7 +44,7 @@ const getData = [];
       <Grid sx={{ display: 'flex',flexDirection:'row',justifyContent:'center',flexWrap:'wrap' }}>
         {getData.map((item) => {
 return(
-          <Card style={{ maxWidth: 300,margin:'15px' }} key={item.id}>
+          <Card style={{ maxWidth: 300,margin:'15px 15px 15px 0' }} className="rescard" key={item.id}>
             <Swiper
               spaceBetween={1}
               effect={"fade"}
@@ -54,7 +54,7 @@ return(
               }}
               modules={[EffectFade, Navigation, Pagination]}
               className="mySwiper"
-              sx={{margin:0}}
+              style={{margin:0}}
             >
               {item.images.map((img) => (
                 <SwiperSlide key={img}>

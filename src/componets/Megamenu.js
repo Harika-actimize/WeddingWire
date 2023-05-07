@@ -42,7 +42,7 @@ const CustomizedMenu = (props) => {
 
   return (
     <div>
-      <Link  aria-controls="customized-menu" underline="none" sx={{fontSize:'12px',padding:0}}
+      <Link  aria-controls="customized-menu" underline="none" sx={{fontSize:'12px',padding:0,color:"black"}}
         aria-haspopup="true" variant="contained" onClick={handleClick} >PLANNING TOOLS
     </Link>
     <Menu
@@ -57,19 +57,27 @@ const CustomizedMenu = (props) => {
       >
         <MenuItem>
         <Grid container spacing={2}>
+          <Grid item xs={2}> </Grid>
             <Grid item xs={2}>
                 <ContentPasteOutlinedIcon sx={{lineHeight: 2.7, fontSize: "2em", float:"left", marginRight:"10px"}}></ContentPasteOutlinedIcon>
                 <Typography sx={{padding: ".5em", fontSize: "16px"}}>Checklist</Typography>
+                <PeopleAltOutlinedIcon sx={{lineHeight: 2.7, fontSize: "2em", float:"left", marginRight:"10px"}}></PeopleAltOutlinedIcon>
+                <Typography sx={{padding: ".5em", fontSize: "16px"}}>Wedding Vendor</Typography>
             </Grid>
             <Grid item xs={2}>
                 <PeopleAltOutlinedIcon sx={{lineHeight: 2.7, fontSize: "2em", float:"left", marginRight:"10px"}}></PeopleAltOutlinedIcon>
                 <Typography sx={{padding: ".5em", fontSize: "16px"}}>Guests</Typography>
+            <WebAssetOutlinedIcon sx={{lineHeight: 2.7, fontSize: "2em", float:"left", marginRight:"10px"}}></WebAssetOutlinedIcon>
+            <Typography sx={{padding: ".5em", fontSize: "16px"}}>Wedding website</Typography>
             </Grid>
-            <Grid item xs={2}>
-                <PeopleAltOutlinedIcon sx={{lineHeight: 2.7, fontSize: "2em", float:"left", marginRight:"10px"}}></PeopleAltOutlinedIcon>
-                <Typography sx={{padding: ".5em", fontSize: "16px"}}>Guests</Typography>
+
+                <Grid item xs={2}>
+                <FactCheckOutlinedIcon sx={{lineHeight: 2.7, fontSize: "2em", float:"left", marginRight:"10px"}}></FactCheckOutlinedIcon>
+                <Typography sx={{padding: ".5em", fontSize: "16px"}}>Budget</Typography>
+                <FactCheckOutlinedIcon sx={{lineHeight: 2.7, fontSize: "2em", float:"left", marginRight:"10px"}}></FactCheckOutlinedIcon>
+                <Typography sx={{padding: ".5em", fontSize: "16px"}}>Hashtag Generator</Typography>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={3}>
                 <Card sx={{padding: "1px", width:"80%"}}>
                     <Box sx={{float: "left"}}>
                         <CardContent>
@@ -77,7 +85,7 @@ const CustomizedMenu = (props) => {
                                 Get the wedding wire App
                             </Typography>
                             <Typography variant='caption' color="text.secondary" component="div">
-                                Plan your wedding on the go with the WeddingWire app
+                                Plan your wedding on the go with the<br></br> WeddingWire app
                             </Typography>
                         </CardContent>
                     </Box>
@@ -87,20 +95,6 @@ const CustomizedMenu = (props) => {
                         image="https://www.weddingwire.in/assets/img/logos/square-icon.svg"
                         alt="Live from space album cover"/>
                 </Card>
-            </Grid>
-            <Grid item xs={2}>
-                <FactCheckOutlinedIcon sx={{lineHeight: 2.7, fontSize: "2em", float:"left", marginRight:"10px"}}></FactCheckOutlinedIcon>
-                <Typography sx={{padding: ".5em", fontSize: "16px"}}> Wedding Vendors</Typography>
-            </Grid>
-            <Grid item xs={2}>
-                <WebAssetOutlinedIcon sx={{lineHeight: 2.7, fontSize: "2em", float:"left", marginRight:"10px"}}></WebAssetOutlinedIcon>
-                <Typography sx={{padding: ".5em", fontSize: "16px"}}>Wedding website</Typography>
-            </Grid>
-            <Grid item xs={2}>
-                <WebAssetOutlinedIcon sx={{lineHeight: 2.7, fontSize: "2em", float:"left", marginRight:"10px"}}></WebAssetOutlinedIcon>
-                <Typography sx={{padding: ".5em", fontSize: "16px"}}>Wedding website</Typography>
-            </Grid>
-            <Grid item xs={6}>
                 <Card sx={{width:"80%"}}>
                     <Box sx={{float:"left"}}>
                         <CardContent>
@@ -108,16 +102,17 @@ const CustomizedMenu = (props) => {
                             Wedshorts
                             </Typography>
                             <Typography variant='caption' color="text.secondary" component="div">
-                            Easily collect all of your guests' event photos in one album!
+                            Easily collect all of your guests' event<br></br> photos in one album!
                             </Typography>
                         </CardContent>
                     </Box>
                     <CardMedia
                         component="img"
-                        sx={{ width: 60 ,height:60,padding:'20px'}}
+                        sx={{ width: 60 ,height:60,padding:'10px'}}
                         image="https://www.weddingwire.in/assets/img/wedshoots/ico_wedshoots.svg"/>
                 </Card>
             </Grid>
+            <Grid item xs={2}> </Grid>
             </Grid>
         </MenuItem>
       </Menu>

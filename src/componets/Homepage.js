@@ -76,7 +76,7 @@ const Homepage = () => {
 	</Box> */}
 
 							<Box>
-							{getData.filter((item)=>item.featured !== 'premium').map((itmes, index) => {
+							{getData.filter((item)=>item.featured !== 'premium').slice(0, 10).map((itmes, index) => {
 									// console.log("catdata",itmes);
 									return (
 										<SwiperSlide key={index}>

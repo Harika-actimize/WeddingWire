@@ -1,5 +1,4 @@
 import * as types from './actionTypes';
-// import {registerUserApi} from '../api/registerApi';
 export const registerStart =  (users) =>(
     console.log(users),
     {
@@ -16,14 +15,4 @@ export const registerError = (error) =>({
     payload: error,
 });
 
-// export const manualRegisterUserInitiate = (user) => {
-//     console.log('user',user);
-//     return function (dispatch) {
-//         dispatch(registerStart(user));
-//         registerUserApi(user)
-//             .then(async (res) => {
-//                 dispatch(registerSuccess(res));
-//             })
-//             .catch((error) => dispatch(registerError(error.message)))
-//     }
-// }
+ 

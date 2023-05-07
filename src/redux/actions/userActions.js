@@ -31,13 +31,18 @@ export const LoginStart = (users) => (
         type: types.LOGIN_USER_START,
         payload: users,
     });
-export const LoginSuccess = () => ({
+export const LoginSuccess = (data) => ({
     type: types.LOGIN_USER_SUCCESS,
+    payload: data
 
 });
 export const LoginError = (error) => ({
     type: types.LOGIN_USER_ERROR,
     payload: error,
+});
+
+export const Logout = () => ({
+  type: types.LOGOUT,
 });
 
 // ALERT
@@ -127,11 +132,11 @@ export const loginInitiate = async (email, password) => {
    let register= await createUserWithEmailAndPassword(auth, email, password,displayName)
    console.log(register,"userrrrrrrrrrrrrrrr")
     
-    return  function  (dispatch) {
-      dispatch(signupStart());
-      dispatch(signupSuccess({ register, additionalData: { displayName } }));
+    // return  function  (dispatch) {
+    //   dispatch(signupStart());
+    //   dispatch(signupSuccess({ register, additionalData: { displayName } }));
           
-        }
+    //     }
         
     };
   

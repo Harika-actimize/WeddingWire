@@ -1,5 +1,5 @@
 import React from 'react'
-import InteractiveList from './Navbar';
+import InteractiveList from './Navtest';
 import Footer from './Footer';
 import Mumbai from './Mumbai';
 import { Grid } from '@mui/material';
@@ -81,7 +81,7 @@ export default function Innerpage() {
   return (
     <div>
       {/* <ScrollDialog/> */}
-      {/* <InteractiveList /> */}
+      <InteractiveList />
       <InnerPageBannerRes/>
     {/* <InnerPageBanner/> */}
       <Grid container columns={20}>

@@ -42,7 +42,7 @@ const NavWeddingVenues = (props) => {
 
   return (
     <div>
-      <Link  aria-controls="customized-menu" underline="none" sx={{fontSize:'12px',padding:0}}
+      <Link  aria-controls="customized-menu" underline="none" sx={{fontSize:'12px',padding:0,color:"black"}}
         aria-haspopup="true" variant="contained" onClick={handleClick} >WEDDING VENUES
     </Link>
     <Menu

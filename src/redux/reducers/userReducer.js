@@ -4,7 +4,7 @@ const initialState = {
     loading: false,
     currentUser: null,
     error: null,
-    activeuser:{},
+    activeuser:null,
     alert:{open:false,severity:'info',message:''},
 
 }; 
@@ -22,6 +22,11 @@ const initialState = {
                           };
                         case types.SIGNUP_USER_SUCCESS:
                         case types.LOGIN_USER_SUCCESS:
+                          return{
+                            ...state,
+                            loading:false,
+                            activeuser:action.payload
+                          }
                         case types.GOOGLE_SIGN_IN_SUCCESS:
                         case types.FACEBOOK_SIGN_IN_SUCCESS:
                           return {
@@ -29,12 +34,17 @@ const initialState = {
                             loading: false,
                             activeuser: action.payload,
                           };
-                        // case types.LOGOUT_SUCCESS:
-                        //   return {
-                        //     ...state,
-                        //     currentUser: null,
-                        //   };
+                        case types.LOGOUT:
+                          return {
+                            ...state,
+                            activeuser: null,
+                          };
                         case types.SIGNUP_USER_ERROR:
+                          return {
+                            ...state,
+                            loading: false,
+                            alert: action.payload,
+                          };
                         case types.LOGIN_USER_ERROR:
                         // case types.LOGOUT_ERROR:
                         case types.GOOGLE_SIGN_IN_ERROR:
@@ -44,6 +54,12 @@ const initialState = {
                             loading: false,
                             error: action.payload,
                             alert:{open:true,severity:'info',message:''},
+                          };
+                        case types.ALERT:
+                          return {
+                            ...state,
+                            loading: false,
+                            alert: action.payload,
                           };
                         default:
                             return state;

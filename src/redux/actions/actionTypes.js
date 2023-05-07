@@ -14,7 +14,7 @@ export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
 export const LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';
 
 // export const LOGOUT_START = "LOGOUT_START";
-// export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const LOGOUT = "LOGOUT";
 // export const LOGOUT_ERROR = "LOGOUT_ERROR";
 
 export const ALERT = "ALERT";

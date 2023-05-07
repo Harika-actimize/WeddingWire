@@ -24,7 +24,6 @@ class API {
         return new Promise((resolve, reject) => {
           this.api(METHOD.GET, url, data)
             .then((response) => {
-              console.log("res",response)
               resolve(response);
             })
             .catch((error) => {
