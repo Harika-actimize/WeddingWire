@@ -378,10 +378,10 @@ const Signup = () => {
               variant="standard"
             />
             {/* EVENT LOCATION */}
-            <Grid sx={{width:'100%',paddingLeft:'10%',display:'inline-flex'}}>
+            <Grid sx={{width:'80%',display:'inline-flex'}}>
             <TextField
-              sx={{ mt: 1, ml: 1 }}
-              className="pure-u-2"
+              // sx={{ mt: 1, ml: 1 }}
+              // className="pure-u-2"
               type="text"
               name="eventlocation"
               value={eventlocation}
@@ -403,10 +403,10 @@ const Signup = () => {
                 placeholder="india"
                 variant="standard"
                 //  defaultValue={70}
-                sx={{
-                  marginTop: '27px',
-                  marginLeft: '5px',
-                }}
+                // sx={{
+                //   marginTop: '27px',
+                //   marginLeft: '5px',
+                // }}
                 onChange={handleChange}
               >
                 {/* <MenuItem value={''}>select</MenuItem> */}

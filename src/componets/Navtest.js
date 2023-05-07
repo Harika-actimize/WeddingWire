@@ -75,7 +75,7 @@ export default function InteractiveList() {
                   <ul>
                     {/* <li>
 <img src='https://www.weddingwire.in/assets/img/logos/gen_logoHeader.svg'></img></li> */}
-                    <li><Link href="#" underline="none">PLANNING TOOLS</Link>
+                    <li className="dropdown"><Link href="#" underline="none" sx={{color:'black', margin:'10px'}}>PLANNING TOOLS</Link>
                       <ul className="menu-area">
                         <ul>
                           <Typography variant='subtitle1'>Plan your wedding</Typography>
@@ -131,7 +131,7 @@ export default function InteractiveList() {
                         </ul>
                       </ul>
                     </li>
-                    <li className="dropdown"><Link href="#" underline="none">WEDDING VENUES</Link>
+                    <li className="dropdown"><Link sx={{color:'black', margin:'10px'}} href="#" underline="none">WEDDING VENUES</Link>
                       <ul className="menu-area">
                         <ul>
                           <Typography variant='subtitle1'>Plan your wedding</Typography>
@@ -169,7 +169,7 @@ export default function InteractiveList() {
                         </ul>
                       </ul>
                     </li>
-                    <li><Link href="#" underline="none">WEDDING VENDORS</Link>
+                    <li className="dropdown"><Link href="#" underline="none" sx={{color:'black', margin:'10px'}}>WEDDING VENDORS</Link>
                       <ul className="menu-area">
                         <ul>
                           <Typography variant='subtitle1'>Start hiring your vendors</Typography>
@@ -210,7 +210,7 @@ export default function InteractiveList() {
                         <Typography variant='subtitle2'>COMPLETE YOUR WEDDING TEAM</Typography>
                       </ul>
                     </li>
-                    <li className="dropdown hide"><Link href="#" underline="none">BRIDES</Link>
+                    <li className="dropdown hide"><Link href="#" underline="none" sx={{color:'black', margin:'10px'}}>BRIDES</Link>
                       <ul className="menu-area">
                         <ul>
                           <Typography variant='subtitle1'>Brides</Typography>
@@ -232,7 +232,7 @@ export default function InteractiveList() {
                     </li>
 
 
-                    <li className="dropdown hide"><Link href="#" underline="none">GROOMS</Link>
+                    <li className="dropdown hide"><Link href="#" underline="none" sx={{color:'black', margin:'10px'}}>GROOMS</Link>
                       <ul className="menu-area">
                         <ul>
                           <Typography variant='subtitle1'>Couples</Typography>
@@ -242,7 +242,7 @@ export default function InteractiveList() {
                       </ul>
                     </li>
 
-                    <li className="dropdown"><Link href="#" underline="none">BLOGS</Link>
+                    <li className="dropdown"><Link href="#" underline="none" sx={{color:'black', margin:'10px'}}>BLOGS</Link>
                       <ul className="menu-area">
                         <ul>
                           <Typography variant='subtitle1'>Wedding inspiration and ideas</Typography>
@@ -285,7 +285,7 @@ export default function InteractiveList() {
                     </li>
 
 
-                    <li className="hide"><Link href="#" underline="none">COMMUNITY</Link>
+                    <li className="dropdown hide"><Link href="#" underline="none" sx={{color:'black', margin:'10px'}}>COMMUNITY</Link>
                       <ul className="menu-area">
                         <ul>
                           <Typography variant='subtitle1'>Community</Typography>
