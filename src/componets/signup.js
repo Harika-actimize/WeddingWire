@@ -378,6 +378,7 @@ const Signup = () => {
               variant="standard"
             />
             {/* EVENT LOCATION */}
+            <Grid sx={{display:'inline-block'}}>
             <TextField
               sx={{ mt: 1, ml: 1 }}
               className="pure-u-2"
@@ -418,6 +419,8 @@ const Signup = () => {
                 <MenuItem value="India">India</MenuItem>
               </Select>
             </FormControl>
+            </Grid>
+            <Grid sx={{display:'inline-block'}}>
             <TextField
               sx={{
                 ml: '45%',
@@ -454,6 +457,7 @@ const Signup = () => {
                 renderInput={params => <TextField {...params} />}
               />
             </LocalizationProvider>
+            </Grid>
             {/* BRIDE GROOM  */}
             <Grid
               justifyContent="center"
