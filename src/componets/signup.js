@@ -262,8 +262,9 @@ const Signup = () => {
           <Grid xs={5} className="layout-auth-cover pure-u-2-5 imageshow">
             <img
               // component="img"
+              // className="singupimg"
               width={'90%'}
-              height={'91%'}
+              height={'100%'}
               alt="The house from the offer."
               src="https://cdn1.weddingwire.in/assets/img/layer-alta/default_en-IN.jpg"
               style={{ objectFit: "cover" }}
