@@ -1,20 +1,17 @@
-import { Routes,Route } from 'react-router-dom';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Areyouvendor from './componets/Areyouvendor';
+import Innerpage from './componets/InnerPage';
+import Innerpagevennues from './componets/Innerpagevennues';
 import Login from "./componets/login_page";
+import InteractiveList from './componets/Navbar';
+import Pages from './componets/Pages';
 import Signup from "./componets/signup";
 import Welcomepage from './componets/welcomepage';
-import './App.css';
-import { BrowserRouter } from 'react-router-dom';
-import Notification from './componets/Notification';
-import Pages from './componets/Pages'
-import ColumnsGrid from './componets/test1'
-import Innerpage from './componets/InnerPage';
-import Areyouvendor from './componets/Areyouvendor';
-import Innerpagevennues from './componets/Innerpagevennues';
-import InteractiveList from './componets/Navbar';
-import { useSelector, useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
 import { getHomePageInitiate } from './redux/actions/homepageActions';
-import VenuesMumbai from './componets/VenuesMumbai';
+import { LoginSuccess } from './redux/actions/userActions';
 
 
 
@@ -23,6 +20,11 @@ function App() {
 
 	useEffect(() => {
 		// alert("homepage ui");
+    let user = localStorage.getItem("user")
+    if(user) {
+      dispatch(LoginSuccess(JSON.parse(user)));
+      console.log("userrrrrrrr",user)
+    }
 		dispatch(getHomePageInitiate());
 	}, []);
 

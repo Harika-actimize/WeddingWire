@@ -1,4 +1,4 @@
-import { Card } from "@material-ui/core";
+import { Avatar, Card } from "@material-ui/core";
 import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined';
 import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
 import CardGiftcardOutlinedIcon from '@mui/icons-material/CardGiftcardOutlined';
@@ -23,6 +23,7 @@ export default function InteractiveList() {
   const dispatch = useDispatch()
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   const user = useSelector((state) => state.userData.activeuser)
+  console.log("user",user)
   const navigate = useNavigate()
   const goToVendor = () => {
     navigate("/areyouvendor");
@@ -36,6 +37,7 @@ export default function InteractiveList() {
 
   const logout = () => {
     dispatch(Logout())
+    localStorage.clear()
   }
   return (
     <React.Fragment>
@@ -353,8 +355,9 @@ export default function InteractiveList() {
             </div>
           </Grid>
           {user ?
-            <Grid item xs={4}>
-              <Link href="#" underline="none" onClick={logout} sx={{ color: 'red', fontSize: '12px' }}>LOG OUT</Link>
+            <Grid item xs={4} sx={{display:'flex',paddingTop:'10px'}}>
+              <Link href="#" underline="none" onClick={logout} sx={{ color: 'red', fontSize: '12px',paddingRight:'10px' }}>LOG OUT</Link>
+              <Typography sx={{ color: 'red', fontSize: '12px' }}>{user.email}</Typography>
             </Grid> :
             <Grid item xs={4}>
               <Link href='#' underline='none' sx={{ fontSize: '12px', color: 'black' }} onClick={goToVendor} ><WorkOutlineOutlinedIcon sx={{ fontSize: '12px', color: 'black' }}

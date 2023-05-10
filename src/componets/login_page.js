@@ -131,6 +131,7 @@ const Login = () => {
         let res = await signInWithEmailAndPassword(auth, email, password)
         console.log("login", res.user)
         dispatch({ type: 'ALERT', payload: { open: true, severity: 'success', message: "User login successfully" } })
+        localStorage.setItem("user",JSON.stringify(res.user))
         dispatch(LoginSuccess(res.user));
         navigate('/')
       }
