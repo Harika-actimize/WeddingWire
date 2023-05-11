@@ -11,7 +11,7 @@ function MessageInfo() {
         setTimeout(() => {
       dispatch({ type: 'ALERT', payload: { open: false, severity: '', message: "" } })
             
-        }, 2000);
+        }, 5000);
     },[open])
     return (
         <div>

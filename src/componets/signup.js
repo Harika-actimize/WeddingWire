@@ -403,7 +403,7 @@ const Signup = () => {
                 label="location"
                 placeholder="india"
                 variant="standard"
-                //  defaultValue={70}
+                 defaultValue={70}
                 // sx={{
                 //   marginTop: '27px',
                 //   marginLeft: '5px',
