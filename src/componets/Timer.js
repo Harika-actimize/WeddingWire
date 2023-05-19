@@ -14,7 +14,7 @@ function Timer() {
         let expritiontime = localStorage.getItem("expritiontime")
         if(expritiontime) {
             setInterval(function() {
-                console.log(expritiontime*1 < Date.now(), expritiontime*24, Date.now())
+                // console.log(expritiontime*1 < Date.now(), expritiontime*24, Date.now())
                 if(expritiontime*1 < Date.now()) {
                     dispatch(Logout())
                     localStorage.clear()

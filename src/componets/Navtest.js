@@ -25,12 +25,12 @@ export default function InteractiveList() {
   const dispatch = useDispatch()
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   const token = useSelector((state) => state.userData.activeuser) 
-  console.log("tokennnnnnnnn",token)
+  // console.log("tokennnnnnnnn",token)
   let user =""
   if (token){
    user = jwt_decode(token);
   }
-  console.log("user",user)
+  // console.log("user",user)
   const navigate = useNavigate()
   const goToVendor = () => {
     navigate("/areyouvendor");
