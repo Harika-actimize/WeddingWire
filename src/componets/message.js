@@ -9,7 +9,7 @@ function MessageInfo() {
 
     useEffect(()=>{
         setTimeout(() => {
-      dispatch({ type: 'ALERT', payload: { open: false, severity: '', message: "" } })
+      dispatch({ type: 'ALERT', payload: { open: false, severity: '', message: "",expritiontime:"" } })
             
         }, 5000);
     },[open])

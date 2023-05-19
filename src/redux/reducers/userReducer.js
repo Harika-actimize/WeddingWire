@@ -6,6 +6,7 @@ const initialState = {
     error: null,
     activeuser:null,
     alert:{open:false,severity:'info',message:''},
+    expritiontime:'',
 
 }; 
                 const LoginReducer = (state = initialState, action) => {
@@ -38,6 +39,7 @@ const initialState = {
                           return {
                             ...state,
                             activeuser: null,
+                            expritiontime:action.payload
                           };
                         case types.SIGNUP_USER_ERROR:
                           return {

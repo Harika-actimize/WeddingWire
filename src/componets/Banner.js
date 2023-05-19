@@ -1,27 +1,23 @@
-import { Typography,Button,Box,useMediaQuery, Grid, Divider } from "@mui/material";
-import { useTheme } from "@mui/system";
 import {
-  BannerContainer,
+  createStyles, InputAdornment,
+
+
+  makeStyles
+} from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+import SearchIcon from '@mui/icons-material/Search';
+import { Box, Button, Divider, Grid, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/system";
+import { useState } from "react";
+import '../App.css';
+import {
   BannerContent,
   BannerDescription,
   BannerImage,
-  BannerShopButton,
-  BannerTitle,
-  BannerTextfiled
+
+
+  BannerTextfiled, BannerTitle
 } from "./BannerStyle";
-import {
-    FormControl,
-    InputAdornment,
-    TextField,
-    createStyles,
-    makeStyles
-  } from "@material-ui/core";
-  import { useState ,useEffect } from "react";
-  import IconButton from "@material-ui/core/IconButton";
-  import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import '../App.css'
 
 const options = [
   'babyee',
@@ -174,7 +170,7 @@ border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>
   placeholder='in (E.g.Delhi)'
   // sx={{width:'100%'}} 
 />
-<Button variant="contained" color='error' sx={{textTransform:'none'}}>
+<Button variant="contained" color='primary' sx={{textTransform:'none'}}>
       Find
     </Button>
     </Box>

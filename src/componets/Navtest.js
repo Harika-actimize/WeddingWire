@@ -17,12 +17,19 @@ import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import { Logout } from '../redux/actions/userActions';
 import DrawerComp from "./Drawer";
+import jwt_decode from "jwt-decode";
+
 
 export default function InteractiveList() {
   const theme = useTheme();
   const dispatch = useDispatch()
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
-  const user = useSelector((state) => state.userData.activeuser)
+  const token = useSelector((state) => state.userData.activeuser) 
+  console.log("tokennnnnnnnn",token)
+  let user =""
+  if (token){
+   user = jwt_decode(token);
+  }
   console.log("user",user)
   const navigate = useNavigate()
   const goToVendor = () => {
@@ -38,6 +45,7 @@ export default function InteractiveList() {
   const logout = () => {
     dispatch(Logout())
     localStorage.clear()
+    // sessionStorage.cear()
   }
   return (
     <React.Fragment>

@@ -107,7 +107,7 @@ class API {
         headers["accept-language"] = "en";
         headers["Content-Type"] = "application/json";
         headers["Accept"] = "application/json";
-        headers["Authorization"] = localStorage.getItem('token');
+        // headers["Authorization"] = localStorage.getItem('token');
        
         if (data) {
           if (data.isMultipart) {

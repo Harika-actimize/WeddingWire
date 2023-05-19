@@ -34,6 +34,7 @@ import { useTheme } from "@mui/system";
 import Bannerresponsive from './Bannerresponsive';
 import MessageInfo from './message';
 import { useSelector } from 'react-redux';
+import Timer from './Timer';
 
 export default function Pages() {
   const theme = useTheme();
@@ -43,6 +44,7 @@ export default function Pages() {
  
   return (
     <div>
+      <Timer/>
       {/* <ScrollDialog/> */}
       <InteractiveList />
       {matches ? (<>

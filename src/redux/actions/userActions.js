@@ -1,12 +1,6 @@
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, facebookprovider, googleprovider } from '../../firebase';
 import * as types from './actionTypes';
-import { facebookprovider , googleprovider,auth} from '../../firebase';
-import {getAuth} from "firebase/auth";
-// import {auth} from 'firebase/auth';
-// import {  signInWithPopup } from "firebase/auth";
-import { Await } from 'react-router-dom';
-import {  createUserWithEmailAndPassword } from "firebase/auth";
-import { async } from '@firebase/util';
-import {signInWithPopup,signInWithEmailAndPassword} from "firebase/auth";
 // import { type } from '@testing-library/user-event/dist/type';
 
 // signup
@@ -130,7 +124,7 @@ export const loginInitiate = async (email, password) => {
   export const registerInitiate = async (email, password,displayName) => {
     
    let register= await createUserWithEmailAndPassword(auth, email, password,displayName)
-   console.log(register,"userrrrrrrrrrrrrrrr")
+  //  console.log(register,"userrrrrrrrrrrrrrrr")
     
     // return  function  (dispatch) {
     //   dispatch(signupStart());

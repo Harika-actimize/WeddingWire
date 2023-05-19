@@ -20,10 +20,12 @@ function App() {
 
 	useEffect(() => {
 		// alert("homepage ui");
-    let user = localStorage.getItem("user")
+    let user = localStorage.getItem("accessToken")
+    // const user = sessionStorage.getItem("user");
+    // const expritiontime = sessionStorage.getItem("expritiontime");
     if(user) {
       dispatch(LoginSuccess(JSON.parse(user)));
-      console.log("userrrrrrrr",user)
+      // console.log("userrrrrrrr",user)
     }
 		dispatch(getHomePageInitiate());
 	}, []);

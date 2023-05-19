@@ -122,17 +122,28 @@ const Login = () => {
     updateErrorObj(obj)
     return isValid
   }
+  const expirationTime =()=>{
 
+  }
   const handleSubmit = async e => {
     e.preventDefault();
     let valid = formValid()
+    // console.log("///////////////")
     if (valid) {
       try {
         let res = await signInWithEmailAndPassword(auth, email, password)
-        console.log("login", res.user)
-        dispatch({ type: 'ALERT', payload: { open: true, severity: 'success', message: "User login successfully" } })
-        localStorage.setItem("user",JSON.stringify(res.user))
-        dispatch(LoginSuccess(res.user));
+        console.log("login", res.user.stsTokenManager.expirationTime)
+        localStorage.setItem("accessToken",JSON.stringify(res.user.stsTokenManager.accessToken))
+       let myDate = new Date() 
+      localStorage.setItem("expritiontime",myDate.setHours(myDate.getHours() + 24));
+      // dispatch({ type: 'ALERT', payload: { open: true, severity: 'success', message: "User login successfully",accessToken:JSON.stringify(res.user.stsTokenManager.accessToken),expritiontime:myDate.setMinutes(myDate.getMinutes() + 1) }})
+      // dispatch({ type: 'ALERT', payload: { open: true, severity: 'success', message: "User login successfully",expritiontime:myDate.setMinutes(myDate.getMinutes() + 1) }})
+  
+      // sessionStorage.setItem("user",JSON.stringify({id:res.user,expireat:res.user.stsTokenManager.expirationTime}));
+        // sessionStorage.setItem("user",JSON.stringify(res.user));
+        // let myDate = new Date() // your date object
+        // sessionStorage.setItem("expritiontime",myDate.setHours(myDate.getHours() + 1));
+        dispatch(LoginSuccess(res.user.stsTokenManager.accessToken));
         navigate('/')
       }
 
