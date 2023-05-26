@@ -1,34 +1,43 @@
+import { Icon } from '@iconify/react';
+import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
+import StarIcon from '@mui/icons-material/Star';
+import { Grid } from "@mui/material";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 import React from "react";
-import { database, dbRef } from '../firebase';
-import { useState, useEffect } from "react";
 // import {Card,Button} from 'react-bootstrap';
 // import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { BrowserRouter } from 'react-router-dom';
-import StarIcon from '@mui/icons-material/Star';
-import { useNavigate } from 'react-router-dom';
-import { getHomePageInitiate } from '../redux/actions/homepageActions';
-import { homePageApi } from '../redux/api/homepageApi';
+import { useSelector } from "react-redux";
 import { FreeMode } from "swiper";
-import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/free-mode";
-import { Grid } from "@mui/material";
-import CardMedia from '@mui/material/CardMedia';
-import  AiOutlineTag  from "react-icons/bs";
-import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
-import { Icon } from '@iconify/react';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { useNavigate } from 'react-router-dom';
 
 
 const SwiperCard = ({location,heading}) => {
+	const navigate = useNavigate()
 	const getData = useSelector((state) => state.homepagedata.data);
+	const token = useSelector((state) => state.userData.activeuser) 
+console.log("tokennnnnnnnn",token)
+const goTonavigate = (id) => {
+	console.log("index",id)
+	if(token){
+		document.getElementById("white_icons-"+id).style.display = "none";
+		document.getElementById("red_icon-"+id).style.display = "block";
+	}
+	else{
+		navigate("/login")
+	}
+  }
+  const goToWhiteHeart =(id) =>{
+	document.getElementById("white_icons-"+id).style.display = "block";
+	document.getElementById("red_icon-"+id).style.display = "none";
+
+  }
 	return (
 		<>
 			{/* <Grid container spacing={2} columns={20}>
@@ -79,7 +88,8 @@ const SwiperCard = ({location,heading}) => {
 	</Box> */}
 
 							<Box>
-							{getData.filter((item)=>item.cityname.toLowerCase() === location).map((itmes, index) => {									// console.log("catdata",itmes);
+							{getData.filter((item)=>item.cityname.toLowerCase() === location).map((itmes, index) => {									
+								console.log("catdata",itmes);
 									return (
 										<SwiperSlide key={index}>
 											<Card sx={{ maxWidth: 350 }}>
@@ -87,13 +97,33 @@ const SwiperCard = ({location,heading}) => {
 													sx={{ height: 200 }}
 													image={itmes.main_image}
 												/>
-												<Icon style={{position: 'absolute',
+											
+												<Icon id={"white_icons-"+itmes.id} onClick={()=>goTonavigate(itmes.id)} style={{position: 'absolute',
 													color: 'white',
 													top: 12,
 													right: '5%',
 													padding:'0px 8px',
-                          cursor:'pointer',
+                          							cursor:'pointer',
 													transform: 'translateX(-50%)'}} height='22' width='22' icon="streamline:interface-favorite-heart-reward-social-rating-media-heart-it-like-favorite-love" />
+												<Icon id={"red_icon-"+itmes.id}
+												onClick={()=>goToWhiteHeart(itmes.id)}
+												style={{position: 'absolute',
+												// color: 'red',
+												top: 12,
+												right: '5%',
+												padding:'0px 8px',
+												display:'none',
+												  cursor:'pointer',
+												transform: 'translateX(-50%)'}}
+												 height='22' width='22'  icon="noto:red-heart"/>
+												{/* <Icon id={"red_icon-"+itmes.id} style={{position: 'absolute',
+													color: 'red',
+													top: 12,
+													right: '5%',
+													padding:'0px 8px',
+													display:'none',
+                          							cursor:'pointer',
+													transform: 'translateX(-50%)'}} height='22' width='22' icon="streamline:interface-favorite-heart-reward-social-rating-media-heart-it-like-favorite-love" /> */}
 
 												
 													<Typography sx={{ fontSize: '17px', lineHeight: '27px',marginLeft:'15px',marginBottom:'5px' }} noWrap >{itmes.name}</Typography>

@@ -17,6 +17,10 @@ import '../App.css'
 import { auth, facebookprovider, googleprovider } from '../firebase'
 import { LoginStart, LoginSuccess } from '../redux/actions/userActions'
 import MessageInfo from './message'
+import { fbSignInInitiate, googleSignInSuccess } from '../redux/actions/GoogleActions'
+import { onAuthStateChanged } from "firebase/auth";
+import { useEffect } from 'react';
+
 
 const emailValidator = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
@@ -32,7 +36,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }))
 
 const Login = () => {
-
+  const [currentUser, setCurrentUser] = useState(null);
   const errorObject = {
     email: { valid: true, helperText: "Email required" },
     password: { valid: true, helperText: "Password required" }
@@ -53,7 +57,22 @@ const Login = () => {
     navigate("/signup");
 
   };
-
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     console.log("user",user)
+  //     if (user) {
+  //       setCurrentUser({
+  //         // uid: user.uid,
+  //         email: user.email,
+  //         // displayName: user.displayName,
+  //         // photoURL: user.photoURL,
+  //       });
+  //     }
+  //     else {
+  //       setCurrentUser('');
+  //     }
+  //   });
+  // }, []);
 
   const handleFBSignIn = () => {
     signInWithPopup(auth, facebookprovider)
@@ -81,27 +100,47 @@ const Login = () => {
       });
   };
 
-  const handleGoogleSignIn = (res) => {
-    signInWithPopup(auth, googleprovider)
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = googleprovider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
-        const user = result.user;
-        // IdP data available using getAdditionalUserInfo(result)
-        // ...
-      }).catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = googleprovider.credentialFromError(error);
-        // ...
-      });
-  };
+  const handleGoogleSignIn = async e => {
+    // e.preventDefault();
+      try {
+        let res = await signInWithPopup(auth, googleprovider)
+        // console.log("resssssssssssssssss",res)
+          console.log(res);
+          console.log(res.user);
+          const user = res.user;
+          dispatch(googleSignInSuccess(user));
+        navigate('/')
+      }
+      catch (error) {
+        console.log(error)
+        dispatch({ type: 'ALERT', payload: { open: true, severity: 'error', message: "Unable to login, please try again" } })
+
+      };
+
+  }
+
+  // const handleGoogleSignIn = () => {
+  //   signInWithPopup(auth, googleprovider)
+  //     .then((result) => {
+  //       // This gives you a Google Access Token. You can use it to access the Google API.
+  //       const credential = googleprovider.credentialFromResult(result);
+  //       const token = credential.accessToken;
+  //       // The signed-in user info.
+  //       const user = result.user;
+  //       // IdP data available using getAdditionalUserInfo(result)
+  //       // ..
+  //       navigate('/')
+  //     }).catch((error) => {
+  //       // Handle Errors here.
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       // The email of the user's account used.
+  //       // const email = error.customData.email;
+  //       // The AuthCredential type that was used.
+  //       // const credential = googleprovider.credentialFromError(error);
+  //       // ...
+  //     });
+  // };
   const formValid = () => {
     //  debugger;
     let isValid = true
@@ -155,8 +194,6 @@ const Login = () => {
 
       setState({ email: '', password: '' })
     }
-
-
   }
 
   const handleChange = e => {

@@ -18,19 +18,27 @@ import '../App.css';
 import { Logout } from '../redux/actions/userActions';
 import DrawerComp from "./Drawer";
 import jwt_decode from "jwt-decode";
+import { Icon } from '@iconify/react';
+import AccountMenu from './Popup'
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase";
+import { useState, useEffect } from 'react';
 
 
 export default function InteractiveList() {
+  const [currentUser, setCurrentUser] = useState(null);
   const theme = useTheme();
   const dispatch = useDispatch()
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   const token = useSelector((state) => state.userData.activeuser) 
-  // console.log("tokennnnnnnnn",token)
+  // const googleToken = useSelector((state)=> state.googleData.activeuser)
+  console.log("tokennnnnnnnn",token)
+  // console.log("googleToken",googleToken)
   let user =""
   if (token){
    user = jwt_decode(token);
   }
-  // console.log("user",user)
+  console.log("user",user)
   const navigate = useNavigate()
   const goToVendor = () => {
     navigate("/areyouvendor");
@@ -47,6 +55,22 @@ export default function InteractiveList() {
     localStorage.clear()
     // sessionStorage.cear()
   }
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     console.log("user",user)
+  //     if (user) {
+  //       setCurrentUser({
+  //         // uid: user.uid,
+  //         email: user.email,
+  //         // displayName: user.displayName,
+  //         // photoURL: user.photoURL,
+  //       });
+  //     }
+  //     else {
+  //       setCurrentUser('');
+  //     }
+  //   });
+  // }, []);
   return (
     <React.Fragment>
       {/* <Toolbar> */}
@@ -364,6 +388,19 @@ export default function InteractiveList() {
           </Grid>
           {user ?
             <Grid item xs={4} sx={{display:'flex',paddingTop:'10px'}}>
+              <Icon id="red_icon-"
+												// onClick={()=>goToWhiteHeart(itmes.id)}
+												// style={
+												// // color: 'red',
+												// top: 12,
+												// right: '5%',
+												// padding:'0px 8px',
+												// display:'none',
+												//   cursor:'pointer',
+												// transform: 'translateX(-50%)'}}
+												 height='22' width='22'  icon="noto:red-heart"/>
+                         <Icon icon="typcn:mail" width="24" height="24" />
+                         <AccountMenu/>
               <Link href="#" underline="none" onClick={logout} sx={{ color: 'red', fontSize: '12px',paddingRight:'10px' }}>LOG OUT</Link>
               <Typography sx={{ color: 'red', fontSize: '12px' }}>{user.email}</Typography>
             </Grid> :

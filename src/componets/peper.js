@@ -85,9 +85,7 @@ const goToVenues = () => {
 <SwiperSlide><Button sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Caterers</Button></SwiperSlide>
 <SwiperSlide><Button sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Invitations</Button></SwiperSlide>
 </Stack>
-
-
-                     </Swiper>
+</Swiper>
         </Grid>
         <Grid item xs={2}>
         </Grid>
