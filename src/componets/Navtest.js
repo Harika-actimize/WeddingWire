@@ -15,7 +15,7 @@ import * as React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
-import { Logout } from '../redux/actions/userActions';
+// import { Logout } from '../redux/actions/userActions';
 import DrawerComp from "./Drawer";
 import jwt_decode from "jwt-decode";
 import { Icon } from '@iconify/react';
@@ -50,11 +50,11 @@ export default function InteractiveList() {
     navigate("/login")
   }
 
-  const logout = () => {
-    dispatch(Logout())
-    localStorage.clear()
-    // sessionStorage.cear()
-  }
+  // const logout = () => {
+  //   dispatch(Logout())
+  //   localStorage.clear()
+  //   // sessionStorage.cear()
+  // }
   // useEffect(() => {
   //   onAuthStateChanged(auth, (user) => {
   //     console.log("user",user)
@@ -401,7 +401,7 @@ export default function InteractiveList() {
 												 height='22' width='22'  icon="noto:red-heart"/>
                          <Icon icon="typcn:mail" width="24" height="24" />
                          <AccountMenu/>
-              <Link href="#" underline="none" onClick={logout} sx={{ color: 'red', fontSize: '12px',paddingRight:'10px' }}>LOG OUT</Link>
+              {/* <Link href="#" underline="none" onClick={logout} sx={{ color: 'red', fontSize: '12px',paddingRight:'10px' }}>LOG OUT</Link> */}
               <Typography sx={{ color: 'red', fontSize: '12px' }}>{user.email}</Typography>
             </Grid> :
             <Grid item xs={4}>

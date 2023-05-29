@@ -10,21 +10,26 @@ import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
-import { Logout } from '../redux/actions/userActions';
+import { logout } from '../redux/actions/userActions';
 import { useDispatch, useSelector } from 'react-redux';
+import Logout from '@mui/icons-material/Logout';
+
 
 export default function AccountMenu() {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
+        alert("///////////")
     setAnchorEl(event.currentTarget);
+    console.log("//////////////////",event.currentTarget)
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
   const logout = () => {
-    dispatch(Logout())
+    // alert("***********")
+    dispatch(logout())
     localStorage.clear()
     // sessionStorage.cear()
   }
@@ -100,7 +105,7 @@ export default function AccountMenu() {
         </MenuItem>
         <MenuItem onClick={logout}>
           <ListItemIcon>
-            <Logout fontSize="small" />
+            {/* <Logout fontSize="small" /> */}
           </ListItemIcon>
           Logout
         </MenuItem>

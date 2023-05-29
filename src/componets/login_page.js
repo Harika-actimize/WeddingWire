@@ -17,7 +17,7 @@ import '../App.css'
 import { auth, facebookprovider, googleprovider } from '../firebase'
 import { LoginStart, LoginSuccess } from '../redux/actions/userActions'
 import MessageInfo from './message'
-import { fbSignInInitiate, googleSignInSuccess } from '../redux/actions/GoogleActions'
+import {googleSignInSuccess } from '../redux/actions/GoogleActions'
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect } from 'react';
 
@@ -57,58 +57,40 @@ const Login = () => {
     navigate("/signup");
 
   };
-  // useEffect(() => {
-  //   onAuthStateChanged(auth, (user) => {
-  //     console.log("user",user)
-  //     if (user) {
-  //       setCurrentUser({
-  //         // uid: user.uid,
-  //         email: user.email,
-  //         // displayName: user.displayName,
-  //         // photoURL: user.photoURL,
-  //       });
-  //     }
-  //     else {
-  //       setCurrentUser('');
-  //     }
-  //   });
-  // }, []);
+ 
+  const handleFBSignIn = async e => {
 
-  const handleFBSignIn = () => {
-    signInWithPopup(auth, facebookprovider)
-      .then((result) => {
-        // The signed-in user info.
-        const user = result.user;
+    try {
+      let res = await signInWithPopup(auth, facebookprovider)
+      // console.log("resssssssssssssssss",res)
+        console.log(res);
+      //   // console.log(res.user);
+      //   localStorage.setItem("accessToken",JSON.stringify(res.user.accessToken))
+      //   let myDate = new Date() 
+      //  localStorage.setItem("expritiontime",myDate.setHours(myDate.getHours() + 24));
+      //   // const user = res.user;
+      //   dispatch(googleSignInSuccess(res.user.accessToken));
+      // navigate('/')
+    }
+    catch (error) {
+      console.log(error)
+      dispatch({ type: 'ALERT', payload: { open: true, severity: 'error', message: "Unable to login, please try again" } })
 
-        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-        const credential = facebookprovider.credentialFromResult(result);
-        const accessToken = credential.accessToken;
-
-        // IdP data available using getAdditionalUserInfo(result)
-        // ...
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = facebookprovider.credentialFromError(error);
-
-        // ...
-      });
-  };
+    };
+    }
 
   const handleGoogleSignIn = async e => {
     // e.preventDefault();
       try {
         let res = await signInWithPopup(auth, googleprovider)
         // console.log("resssssssssssssssss",res)
-          console.log(res);
-          console.log(res.user);
-          const user = res.user;
-          dispatch(googleSignInSuccess(user));
+          console.log(res.user.accessToken);
+          // console.log(res.user);
+          localStorage.setItem("accessToken",JSON.stringify(res.user.accessToken))
+          let myDate = new Date() 
+         localStorage.setItem("expritiontime",myDate.setHours(myDate.getHours() + 24));
+          // const user = res.user;
+          dispatch(googleSignInSuccess(res.user.accessToken));
         navigate('/')
       }
       catch (error) {
@@ -119,29 +101,7 @@ const Login = () => {
 
   }
 
-  // const handleGoogleSignIn = () => {
-  //   signInWithPopup(auth, googleprovider)
-  //     .then((result) => {
-  //       // This gives you a Google Access Token. You can use it to access the Google API.
-  //       const credential = googleprovider.credentialFromResult(result);
-  //       const token = credential.accessToken;
-  //       // The signed-in user info.
-  //       const user = result.user;
-  //       // IdP data available using getAdditionalUserInfo(result)
-  //       // ..
-  //       navigate('/')
-  //     }).catch((error) => {
-  //       // Handle Errors here.
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       // The email of the user's account used.
-  //       // const email = error.customData.email;
-  //       // The AuthCredential type that was used.
-  //       // const credential = googleprovider.credentialFromError(error);
-  //       // ...
-  //     });
-  // };
-  const formValid = () => {
+   const formValid = () => {
     //  debugger;
     let isValid = true
     let obj = { ...errorObj }
