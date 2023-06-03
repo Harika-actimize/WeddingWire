@@ -17,11 +17,31 @@ import { Icon } from '@iconify/react';
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getInnerPageInitiate } from '../redux/actions/innerpageActions';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Mumbai() {
+  const navigate = useNavigate()
  const innerpagedata = useSelector((state) => state.innerpagedata.data?.data);
  console.log("ppppppppppppp",innerpagedata)
+ const token = useSelector((state) => state.userData.activeuser) 
+console.log("tokennnnnnnnn",token)
+const goTonavigate = (id) => {
+	console.log("index",id)
+	if(token){
+		document.getElementById("white_icons-"+id).style.display = "none";
+		document.getElementById("red_icon-"+id).style.display = "block";
+	}
+	else{
+		navigate("/login")
+	}
+  }
+  const goToWhiteHeart =(id) =>{
+    document.getElementById("white_icons-"+id).style.display = "block";
+    document.getElementById("red_icon-"+id).style.display = "none";
+  
+    }
+  
  const dispatch = useDispatch();
 
  useEffect(() => {
@@ -56,14 +76,24 @@ return(
               {item.images.map((img) => (
                 <SwiperSlide key={img}>
                   <img height='100%' width='100%' style={{objectFit:'cover',display:'block'}}  src={img}></img>
-<Icon style={{position: 'absolute',
+                  <Icon id={"white_icons-"+item.id} onClick={()=>goTonavigate(item.id)} style={{position: 'absolute',
 													color: 'white',
 													top: 12,
 													right: '5%',
 													padding:'0px 8px',
-                          cursor:'pointer',
+                          							cursor:'pointer',
 													transform: 'translateX(-50%)'}} height='22' width='22' icon="streamline:interface-favorite-heart-reward-social-rating-media-heart-it-like-favorite-love" />
-                </SwiperSlide>
+												<Icon id={"red_icon-"+item.id}
+												onClick={()=>goToWhiteHeart(item.id)}
+												style={{position: 'absolute',
+												// color: 'red',
+												top: 12,
+												right: '5%',
+												padding:'0px 8px',
+												display:'none',
+												  cursor:'pointer',
+												transform: 'translateX(-50%)'}}
+												 height='22' width='22'  icon="noto:red-heart"/>                </SwiperSlide>
               ))}
             </Swiper>
             <Typography sx={{ fontSize: '15px', lineHeight: '27px', marginLeft: '15px', marginBottom: '5px' }}>{item.name}</Typography>

@@ -15,7 +15,7 @@ import * as React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
-// import { Logout } from '../redux/actions/userActions';
+// import { logout } from '../redux/actions/userActions';
 import DrawerComp from "./Drawer";
 import jwt_decode from "jwt-decode";
 import { Icon } from '@iconify/react';
@@ -51,7 +51,7 @@ export default function InteractiveList() {
   }
 
   // const logout = () => {
-  //   dispatch(Logout())
+  //   dispatch(logout())
   //   localStorage.clear()
   //   // sessionStorage.cear()
   // }
@@ -76,16 +76,21 @@ export default function InteractiveList() {
       {/* <Toolbar> */}
       {isMatch ? (
         <>
-          <Grid container columns={20} sx={{ padding: "20px 10px", justifyContent: 'space-between' }}>
+          <Grid container sx={{ padding: "20px 0px", justifyContent: 'space-between' }}>
             <Grid>
               <DrawerComp />
             </Grid>
             <Grid>
-              <img src="https://www.weddingwire.in/assets/img/logos/gen_logoHeader.svg"></img>
+              <img src="https://www.weddingwire.in/assets/img/logos/gen_logoHeader-pride.svg" width="90%"></img>
             </Grid>
+            {user ?
             <Grid>
+              <AccountMenu/></Grid>
+           : 
+           <Grid>
               <PermIdentityIcon onClick={goTosignup} />
-            </Grid>
+              </Grid>
+              }
           </Grid>
         </>
       ) : (<>
@@ -98,7 +103,7 @@ export default function InteractiveList() {
           {/* <Divider></Divider> */}
           {/* <Grid item xs={2}> </Grid> */}
           <Grid item xs={4} style={{ textAlign: 'right' }}>
-            <img src="https://www.weddingwire.in/assets/img/logos/gen_logoHeader.svg"></img>
+            <img src="https://www.weddingwire.in/assets/img/logos/gen_logoHeader-pride.svg"></img>
 
           </Grid>
           <Grid xs={12} style={{ textAlign: 'left' }}>
@@ -387,22 +392,13 @@ export default function InteractiveList() {
             </div>
           </Grid>
           {user ?
-            <Grid item xs={4} sx={{display:'flex',paddingTop:'10px'}}>
+            <Grid item xs={4} sx={{display:'flex',paddingTop:'10px',justifyContent:'space-evenly'}}>
               <Icon id="red_icon-"
-												// onClick={()=>goToWhiteHeart(itmes.id)}
-												// style={
-												// // color: 'red',
-												// top: 12,
-												// right: '5%',
-												// padding:'0px 8px',
-												// display:'none',
-												//   cursor:'pointer',
-												// transform: 'translateX(-50%)'}}
-												 height='22' width='22'  icon="noto:red-heart"/>
-                         <Icon icon="typcn:mail" width="24" height="24" />
+												 height='30' width='30'  icon="noto:red-heart"/>
+                         <Icon icon="typcn:mail" width="30" height="30" />
                          <AccountMenu/>
               {/* <Link href="#" underline="none" onClick={logout} sx={{ color: 'red', fontSize: '12px',paddingRight:'10px' }}>LOG OUT</Link> */}
-              <Typography sx={{ color: 'red', fontSize: '12px' }}>{user.email}</Typography>
+              {/* <Typography sx={{ color: 'red', fontSize: '12px' }}>{user.email}</Typography> */}
             </Grid> :
             <Grid item xs={4}>
               <Link href='#' underline='none' sx={{ fontSize: '12px', color: 'black' }} onClick={goToVendor} ><WorkOutlineOutlinedIcon sx={{ fontSize: '12px', color: 'black' }}
