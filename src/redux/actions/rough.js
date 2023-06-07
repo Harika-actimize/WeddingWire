@@ -39,7 +39,7 @@ const Homepage = () => {
 	// const endPoints = 'data.json';
 	const dispatch = useDispatch();
 	const homepagedata = useSelector((state) => state.homepagedata);
-        console.log('homepagedata',homepagedata);
+        // console.log('homepagedata',homepagedata);
 	// const data = Object.keys(homepagedata)
 	// console.log("...........",Object.values(homepagedata));
 

@@ -23,6 +23,7 @@ import Factors from './Factors';
 import Nearyou from './Nearyou';
 import InnerAllWedding from './InnerAllWedding';
 // import Paragraphs from './Paragraphs';
+import { useParams } from 'react-router-dom';
 
 
 const data = [
@@ -72,6 +73,8 @@ const data = [
     {location:"Malad West",venue_count:10},
   ]
 function Innerpagevennues() {
+    const param = useParams()
+    console.log(param)
     return (
         <div>
             <InteractiveList/>
@@ -84,14 +87,14 @@ function Innerpagevennues() {
 <Grid xs={16} md={16} sm={16}> 
 <Location/>
 <SmallBanner/>
-<SwiperCard location = "hyderabad" heading="Venues in Hyderabad"/>
-<VenuesHydrabad/>
-<SwiperCard location = "bangalore" heading="Venues in Bangalore"/>
-<VenuesBanglore/>
-<SwiperCard location = "mumbai" heading="Venues in Mumbai"/>
-<VenuesMumbai/>
+<SwiperCard location="hyderabad" heading="Venues in Hyderabad"/>
+<VenuesHydrabad category={param.sub_category_name} location ={"Hyderabad"}/>
+<SwiperCard location="bangalore" heading="Venues in Bangalore"/>
+<VenuesHydrabad category = {param.sub_category_name} location ={"Bangalore"}/>
+<SwiperCard location = "mumbai" heading="Venues in Mumbai" />
+<VenuesHydrabad category = {param.sub_category_name} location ={"Mumbai"}/>
 <SwiperCard location = "chennai" heading="Venues in Chennai"/>
-<VenuesChennai/>
+<VenuesHydrabad category = {param.sub_category_name} location ={"Chennai"}/>
 <Innerpaper/>
 <Promtions/>
 <InnerExclusive/>

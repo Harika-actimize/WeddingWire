@@ -15,12 +15,12 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function MediaControlCard() {
   const theme = useTheme();
   const token = useSelector((state) => state.userData.activeuser) 
-  console.log("tokennnnnnnnn",token)
+  // console.log("tokennnnnnnnn",token)
   let user =""
   if (token){
    user = jwt_decode(token);
   }
-    console.log("user",user)
+    // console.log("user",user)
   return (
     <Card sx={{ display: 'flex' }}>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>

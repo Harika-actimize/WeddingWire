@@ -103,8 +103,8 @@ export default function InteractiveList() {
           {/* <Divider></Divider> */}
           {/* <Grid item xs={2}> </Grid> */}
           <Grid item xs={4} style={{ textAlign: 'right' }}>
-            <img src="https://www.weddingwire.in/assets/img/logos/gen_logoHeader-pride.svg"></img>
-
+            <img  src="https://www.weddingwire.in/assets/img/logos/gen_logoHeader-pride.svg" onClick={()=>navigate("/")}></img>
+            
           </Grid>
           <Grid xs={12} style={{ textAlign: 'left' }}>
             <div className='back'>

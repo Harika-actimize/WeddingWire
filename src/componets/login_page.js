@@ -131,7 +131,7 @@ const Login = () => {
     if (valid) {
       try {
         let res = await signInWithEmailAndPassword(auth, email, password)
-        console.log("login", res.user.stsTokenManager.expirationTime)
+        // console.log("login", res.user.stsTokenManager.expirationTime)
         localStorage.setItem("accessToken",JSON.stringify(res.user.stsTokenManager.accessToken))
        let myDate = new Date() 
       localStorage.setItem("expritiontime",myDate.setHours(myDate.getHours() + 24));
@@ -182,7 +182,7 @@ const Login = () => {
       </Box>
 
       <Grid container sx={{ maxWidth: '860px', margin: 'auto', maxHeight: '800px', position: "relative", border: '1px solid grey' }} >
-        <Grid xs={5} className="layout-auth-cover pure-u-2-5">
+        <Grid xs={5} className="layout-auth-cover pure-u-2-5 imageshow">
           <img
             // component="img"
             width={'90%'}
@@ -192,7 +192,7 @@ const Login = () => {
             style={{ objectFit: "cover" }}
           ></img>
         </Grid>
-        <Grid xs={7} sx={{ textAlign: "center", alignItems: "center", marginTop: '50px' }}>
+        <Grid xs={7} sx={{ textAlign: "center", alignItems: "center", marginTop: '50px' }}  className="socialloginblock">
           <MessageInfo />
           <Grid
             sx={{

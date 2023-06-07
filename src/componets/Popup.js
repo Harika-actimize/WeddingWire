@@ -31,7 +31,7 @@ export default function AccountMenu() {
   console.log("user",user)
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
-        alert("///////////")
+        // alert("///////////")
     setAnchorEl(event.currentTarget);
     console.log("//////////////////",event.currentTarget)
   };

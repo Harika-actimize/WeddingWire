@@ -48,12 +48,12 @@ export default function Banner() {
   useState();
   const open = Boolean(anchorEl);
   const handleClickListItem = (event) => {
-    console.log("////////////",event.target)
+    // console.log("////////////",event.target)
     setAnchorEl(event.currentTarget);
   };
 
   const handleMenuItemClick = (event, index) => {
-    console.log("@@@@@@@@@@@@",index)
+    // console.log("@@@@@@@@@@@@",index)
     setSelectedIndex(index);
     setAnchorEl(null);
   };

@@ -20,7 +20,7 @@ export const facebookSignInInitaite = () => {
         dispatch(facebookSignInStart());
         signInWithPopup(auth, facebookprovider)
             .then(async (res) => {
-                console.log(res);
+                // console.log(res);
                 const user = res.user;
                 dispatch(facebookSignInSuccess(user));
             })

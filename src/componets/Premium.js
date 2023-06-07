@@ -27,6 +27,8 @@ import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import { ThemeProvider } from "@material-ui/core";
 import { styled } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
+import { BridalMakeupArtists, WeddingCatering, WeddingDecorator, WeddingInvitations, WeddingPhotography, WeddingPlanners, WeddingVenues } from "./modalData";
+import { Icon } from '@iconify/react';
 
 const ColorButton = styled(Button)(({ theme }) => ({
 	color: theme.palette.getContrastText(red[500]),
@@ -108,10 +110,14 @@ function Premium() {
 												<Typography variant='caption' noWrap>{itmes.area}.{itmes.cityname}</Typography>
 											</Box>
 											<Box sx={{ display: 'flex', marginLeft: '15px', marginBottom: '15px' }}>
-												<BrunchDiningOutlinedIcon sx={{ fontSize: '18px', marginRight: '5px' }}></BrunchDiningOutlinedIcon><Typography variant='caption' >from ₹ {itmes.food}</Typography>
-												<PeopleAltOutlinedIcon sx={{ fontSize: '18px', marginRight: '5px' }}></PeopleAltOutlinedIcon>
-												<Typography variant='caption'  >{itmes.number_of_guasts}</Typography>
-												{/* <AiOutlineTag></AiOutlineTag> */}
+											{(itmes.sub_category_name.toLowerCase() === WeddingDecorator.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingInvitations.toLowerCase()||itmes.sub_category_name.toLowerCase() === BridalMakeupArtists.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingPlanners.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingPhotography.toLowerCase())&&
+												<Box>
+                        <Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}><Icon icon="bi:database-fill" /> from ₹{itmes.features.package_amount}</Typography></Box>}
+												{(itmes.sub_category_name.toLowerCase() === WeddingVenues.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingCatering.toLowerCase())&&
+												 
+                          
+                        <Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}><Icon icon="streamline:travel-hotel-serving-dome-cook-tool-dome-kitchen-drink-serving-platter-dish-tools-food-cooking" />
+                        from ₹{itmes.features.plate_price}  <Icon icon="majesticons:users-line" />  {itmes.features.number_of_guests}</Typography>}
 											</Box>
 											</Card>
 											{/* <Card>

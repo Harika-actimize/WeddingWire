@@ -17,51 +17,44 @@ import { Icon } from '@iconify/react';
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getInnerPageInitiate } from '../redux/actions/innerpageActions';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation, useParams } from 'react-router-dom';
+import { BridalMakeupArtists, WeddingCatering, WeddingInvitations, WeddingPhotography, WeddingPlanners, WeddingVenues, WeddingDecorator } from "./modalData";
 
 
 export default function Mumbai() {
   const navigate = useNavigate()
- const innerpagedata = useSelector((state) => state.innerpagedata.data?.data);
- console.log("ppppppppppppp",innerpagedata)
- const token = useSelector((state) => state.userData.activeuser) 
-console.log("tokennnnnnnnn",token)
-const goTonavigate = (id) => {
-	console.log("index",id)
-	if(token){
-		document.getElementById("white_icons-"+id).style.display = "none";
-		document.getElementById("red_icon-"+id).style.display = "block";
-	}
-	else{
-		navigate("/login")
-	}
+  const param = useParams()
+  const token = useSelector((state) => state.userData.activeuser) 
+  const innerpagedata = useSelector((state) => state.homepagedata.data);
+  const [data, setData] = useState([])
+  const goTonavigate = (id) => {
+    if(token){
+      document.getElementById("white_icons-"+id).style.display = "none";
+      document.getElementById("red_icon-"+id).style.display = "block";
+    }
+    else{
+      navigate("/login")
+    }
   }
   const goToWhiteHeart =(id) =>{
     document.getElementById("white_icons-"+id).style.display = "block";
     document.getElementById("red_icon-"+id).style.display = "none";
-  
+  }
+
+  useEffect(()=>{
+    let data = innerpagedata.filter(item=>item.sub_category_name.toLowerCase() === param.sub_category_name.toLowerCase())
+    if(param.location){
+      data = data.filter(item=>item.cityname.toLowerCase() === param.location.toLowerCase())
     }
-  
- const dispatch = useDispatch();
-
- useEffect(() => {
-  // alert("homepage ui");
-  dispatch(getInnerPageInitiate());
-}, []);
-console.log(">>>>>>>>>>>>>>>>>>>>>>>",innerpagedata)
-const getData = [];
-	for (let key in innerpagedata) {
-
-		getData.push({ id: key, ...innerpagedata[key] });
-	}
-	console.log('getData', getData);
+    setData(data)
+  },[innerpagedata])
   
   return (
     <>
       <Grid sx={{ display: 'flex',flexDirection:'row',justifyContent:'center',flexWrap:'wrap' }}>
-        {getData.map((item) => {
+        {data.map((item) => {
 return(
-          <Card style={{ maxWidth: 300,margin:'15px 15px 15px 0' }} className="rescard" key={item.id}>
+          <Card style={{ maxWidth: 330,margin:'15px 15px 15px 0'}} className="rescard" key={item.id}>
             <Swiper
               spaceBetween={1}
               effect={"fade"}
@@ -71,7 +64,7 @@ return(
               }}
               modules={[EffectFade, Navigation, Pagination]}
               className="mySwiper"
-              style={{margin:0}}
+              style={{margin:0,}}
             >
               {item.images.map((img) => (
                 <SwiperSlide key={img}>
@@ -99,14 +92,23 @@ return(
             <Typography sx={{ fontSize: '15px', lineHeight: '27px', marginLeft: '15px', marginBottom: '5px' }}>{item.name}</Typography>
            <Typography></Typography>
             <Box sx={{ display: 'flex', marginLeft: '15px', marginBottom: '5px' }}>
-              <StarIcon sx={{ color: '#fabb00', fontSize: '18px' }}></StarIcon><Typography variant='caption' >{item.rateing}</Typography>
-              <Typography variant='caption'>{item.address}</Typography>
+              <StarIcon sx={{ color: '#fabb00', fontSize: '18px' }}></StarIcon><Typography variant='caption' >{item.star_rating}</Typography>
+              <Typography variant='caption'>{item.area},{item.cityname}</Typography>
             </Box>
             <Box sx={{ display: 'flex', marginLeft: '15px', marginBottom: '15px' }}>
-              <BrunchDiningOutlinedIcon sx={{ fontSize: '18px', marginRight: '5px' }}></BrunchDiningOutlinedIcon><Typography variant='caption' >from ₹ {item.price}</Typography>
-              <PeopleAltOutlinedIcon sx={{ fontSize: '18px', marginRight: '5px' }}></PeopleAltOutlinedIcon>
-              <Typography variant='caption'  >{item.number_of_guests}</Typography>
-            </Box>
+              {/* <BrunchDiningOutlinedIcon sx={{ fontSize: '18px', marginRight: '5px' }}></BrunchDiningOutlinedIcon> */}
+              {/* <Icon icon="streamline:travel-hotel-serving-dome-cook-tool-dome-kitchen-drink-serving-platter-dish-tools-food-cooking" /> */}
+              {/* <Typography variant='caption' >from ₹ {item.food}</Typography> */}
+              {/* <PeopleAltOutlinedIcon sx={{ fontSize: '18px', marginRight: '5px' }}></PeopleAltOutlinedIcon> */}
+              {(item.sub_category_name.toLowerCase() === WeddingDecorator.toLowerCase()||item.sub_category_name.toLowerCase() === WeddingInvitations.toLowerCase()||item.sub_category_name.toLowerCase() === BridalMakeupArtists.toLowerCase()||item.sub_category_name.toLowerCase() === WeddingPlanners.toLowerCase()||item.sub_category_name.toLowerCase() === WeddingPhotography.toLowerCase())&&
+												<Box>
+                        <Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}><Icon icon="bi:database-fill" /> from ₹{item.features.package_amount}</Typography></Box>}
+												{(item.sub_category_name.toLowerCase() === WeddingVenues.toLowerCase()||item.sub_category_name.toLowerCase() === WeddingCatering.toLowerCase())&&
+												 
+                          
+                        <Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}><Icon icon="streamline:travel-hotel-serving-dome-cook-tool-dome-kitchen-drink-serving-platter-dish-tools-food-cooking" />
+                        from ₹{item.features.plate_price}  <Icon icon="majesticons:users-line" />  {item.features.number_of_guests}</Typography>}           
+                         </Box>
             <Button sx={{
               ":hover": {
                 color: '#fff',

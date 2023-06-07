@@ -8,23 +8,21 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import React from "react";
-// import {Card,Button} from 'react-bootstrap';
-// import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useParams } from 'react-router-dom';
+import { BridalMakeupArtists, WeddingCatering, WeddingInvitations, WeddingPhotography, WeddingPlanners, WeddingVenues, WeddingDecorator } from "./modalData";
 
 
 const SwiperCard = ({location,heading}) => {
 	const navigate = useNavigate()
 	const getData = useSelector((state) => state.homepagedata.data);
 	const token = useSelector((state) => state.userData.activeuser) 
-console.log("tokennnnnnnnn",token)
+// console.log("tokennnnnnnnn",token)
 const goTonavigate = (id) => {
-	console.log("index",id)
 	if(token){
 		document.getElementById("white_icons-"+id).style.display = "none";
 		document.getElementById("red_icon-"+id).style.display = "block";
@@ -38,13 +36,9 @@ const goTonavigate = (id) => {
 	document.getElementById("red_icon-"+id).style.display = "none";
 
   }
+  console.log("getData",getData)
 	return (
 		<>
-			{/* <Grid container spacing={2} columns={20}>
-   <img src='https://cdn1.weddingwire.in/img/badges/2023/badge-weddingawards_en_IN_small.jpg'></img>
-		<Typography variant='h5'>Couples’ Choice Awards</Typography>
-		<Typography variant='caption'>Explore winners in your area.</Typography>
-		</Grid> */}
 			<div>
 				<Grid columns={20}>
 					<Grid item xs={2}>
@@ -81,15 +75,10 @@ const goTonavigate = (id) => {
 
 							}}
 						>
-							{/* <Box sx={{display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
-					   <Box>
-				   <Card sx={{backgroundColor:"blue",width:"10%",height:100,mr:5}}><Typography>Easily Plan Your Wedding</Typography></Card>
-				   <Card sx={{backgroundColor:"blue",width:"10%",height:100}}><Typography>Easily Plan Your Wedding</Typography></Card>
-	</Box> */}
-
+							
 							<Box>
-							{getData.filter((item)=>item.cityname.toLowerCase() === location).map((itmes, index) => {									
-								console.log("catdata",itmes);
+							{getData.filter((item)=>(item.cityname.trim().toLowerCase() === location && item.sub_category_name === "WeddingVenue") ).slice(0,4).map((itmes, index) => {									
+								// console.log("catdata",itmes);
 									return (
 										<SwiperSlide key={index}>
 											<Card sx={{ maxWidth: 350 }}>
@@ -136,7 +125,10 @@ const goTonavigate = (id) => {
 												<Typography variant='caption' sx={{ color: '#fabb00'}}>-10%</Typography>
 													{/* <AiOutlineTag></AiOutlineTag> */}
 												</Box>
-												<Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}>from{itmes.package_amount}</Typography>
+												{(itmes.sub_category_name.toLowerCase() === WeddingDecorator.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingInvitations.toLowerCase()||itmes.sub_category_name.toLowerCase() === BridalMakeupArtists.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingPlanners.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingPhotography.toLowerCase())&&
+												<Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}>from {itmes.features.package_amount}</Typography>}
+												{(itmes.sub_category_name.toLowerCase() === WeddingVenues.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingCatering.toLowerCase())&&
+												<Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}>from {itmes.features.plate_price}   {itmes.features.number_of_guests}</Typography>}
 												<Button sx={{
               ":hover": {
                 color: '#b5141b',

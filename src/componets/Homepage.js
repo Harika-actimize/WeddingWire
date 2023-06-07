@@ -1,29 +1,20 @@
-import React from "react";
-import { database, dbRef } from '../firebase';
-import { useState, useEffect } from "react";
-// import {Card,Button} from 'react-bootstrap';
-// import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { Icon } from '@iconify/react';
+import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
+import StarIcon from '@mui/icons-material/Star';
+import { Grid } from "@mui/material";
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
+import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { BrowserRouter } from 'react-router-dom';
-import StarIcon from '@mui/icons-material/Star';
-import { useNavigate } from 'react-router-dom';
-import { getHomePageInitiate } from '../redux/actions/homepageActions';
-import { homePageApi } from '../redux/api/homepageApi';
+import React from "react";
+// import {Card,Button} from 'react-bootstrap';
+// import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { FreeMode } from "swiper";
-import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/free-mode";
-import { Grid } from "@mui/material";
-import CardMedia from '@mui/material/CardMedia';
-import  AiOutlineTag  from "react-icons/bs";
-import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { BridalMakeupArtists, WeddingCatering, WeddingDecorator, WeddingInvitations, WeddingPhotography, WeddingPlanners, WeddingVenues } from "./modalData";
 
 const Homepage = () => {
 	const getData = useSelector((state) => state.homepagedata.data);
@@ -77,7 +68,6 @@ const Homepage = () => {
 
 							<Box>
 							{getData.filter((item)=>item.featured !== 'premium').slice(0, 10).map((itmes, index) => {
-									// console.log("catdata",itmes);
 									return (
 										<SwiperSlide key={index}>
 											<Card sx={{ maxWidth: 350 }}>
@@ -97,7 +87,14 @@ const Homepage = () => {
 												<Typography variant='caption' sx={{ color: '#fabb00'}}>-10%</Typography>
 													{/* <AiOutlineTag></AiOutlineTag> */}
 												</Box>
-												<Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}>from{itmes.package_amount}</Typography>
+												{(itmes.sub_category_name.toLowerCase() === WeddingDecorator.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingInvitations.toLowerCase()||itmes.sub_category_name.toLowerCase() === BridalMakeupArtists.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingPlanners.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingPhotography.toLowerCase())&&
+												<Box>
+                        <Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}><Icon icon="bi:database-fill" /> from ₹{itmes.features.package_amount}</Typography></Box>}
+												{(itmes.sub_category_name.toLowerCase() === WeddingVenues.toLowerCase()||itmes.sub_category_name.toLowerCase() === WeddingCatering.toLowerCase())&&
+												 
+                          
+                        <Typography variant='caption' sx={{marginLeft:'15px',marginBottom:'5px'}}><Icon icon="streamline:travel-hotel-serving-dome-cook-tool-dome-kitchen-drink-serving-platter-dish-tools-food-cooking" />
+                        from ₹{itmes.features.plate_price}  <Icon icon="majesticons:users-line" />  {itmes.features.number_of_guests}</Typography>}           
 											</Card>
 											{/* <Card>
 													<img width="640px" variant="top" src={itmes.main_image} />

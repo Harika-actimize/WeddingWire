@@ -21,12 +21,12 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function ColumnsGrid() {
   const token = useSelector((state) => state.userData.activeuser) 
-console.log("tokennnnnnnnn",token)
+// console.log("tokennnnnnnnn",token)
 let user =""
 if (token){
  user = jwt_decode(token);
 }
-  console.log("user",user)
+  // console.log("user",user)
   return (
     <Box sx={{marginTop:'10px'}}>
       {user ? (

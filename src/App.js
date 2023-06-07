@@ -42,8 +42,11 @@ function App() {
           <Route path="login"  exact element={ <Login/> } />
           <Route path="login"  exact element={ <InteractiveList/> } />
           <Route path='welcomepage' exact element={<Welcomepage/>}/>
-          <Route path='weddingvenues' exact element={<Innerpagevennues/>}/>
-          <Route path='weddingvenues/mumbai' exact element={<Innerpage/>}/>
+
+          <Route path='venues/:sub_category_name' exact element={<Innerpagevennues/>}/>
+
+          <Route path='/:sub_category_name' exact element={<Innerpage/>}/>
+          <Route path='/:sub_category_name/:location' exact element={<Innerpage/>}/>
           <Route path='areyouvendor' exact element={<Areyouvendor/>}/>
         </Routes>
     </>

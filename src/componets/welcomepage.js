@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 export default function Welcomepage({...props}) {
   const user = useSelector((state)=>state.userData.activeuser)
-  console.log(user,"WELCOME");
+  // console.log(user,"WELCOME");
   
   return (
     <>

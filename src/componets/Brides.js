@@ -32,7 +32,7 @@ const Brides = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
-    console.log('currect target', event.currentTarget);
+    // console.log('currect target', event.currentTarget);
     setAnchorEl(event.currentTarget);
   }
 

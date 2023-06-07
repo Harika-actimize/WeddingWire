@@ -24,6 +24,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import '../App.css'
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
+import { useNavigate,useLocation, useParams } from 'react-router-dom';
 
 const options = [
   'babyee',
@@ -49,17 +50,19 @@ const options = [
 ];
 
 export default function InnerPageBannerRes() {
+  const param = useParams()
+  // console.log("param",param);
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedIndex, setSelectedIndex] = 
   useState();
   const open = Boolean(anchorEl);
   const handleClickListItem = (event) => {
-    console.log("////////////",event.target)
+    // console.log("////////////",event.target)
     setAnchorEl(event.currentTarget);
   };
 
   const handleMenuItemClick = (event, index) => {
-    console.log("@@@@@@@@@@@@",index)
+    // console.log("@@@@@@@@@@@@",index)
     setSelectedIndex(index);
     setAnchorEl(null);
   };
@@ -78,9 +81,7 @@ export default function InnerPageBannerRes() {
         margin: "0"
       }
     });
-  });
-
-  
+  });  
   return (
   <>
 {matches ?(<>
@@ -262,7 +263,7 @@ placeholder='in (E.g.Delhi)'
         color="inherit"
         href="/material-ui/getting-started/installation/"
       >
-        Mumbai
+      {param.location}
       </Link>
       </Breadcrumbs>
         

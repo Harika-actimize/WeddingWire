@@ -4,12 +4,14 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import { Button, Grid } from "@mui/material";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useParams} from 'react-router-dom'
 import { FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/free-mode";
 import "../App.css"
+import { BridalMakeupArtists, WeddingCatering, WeddingDecorator, WeddingInvitations, WeddingPhotography, WeddingPlanners, WeddingVenues } from './modalData';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -35,10 +37,14 @@ export default function DirectionStack() {
   //  backgroundColor: '#ea4c89',
 });
 const navigate = useNavigate()
-const goToVenues = () => {
-  navigate("/weddingvenues");
+const param = useParams()
+const goToVenues = (val) => {
+  navigate(`venues/${val}`);
 
 };
+const goTo = (category) =>{
+  navigate(`/${category}`)
+}
   return (
     <div>
       <Grid container spacing={5} columns={20} sx={{ mt: '5px' }}>
@@ -77,13 +83,13 @@ const goToVenues = () => {
             }}
           >
 <Stack direction="row" spacing={2} >
-<SwiperSlide><Button onClick={goToVenues} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Venues</Button></SwiperSlide>
-<SwiperSlide><Button sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Photographers</Button></SwiperSlide>
-<SwiperSlide><Button sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Planners</Button></SwiperSlide>
-<SwiperSlide><Button sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Bridal Makeup Artists</Button></SwiperSlide>
-<SwiperSlide><Button sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Decorators</Button></SwiperSlide>
-<SwiperSlide><Button sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Caterers</Button></SwiperSlide>
-<SwiperSlide><Button sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Invitations</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goToVenues(WeddingVenues)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Venues</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(WeddingPhotography)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Photographers</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(WeddingPlanners)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Planners</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(BridalMakeupArtists)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Bridal Makeup Artists</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(WeddingDecorator)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Decorators</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(WeddingCatering)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Caterers</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(WeddingInvitations)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Invitations</Button></SwiperSlide>
 </Stack>
 </Swiper>
         </Grid>

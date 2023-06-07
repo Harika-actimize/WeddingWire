@@ -17,7 +17,7 @@ function Exclusive() {
         { id: 5, image: "https://cdn0.weddingwire.in/vendor/1217/3_2/320/jpg/4q9a2327_15_71217-1555762721.webp", name: 'Silverador Resort Club', address: 'Mira Road', type: 'Banquet Halls' },
     ];
     return (
-        <div>
+        <div> 
             <Swiper
                 freeMode={true}
                 grabCursor={true}
@@ -52,7 +52,7 @@ function Exclusive() {
                         // console.log("catdata",itmes);
                         return (
                             <SwiperSlide key={index}>
-                                <Card sx={{ maxWidth: 300, marginLeft: '15px' }}>
+                                <Card sx={{ maxWidth: 330,margin:'15px 15px 15px 0' }}>
                                     <CardMedia
                                         sx={{ height: 200 }}
                                         image={itmes.image}
@@ -62,7 +62,7 @@ function Exclusive() {
                                         // color: 'black',
                                         backgroundColor: '#fff',
                                         top: '50%',
-                                        right: '7%',
+                                        right: '20%',
                                         height: 40,
                                         width: 40,
                                         // padding:'0px 8px',

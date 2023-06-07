@@ -1,0 +1,7 @@
+export const WeddingPhotography = "WeddingPhotography"
+export const WeddingInvitations = "WeddingInvitations"
+export const BridalMakeupArtists = "BridalMakeupArtists"
+export const WeddingDecorator = "WeddingDecorator"
+export const WeddingPlanners = "WeddingPlanners"
+export const WeddingVenues = "WeddingVenue"
+export const WeddingCatering = "WeddingCatering"
