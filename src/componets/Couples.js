@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Icon } from '@iconify/react';
 function Couples() {
     return (
         <div>
@@ -15,7 +15,7 @@ function Couples() {
                 <Grid item xs={16} sx={{}}>
                     <Typography variant='h5'sx={{fontSize:'24px',fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif',fontWeight:'700',marginBottom:'20px'}} >Couples’ Choice Awards</Typography>
                     <Typography variant='caption' sx={{fontFamily:'ProximaNova,ProximaNova-fallback-Arial,sans-serif'}}>Explore winners in your area.</Typography>
-                    <Button variant="outlined" className='hidebutton' sx={{borderColor:'#d9d9d9',color:'#222',textTransform:'none',marginRight:'10%',mb:'15px', float:'right'}}>View all winners<ArrowForwardIcon></ArrowForwardIcon></Button>
+                    <Button variant="outlined" className='hidebutton' sx={{borderColor:'#d9d9d9',color:'#222',textTransform:'none',marginRight:'10%',mb:'15px', float:'right'}}>View all winners<Icon icon="tabler:arrow-up" width="24" height="24" rotate={1} /></Button>
                 </Grid>
                 <Grid item xs={2}>
 

@@ -52,17 +52,17 @@ function InnerExclusive() {
                         // console.log("catdata",itmes);
                         return (
                             <SwiperSlide key={index}>
-                                <Card sx={{ maxWidth: 300, marginLeft: '15px' }}>
+                                <Card sx={{ maxWidth: 360, marginLeft: '15px' }}>
                                     <CardMedia
                                         sx={{ height: 200 }}
                                         image={itmes.image}
                                     />
-                                    <Avatar sx={{
+                                    <Avatar className="avatarhide" sx={{
                                         position: 'absolute',
                                         // color: 'black',
                                         backgroundColor: '#fff',
-                                        top: '50%',
-                                        right: '7%',
+                                        top: '51%',
+                                        right: '15%',
                                         height: 40,
                                         width: 40,
                                         // padding:'0px 8px',
@@ -70,7 +70,7 @@ function InnerExclusive() {
                                         cursor: 'pointer',
                                         transform: 'translateX(-50%)'
                                     }}>
-                                        <Icon style={{ color: 'black' }} icon="iconoir:percentage-circle" height='30' width='30' /></Avatar>
+                                        <Icon className="avatarhide" style={{ color: 'black' }} icon="iconoir:percentage-circle" height='30' width='30' /></Avatar>
                                     <Typography sx={{
                                         fontSize: '13px',
                                         lineHeight: '27px',

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Icon } from '@iconify/react';
 
 
 function Discussion() {
@@ -12,7 +12,7 @@ function Discussion() {
 
                 </Grid>
                 <Grid item xs={10} sm={2} sx={{textAlign:'center'}}>
-                    <Button variant="outlined" sx={{borderColor:'#d9d9d9',color:'#222',textTransform:'none',width:'max-content'}}>View all discussions<ArrowForwardIcon></ArrowForwardIcon></Button>
+                    <Button variant="outlined" sx={{borderColor:'#d9d9d9',color:'#222',textTransform:'none',width:'max-content'}}>View all discussions<Icon icon="tabler:arrow-up" width="24" height="24" rotate={1} /></Button>
                 </Grid>
                 <Grid item xs={4}>
 

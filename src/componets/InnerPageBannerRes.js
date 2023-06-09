@@ -1,30 +1,23 @@
-import { Typography,Button,Box,useMediaQuery, Grid, Divider } from "@mui/material";
-import { useTheme } from "@mui/system";
 import {
-  BannerContainer,
-  BannerContent,
-  BannerDescription,
-  BannerImage,
-  BannerShopButton,
-  BannerTitle,
-  BannerInnerImg
-} from "./BannerStyle";
-import {
-    FormControl,
-    InputAdornment,
-    TextField,
-    createStyles,
-    makeStyles
-  } from "@material-ui/core";
-  import { useState ,useEffect } from "react";
-  import IconButton from "@material-ui/core/IconButton";
-  import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
+  createStyles, InputAdornment,
+  makeStyles, TextField
+} from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from '@mui/icons-material/Search';
-import '../App.css'
+import { Box, Button, Divider, Grid, useMediaQuery } from "@mui/material";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
-import { useNavigate,useLocation, useParams } from 'react-router-dom';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { useTheme } from "@mui/system";
+import { useState } from "react";
+import { useParams } from 'react-router-dom';
+import '../App.css';
+import {
+  BannerContent,
+  BannerInnerImg, BannerTitle
+} from "./BannerStyle";
+import { BridalMakeupArtists, WeddingCatering, WeddingDecorator, WeddingInvitations, WeddingPhotography, WeddingPlanners, WeddingVenues } from "./modalData";
 
 const options = [
   'babyee',
@@ -48,10 +41,18 @@ const options = [
   'mani',
   'sita'
 ];
+const randompics = 
+  {[WeddingVenues]:'https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-banquetes.jpg',
+  [WeddingPhotography]:"https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-wedding-photography.jpg",
+  [WeddingPlanners]:"https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-wedding-planners.jpg",
+  [BridalMakeupArtists]:"https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-bridal-makeup.jpg",
+  [WeddingDecorator]:"https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-wedding-decoration.jpg",
+  [WeddingCatering]:'https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-catering.jpg',
+  [WeddingInvitations]:"https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-wedding-invitations.jpg"}
 
 export default function InnerPageBannerRes() {
   const param = useParams()
-  // console.log("param",param);
+  console.log("param",param.sub_category_name);
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedIndex, setSelectedIndex] = 
   useState();
@@ -82,6 +83,7 @@ export default function InnerPageBannerRes() {
       }
     });
   });  
+  console.log("//////////",randompics[param.sub_category_name])
   return (
   <>
 {matches ?(<>
@@ -98,13 +100,13 @@ export default function InnerPageBannerRes() {
         color="inherit"
         href="/weddingvenues"
       >
-        Wedding Venues
+        {param.sub_category_name}
       </Link>
     </Breadcrumbs>
       
-      <BannerTitle sx={{
+      <BannerTitle className="BannerTitle" sx={{
 fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif",marginTop:'3%',mb:'3%'
-      }}>Wedding Venues
+      }}>{param.sub_category_name}
 </BannerTitle>
 
       <Grid
@@ -249,15 +251,8 @@ placeholder='in (E.g.Delhi)'
           color="inherit"
           href="/weddingvenues"
         >
-          Wedding Venues
+        {param.sub_category_name}
         </Link>
-        <Link
-        underline="hover"
-        color="inherit"
-        href="/material-ui/getting-started/installation/"
-      >
-         Maharashtra 
-      </Link>
       <Link
         underline="hover"
         color="inherit"
@@ -267,9 +262,9 @@ placeholder='in (E.g.Delhi)'
       </Link>
       </Breadcrumbs>
         
-        <BannerTitle sx={{
+        <BannerTitle className="BannerTitle" sx={{
   fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif",marginTop:'3%',mb:'3%'
-        }}>Wedding Venues
+        }}>{param.sub_category_name}
 </BannerTitle>
 
         <Grid
@@ -345,7 +340,7 @@ placeholder='in (E.g.Delhi)'
     </Grid>
     <Grid item xs={20} md={10} sm={20}>
       {/* <div className='banner'></div> */}
-    <BannerInnerImg src="https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-banquetes.jpg" className='banner' />
+    <BannerInnerImg src={randompics[param.sub_category_name]} className='banner' />
     {/* <div className='homeHeading_content'>
 
     </div> */}

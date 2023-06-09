@@ -77,7 +77,7 @@ const Homepage = () => {
 
 												/>
 												
-													<Typography sx={{ fontSize: '17px', lineHeight: '27px',marginLeft:'15px',marginBottom:'5px' }} noWrap>{itmes.name}</Typography>
+													<Typography sx={{ fontSize: '20px', lineHeight: '27px',marginLeft:'15px',marginBottom:'5px' }} noWrap>{itmes.name}</Typography>
 													<Box sx={{display:'flex',marginLeft:'15px',marginBottom:'5px'}}>
 													<StarIcon sx={{ color: '#fabb00', fontSize: '18px' }}></StarIcon><Typography variant='caption' >{itmes.star_rating}({itmes.outof})</Typography>
 													<Typography variant='caption' noWrap>{itmes.area}.{itmes.cityname}</Typography>					

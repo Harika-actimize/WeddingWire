@@ -100,7 +100,7 @@ export default function AccountMenu() {
         <MenuItem onClick={handleClose}>
         <Avatar sx={{ width: 56, height:56 }}>{user.email.charAt(0).toUpperCase()}</Avatar>
         <div>
-        <Typography sx={{fontSize:'1.5rem',fontWeight:'700',fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif"}}>{user.email}</Typography>
+        <Typography sx={{fontSize:'18px',fontWeight:'700',fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif"}}>{user.email}</Typography>
         <Typography>profile</Typography>
         </div>
         </MenuItem>

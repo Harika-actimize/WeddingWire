@@ -16,6 +16,7 @@ import {
     createStyles,
     makeStyles
   } from "@material-ui/core";
+  import { useParams } from 'react-router-dom';
   import { useState ,useEffect } from "react";
   import IconButton from "@material-ui/core/IconButton";
   import MenuItem from '@mui/material/MenuItem';
@@ -24,6 +25,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import '../App.css'
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
+import { BridalMakeupArtists, WeddingCatering, WeddingDecorator, WeddingInvitations, WeddingPhotography, WeddingPlanners, WeddingVenues } from "./modalData";
 
 const options = [
   'babyee',
@@ -47,8 +49,16 @@ const options = [
   'mani',
   'sita'
 ];
-
+const randompics = 
+  {WeddingVenues:'https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-banquetes.jpg',
+  WeddingPhotography:"https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-wedding-photography.jpg",
+  WeddingPlanners:"https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-wedding-planners.jpg",
+  BridalMakeupArtists:"https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-bridal-makeup.jpg",
+  WeddingDecorator:"https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-wedding-decoration.jpg",
+  WeddingCatering:'https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-catering.jpg',
+  WeddingInvitations:"https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-wedding-invitations.jpg"}
 export default function InnerPageBanner() {
+  const param = useParams()
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedIndex, setSelectedIndex] = 
   useState();
@@ -330,7 +340,7 @@ placeholder='in (E.g.Delhi)'
     </Grid>
     <Grid item xs={20} md={10} sm={20}>
       {/* <div className='banner'></div> */}
-    <BannerInnerImg src="https://www.weddingwire.in/assets/img/directory/headings/bg_directory-hero-banquetes.jpg" className='banner' />
+    <BannerInnerImg src={randompics[param.sub_category_name]} className='banner' />
     {/* <div className='homeHeading_content'>
 
     </div> */}

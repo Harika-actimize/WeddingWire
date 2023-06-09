@@ -24,6 +24,7 @@ import Nearyou from './Nearyou';
 import InnerAllWedding from './InnerAllWedding';
 // import Paragraphs from './Paragraphs';
 import { useParams } from 'react-router-dom';
+import InnerPageBannerRes from './InnerPageBannerRes';
 
 
 const data = [
@@ -78,7 +79,7 @@ function Innerpagevennues() {
     return (
         <div>
             <InteractiveList/>
-<InnerPageBanner/>
+<InnerPageBannerRes/>
 
             <Grid container columns={20}>
 <Grid xs={2}> 

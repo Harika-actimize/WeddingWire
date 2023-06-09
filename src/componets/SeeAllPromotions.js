@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Grid } from '@mui/material';
+import { Icon } from '@iconify/react';
 
 function SeeAllPromotions() {
     return (
@@ -16,7 +16,8 @@ function SeeAllPromotions() {
                     textTransform:'none',
                     margin:'25px',
                     width:'max-content',
-                    }}>See all promotions<ArrowForwardIcon></ArrowForwardIcon></Button>
+                    // marginTop:'10px',
+                    }}>See all promotions<Icon icon="tabler:arrow-up" width="24" height="24" rotate={1} /></Button>
                     </Grid>
         </div>
     )

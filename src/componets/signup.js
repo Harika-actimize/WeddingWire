@@ -27,7 +27,7 @@ import { auth } from "../firebase"
 import { fbSignInInitiate, googleSignInInitiate } from '../redux/actions/userActions'
 import { registerUserApi } from '../redux/api/registerApi'
 import MessageInfo from './message';
-
+import { makeStyles } from '@material-ui/core/styles';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -48,6 +48,18 @@ const theme = createTheme({
     }
   }
 });
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
 
 const CustomTypo = styled(Typography)(({ theme }) => ({
   whiteSpace:'nowrap',
@@ -105,6 +117,7 @@ const Signup = () => {
   const [w, setW] = useState(window.innerWidth)
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const classes = useStyles();
 
   useEffect(() => {
     const handleResize = () => {
@@ -379,13 +392,12 @@ const Signup = () => {
               variant="standard"
             />
             {/* EVENT LOCATION */}
-            <Grid sx={{width:'80%',display:'inline-flex'}}>
+            <div style={{width:'100%'}}>
             <TextField
-              // sx={{ mt: 1, ml: 1 }}
-              // className="pure-u-2"
               type="text"
               name="eventlocation"
               value={eventlocation}
+              sx={{width:"40%"}}
               onChange={handleChange}
               label="Event location"
               variant="standard"
@@ -399,6 +411,7 @@ const Signup = () => {
                 labelId="demo-simple-select-label"
                 name="location"
                 id="demo-simple-select"
+                // sx={{width:"40%"}}
                 value={location}
                 label="location"
                 placeholder="india"
@@ -420,10 +433,29 @@ const Signup = () => {
                 <MenuItem value="India">India</MenuItem>
               </Select>
             </FormControl>
-            </Grid>
-            <Grid sx={{width:"100%",paddingLeft:'10%',display:"inline-flex"}}>
+            </div>
+            <div style={{width:'100%'}}>
             {/* DatePicker FIELD */}
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
+            {/* <form className={classes.container} noValidate> */}
+      <TextField
+        id="date"
+        label="Event date"
+        type="date"
+        sx={{width:"40%",marginRight:"10px"}}
+        // defaultValue="2017-05-24"
+        className={classes.textField}
+        variant="standard"
+        value={date}
+        onChange={newValue => {
+          // console.log('newvalue', newValue)
+          setData({ ...data, date: newValue })
+        }}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+    {/* </form> */}
+            {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
                 label="Event date"
                 // sx={{mt:'-6%',ml: '10%'}}
@@ -437,18 +469,15 @@ const Signup = () => {
                 }}
                 renderInput={params => <TextField {...params} />}
               />
-            </LocalizationProvider>
+            </LocalizationProvider> */}
             <TextField
-              // sx={{
-              //   ml: '45%',
-              //   mt: '2%',
-              // }}
               label="Phone number"
               type="text"
+              sx={{width:"40%"}}
               value={phonenumber}
               name="phonenumber"
               variant="standard"
-              className="pure-u-2"
+              // className="pure-u-2"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
@@ -458,7 +487,7 @@ const Signup = () => {
               }}
               onChange={handleChange}
             />
-            </Grid>
+            </div>
             {/* BRIDE GROOM  */}
             <Grid
               justifyContent="center"

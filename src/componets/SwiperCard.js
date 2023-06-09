@@ -36,7 +36,7 @@ const goTonavigate = (id) => {
 	document.getElementById("red_icon-"+id).style.display = "none";
 
   }
-  console.log("getData",getData)
+//   console.log("getData",getData)
 	return (
 		<>
 			<div>
@@ -81,7 +81,7 @@ const goTonavigate = (id) => {
 								// console.log("catdata",itmes);
 									return (
 										<SwiperSlide key={index}>
-											<Card sx={{ maxWidth: 350 }}>
+											<Card sx={{ maxWidth: 380 }}>
 												<CardMedia
 													sx={{ height: 200 }}
 													image={itmes.main_image}

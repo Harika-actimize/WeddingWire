@@ -7,7 +7,7 @@ import { Typography } from '@mui/material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import jwt_decode from "jwt-decode";
 import { useDispatch, useSelector } from 'react-redux';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Icon } from '@iconify/react';
 import Button from '@mui/material/Button';
 import MediaControlCard from './Card';
 
@@ -37,7 +37,7 @@ if (token){
 </Grid>
 <Grid item xs={16}>
     <Typography variant='h5'sx={{fontSize:'24px',fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif',fontWeight:'700',marginBottom:'15px'}} >All of your wedding details</Typography>
-    <Button variant="outlined" className='hidebutton' sx={{borderColor:'#d9d9d9',color:'#222',textTransform:'none',marginRight:'10%',mb:'15px', float:'right'}}>Planning Tools<ArrowForwardIcon></ArrowForwardIcon></Button>
+    <Button variant="outlined" className='hidebutton' sx={{borderColor:'#d9d9d9',color:'#222',textTransform:'none',marginRight:'10%',mb:'15px', float:'right'}}>Planning Tools<Icon icon="tabler:arrow-up" width="24" height="24" rotate={1} /></Button>
 </Grid>
 <Grid item xs={2}>
 

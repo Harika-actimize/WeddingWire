@@ -1,9 +1,6 @@
 import { Box, Button, Typography ,TextField} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Colors } from "./Theme";
-// import Banner from './Banner';
-// import { Stack } from '@mui/material/Stack';
-
 export const BannerContainer = styled(Box)(({ matches, theme }) => ({
   display: '-webkit-inline-flex',
   justifyContent: "center",

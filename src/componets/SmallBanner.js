@@ -9,11 +9,10 @@ function SmallBanner() {
 
     return (
         <div>
-            {matches ? (<>
-                <Typography sx={{fontSize:'1.63rem'}} variant="h4">Find your wedding venue</Typography>
-            <p>Search through a vast selection of venues to find the place that perfectly matches your wedding vision.</p>
-
-            </>):(<>   
+            {matches ? (<div>
+                    <Typography sx={{fontSize:'1.63rem'}} variant="h4">Find your wedding venue</Typography>
+                    <p>Search through a vast selection of venues to find the place that<br></br> perfectly matches your wedding vision.</p>
+                </div>):(<>   
              <div className='Bannneralign'>
             <picture className='smallbaner'>
                 <source srcSet='https://www.weddingwire.in/assets/img/listing-sector-banner/1.avif' type="image/avif"></source>

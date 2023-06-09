@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid } from "@mui/material";
 import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Icon } from '@iconify/react';
 import { useNavigate } from 'react-router-dom'
 
 
@@ -18,7 +18,7 @@ function VenuesChennai() {
 
                 </Grid>
                 <Grid xs={10} sm={2} sx={{textAlign:'center'}}>
-                    <Button onClick={goToChennai} variant="outlined" sx={{mb:'1.5rem', padding: '.69rem 1rem', borderColor:'#d9d9d9',color:'#222',textTransform:'none',width:'max-content'}}>Discover 308 venues in Chennai<ArrowForwardIcon></ArrowForwardIcon></Button>
+                    <Button onClick={goToChennai} variant="outlined" sx={{mb:'1.5rem', padding: '.69rem 1rem', borderColor:'#d9d9d9',color:'#222',textTransform:'none',width:'max-content'}}>Discover 308 venues in Chennai<Icon icon="tabler:arrow-up" width="24" height="24" rotate={1} /></Button>
                 </Grid>
                 <Grid item xs={4}>
 

@@ -104,7 +104,7 @@ textAlign:'center',
 justifyContent:'center',
 padding:'.69rem 1rem',
 fontWeight:'600',
-width:'300px',
+width:'max-content',
 marginBottom:'0',
 borderRadius:'.5rem',
 border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>

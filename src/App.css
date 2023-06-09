@@ -180,7 +180,6 @@ button {
 }
 .css-q8hpuo-MuiFormControl-root{
   width: 40% !important;
-  margin-top: 9px !important;
 }
 /* .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   margin-left: 45%;
@@ -400,10 +399,18 @@ nav ul.menu-area ul li Link:hover{
   .navcardres{
     width: 250px !important;
   }
+  .smallbanner{
+    width: 63%;
+    /* height:%; */
+  }
+  
 }
 
 
 @media only screen and (max-width: 768px) {
+  .BannerTitle{
+    font-size: 27px !important;
+  }
   .itemLoc li{
     width:29%!important;
   }
@@ -437,11 +444,18 @@ nav ul.menu-area ul li Link:hover{
   .rescard{
     width: 250px !important;
   }
+  .avatarhide{
+    display: none !important;
+  }
 }
 @media only screen and (max-width: 1440px) {
   .css-clvyeo{
     width: 100% !important;
   }
+  /* .smallcard{
+    width: 43%;
+    padding: 2rem;
+  } */
 }
 
 @media only screen and (max-width: 425px) {
@@ -489,8 +503,9 @@ nav ul.menu-area ul li Link:hover{
   padding: 0;
   line-height: 2rem;
   /* text-align: -webkit-match-parent; */
-
-
+}
+.smallbanner{
+  width: 63%;
 }
 .subname{
   display: block;
@@ -539,7 +554,7 @@ max-width:'800px';
   width: 91% !important;
 }
 .findcard{
-  width: 43%;
+  width: 35% !important;
   padding: 2rem;
   box-shadow: 0 5px 12px #0003;
   background-color: #fff;
@@ -554,6 +569,9 @@ max-width:'800px';
 font-family: Merriweather,Merriweather-fallback-TimesNewRoman,times,serif;
 font-weight: 700;
 margin-bottom: .5rem;
+}
+.css-i4bv87-MuiSvgIcon-root{
+  color: white;
 }
 .smallbaner{
   width: 100%;
@@ -650,4 +668,7 @@ float: left;
   text-transform: uppercase;
   letter-spacing: .0625rem;
   color: #6c6c6c;
+}
+.css-nw74th-MuiGrid-root {
+  margin-bottom: 15px;
 }

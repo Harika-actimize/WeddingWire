@@ -1,4 +1,4 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Icon } from '@iconify/react';
 import { Grid } from "@mui/material";
 import Button from '@mui/material/Button';
 import React from 'react';
@@ -18,7 +18,7 @@ function VenuesHydrabad(props) {
 
                 </Grid>
                 <Grid xs={10} sm={2} sx={{textAlign:'center'}}>
-                    <Button onClick={goTo} variant="outlined" sx={{mb:'1.5rem', borderColor:'#d9d9d9',color:'#222',textTransform:'none',width:'max-content',padding: '.69rem 1rem'}}>Discover 389 venues in {props.location}<ArrowForwardIcon></ArrowForwardIcon></Button>
+                    <Button onClick={goTo} variant="outlined" sx={{mb:'1.5rem', borderColor:'#d9d9d9',color:'#222',textTransform:'none',width:'max-content',padding: '.69rem 1rem'}}>Discover 389 venues in {props.location}<Icon icon="tabler:arrow-up" width="24" height="24" rotate={1} /></Button>
                 </Grid>
                 <Grid item xs={4}>
 
