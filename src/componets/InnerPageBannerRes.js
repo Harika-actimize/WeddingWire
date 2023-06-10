@@ -172,6 +172,7 @@ placeholder='in (E.g.Delhi)'
 />
 </>) :(
 <>
+<Grid sx={{marginBottom:'10px'}}>
       <TextField
 variant="outlined"
 placeholder='Wedding'
@@ -232,6 +233,7 @@ placeholder='in (E.g.Delhi)'
 <Button variant="contained" color='error' sx={{textTransform:'none'}}>
     Find
   </Button>
+  </Grid>
   </>)}
 </Grid>
     </BannerContent>
