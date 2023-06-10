@@ -259,7 +259,7 @@ const Signup = () => {
 
   return (
     <>
-     <Box sx={{textAlign:'center',mb:'2pc',mt:'2pc'}}>
+     <Box sx={{textAlign:'center',mb:1,mt:2}}>
         <img
          style={{
           height: 30,
@@ -336,7 +336,7 @@ const Signup = () => {
             {/* NAME FIELD */}
             <TextField
               id="standard-basic"
-              label="Name and Surename"
+              label="Name"
               variant="standard"
               helperText={!errorObj.name.valid&&errorObj.name.helperText}
               error={!errorObj.name.valid}
@@ -392,18 +392,18 @@ const Signup = () => {
               variant="standard"
             />
             {/* EVENT LOCATION */}
-            <div style={{width:'100%'}}>
+            <div style={{width:'100%',marginTop:'10px'}}>
             <TextField
               type="text"
               name="eventlocation"
               value={eventlocation}
-              sx={{width:"40%"}}
+              sx={{width:"40%",marginRight:"10px"}}
               onChange={handleChange}
               label="Event location"
               variant="standard"
             />
             {/* LOCATION FIELD */}
-            <FormControl variant="standard" fullWidth>
+            <FormControl className="locfield" variant="standard" sx={{minWidth: 200 }}>
               <InputLabel id="demo-simple-select-standard-label">
                 select
                     </InputLabel>
@@ -411,7 +411,7 @@ const Signup = () => {
                 labelId="demo-simple-select-label"
                 name="location"
                 id="demo-simple-select"
-                // sx={{width:"40%"}}
+                // sx={{width:"100%"}}
                 value={location}
                 label="location"
                 placeholder="india"
@@ -434,7 +434,7 @@ const Signup = () => {
               </Select>
             </FormControl>
             </div>
-            <div style={{width:'100%'}}>
+            <div style={{width:'100%',marginTop:'10px'}}>
             {/* DatePicker FIELD */}
             {/* <form className={classes.container} noValidate> */}
       <TextField
@@ -442,13 +442,11 @@ const Signup = () => {
         label="Event date"
         type="date"
         sx={{width:"40%",marginRight:"10px"}}
-        // defaultValue="2017-05-24"
         className={classes.textField}
         variant="standard"
-        value={date}
-        onChange={newValue => {
-          // console.log('newvalue', newValue)
-          setData({ ...data, date: newValue })
+        value={data.date}
+        onChange={e => {
+          setData({ ...data, date: e.target.value })
         }}
         InputLabelProps={{
           shrink: true,
@@ -492,7 +490,7 @@ const Signup = () => {
             <Grid
               justifyContent="center"
               alignItems="right"
-              sx={{ mt: '1%', display: 'flex' }}
+              sx={{ mt: 1, display: 'flex' }}
             >
               <Typography> I am </Typography>
               <img
@@ -525,13 +523,28 @@ const Signup = () => {
               WeddingWire.in.
                   </Typography>
             <Button
-              sx={{
-                backgroundColor: '#fb1b26',
-                mt: 1,
-                p: '12px 15px',
-                color: '#fff',
-              }}
-              className="btn-flat.red btn-full btn-flat--big btn-flat select "
+            className="btnOutline btnOutline--grey btnOutline--full"
+            sx={{
+              backgroundColor:"#f80410",
+              color: 'white',
+              mt: 1,
+              fontSize:"16px",
+              fontWeight:'600',
+              padding:"8px 12px",
+              textTransform: 'none',
+              borderColor: '#f80410',
+              borderRadius:"10px",
+              ":hover": {
+                backgroundColor:'#f80410'
+              },
+            }}
+              // sx={{
+              //   backgroundColor: '#fb1b26',
+              //   mt: 1,
+              //   p: '12px 15px',
+              //   color: '#fff',
+              // }}
+              // className="btn-flat.red btn-full btn-flat--big btn-flat select "
               onClick={handleSubmit}
             >
               Signup

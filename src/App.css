@@ -468,6 +468,9 @@ nav ul.menu-area ul li Link:hover{
   .hidebutton{
     display: none !important;
   }
+  .locfield{
+min-width: 95px !important;
+  }
 }
 @media only screen and (max-width: 320px) {
   .itemLoc li{
@@ -671,4 +674,14 @@ float: left;
 }
 .css-nw74th-MuiGrid-root {
   margin-bottom: 15px;
+}
+.bride-switchMargin{
+  margin: 0 0 20px;
+}
+.bride{
+  width: 100%;
+}
+.lab{
+  color: #8c8c8c;
+  width: 14.2857%;
 }

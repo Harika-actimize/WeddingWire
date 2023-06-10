@@ -72,7 +72,7 @@ const goTo = (category) =>{
                 spaceBetween: 0,
               },
               1024: {
-                slidesPerView: 7,
+                slidesPerView: 5,
                 spaceBetween: 0,
               },
               1280: {
