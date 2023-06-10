@@ -75,7 +75,7 @@ const data = [
   ]
 function Innerpagevennues() {
     const param = useParams()
-    console.log(param)
+    // console.log(param)
     return (
         <div>
             <InteractiveList/>

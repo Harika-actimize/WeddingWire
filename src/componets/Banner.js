@@ -95,19 +95,7 @@ export default function Banner() {
         aria-label="Device settings"
         sx={{ bgcolor: 'background.paper',display:'flex'}}>
 {matches ? (<>
-<Button sx={{color:'#fff',
-backgroundColor:'red',
-transition:'all .15s',
-backgroundPosition:'center',
-display:'flex',
-textAlign:'center',
-justifyContent:'center',
-padding:'.69rem 1rem',
-fontWeight:'600',
-width:'max-content',
-marginBottom:'0',
-borderRadius:'.5rem',
-border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>
+  <Button sx={{mb:'1.5rem', padding: '.69rem 1rem', borderColor:'#d9d9d9',color:'#222',textTransform:'none',width:'max-content'}}>Discover 851 venues in Mumbai</Button>
 </>) :(
   <>
   <Box sx={{display:'flex'}}>

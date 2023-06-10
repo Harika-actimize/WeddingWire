@@ -74,7 +74,7 @@ export const Gallary = () => {
                 <img
                 src={item.image}
                 style={{height:"285px",width:"300px"}}
-                className="galary imgA1"
+                className="galary imgA1 bigimg"
               //   srcSet="assets/img/{item.image}&dpr=2 2x"
                     loading="lazy"
                     alt=""
@@ -82,7 +82,7 @@ export const Gallary = () => {
                 <img
                 src={item.image1}
                 style={{height:'180px',width:"100px"}}
-                className= "galary imgB1"
+                className= "galary imgB1 smallimg"
               //   srcSet="assets/img/{item.image}&dpr=2 2x"
                     loading="lazy"
                     alt=""
@@ -95,16 +95,16 @@ export const Gallary = () => {
     <Card variant="outlined" sx={{margin: '10px', minHeight: '280px',backgroundColor:'#f8f8f8' }} key={index}>
                 <img
                 src={item.image}
-                style={{height:'250px',width:"300px"}}
-                className="galary imgA1"
+                // style={{height:'250px',width:"300px"}}
+                className="bigimg galary imgA1"
               //   srcSet="assets/img/{item.image}&dpr=2 2x"
                     loading="lazy"
                     alt=""
                 />
                 <img
                 src={item.image1}
-                style={{height:'180px',width:"100px"}}
-                className= "galary imgB1"
+                // style={{height:'180px',width:"100px"}}
+                className= "galary imgB1 smallimg"
               //   srcSet="assets/img/{item.image}&dpr=2 2x"
                     loading="lazy"
                     alt=""

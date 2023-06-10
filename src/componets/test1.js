@@ -31,7 +31,7 @@ if (token){
     <Box sx={{marginTop:'10px'}}>
       {user ? (
         <>
-        <Grid container spacing={2} columns={20}>
+        <Grid container spacing={2} columns={20} >
         <Grid item xs={2}>
 
 </Grid>
@@ -66,30 +66,30 @@ if (token){
 
   {/* </Grid> */}
 
-        <Grid item xs={8} sm={6} md={2}>
-          <Item sx={{height:'150px'}}>
-            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/notebook.svg'></img>
+        <Grid item xs={8} sm={4} md={2} className="columngrid">
+          <Item sx={{height:'150px'}} >
+            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/notebook.svg' height="70px" width="70px"></img>
             <Typography sx={{color:"black"}}>0 of 18</Typography>
             <Typography>Services hired</Typography>
           </Item>
         </Grid>
-        <Grid item xs={8} sm={6} md={2}>
+        <Grid item xs={8} sm={4} md={2}>
         <Item sx={{height:'150px'}}>
-            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/to_do.svg'></img>
+            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/to_do.svg' height="70px" width="70px"></img>
           <Typography sx={{color:"black"}}>0 of 112</Typography>
           <Typography>Tasks Completed</Typography>
           </Item>
         </Grid>
-        <Grid item xs={8} sm={6} md={2}>
+        <Grid item xs={8} sm={4} md={2} className="columngrid">
         <Item sx={{height:'150px'}}>
-            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/add_guest.svg'></img>
+            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/add_guest.svg' height="70px" width="70px"></img>
           <Typography sx={{color:"black"}}>0 of 2</Typography>
           <Typography>Guests attending</Typography>
           </Item>
         </Grid>
-        <Grid item xs={8} sm={6} md={2}>
+        <Grid item xs={8} sm={4} md={2}>
         <Item sx={{height:'150px'}}>
-            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/calculator.svg'></img>
+            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/calculator.svg' height="70px" width="70px"></img>
           <Typography sx={{color:"black"}}>₹0</Typography>
           <Typography>Budget spent</Typography>
           </Item>
@@ -111,45 +111,44 @@ if (token){
 <Typography sx={{marginTop:'55px',color:'red'}}>Get Started<KeyboardArrowRightIcon sx={{color:'red'}}></KeyboardArrowRightIcon></Typography>
 </Item>
         </Grid>
-
-        <Grid item xs={6} sm={6} md={2}>
+        <Grid item xs={6} sm={6} md={2} className="columngrid">
           <Item sx={{height:'130px'}}>
-            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/search.svg'></img>
-            <Typography>Wedding Venues</Typography>
+            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/search.svg' height="70px" width="70px"></img>
+            <Typography sx={{fontSize:'13px'}}>Wedding Venues</Typography>
           </Item>
         </Grid>
         <Grid item xs={6} sm={6} md={2}>
         <Item sx={{height:'130px'}}>
-            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/websites.svg'></img>
-          <Typography>Wedding Website</Typography>
+            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/websites.svg' height="70px" width="70px"></img>
+          <Typography sx={{fontSize:'13px'}}>Wedding Website</Typography>
           </Item>
         </Grid>
         <Grid item xs={6} sm={6} md={2}>
         <Item sx={{height:'130px'}}>
-            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/notebook.svg'></img>
-          <Typography>Planning Tools</Typography>
+            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/notebook.svg' height="70px" width="70px"></img>
+          <Typography sx={{fontSize:'13px'}}>Planning Tools</Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={6} sm={6} md={2} className="columngrid">
+        <Item sx={{height:'130px'}}>
+            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/lightbulb.svg' height="70px" width="70px"></img>
+          <Typography sx={{fontSize:'13px'}}>Ideas</Typography>
           </Item>
         </Grid>
         <Grid item xs={6} sm={6} md={2}>
         <Item sx={{height:'130px'}}>
-            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/lightbulb.svg'></img>
-          <Typography>Ideas</Typography>
+            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/camera.svg' height="70px" width="70px"></img>
+          <Typography sx={{fontSize:'13px'}}>Real Weddings</Typography>
           </Item>
         </Grid>
         <Grid item xs={6} sm={6} md={2}>
         <Item sx={{height:'130px'}}>
-            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/camera.svg'></img>
-          <Typography>Real Weddings</Typography>
+            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/chat_bubble.svg'height="70px" width="70px" ></img>
+          <Typography sx={{fontSize:'13px'}}>Community</Typography>
           </Item>
         </Grid>
-        <Grid item xs={6} sm={6} md={2}>
-        <Item sx={{height:'130px'}}>
-            <img src='https://cdn1.weddingwire.in/assets/svg/original/illustration/chat_bubble.svg'></img>
-          <Typography>Community</Typography>
-          </Item>
-        </Grid>
-      </Grid>
       <Grid item xs={2}>
+        </Grid>
         </Grid>
         </>)}
     </Box>

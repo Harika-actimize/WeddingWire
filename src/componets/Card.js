@@ -22,7 +22,7 @@ export default function MediaControlCard() {
   }
     // console.log("user",user)
   return (
-    <Card sx={{ display: 'flex' }}>
+    <Card sx={{ display: 'flex',height:'170px',marginTop:'15px' }} className="usercolumn">
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="subtitle1">
@@ -51,6 +51,7 @@ export default function MediaControlCard() {
       <CardMedia
         component="img"
         sx={{ width: 151,objectFit:'cover' }}
+        height ="170px" width="150px"
         image="https://cdn1.weddingwire.in/assets/tools/en_IN/bg_dash-cover.jpg"
         alt="Live from space album cover"
       />

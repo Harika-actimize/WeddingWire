@@ -208,7 +208,14 @@ button {
   /* z-index: -1; */
   width: 100%;
 }
-
+.bigimg{
+  height: 250px !important;
+  width: 300px !important;
+}
+.smallimg{
+  height: 180px !important;
+  width: 100px !important;
+}
 .galary {
   position:relative;
   top: 25px;
@@ -377,7 +384,13 @@ nav ul.menu-area ul li Link:hover{
 .right{
   float: right;
 }
+.couplesbtn{
+margin-right: 10% !important;  
+}
 @media only screen and (max-width: 1024px) {
+  .couples{
+    margin-left: 10% !important;
+  }
   .itemLoc li{
     width:20%!important;
   }
@@ -408,6 +421,18 @@ nav ul.menu-area ul li Link:hover{
 
 
 @media only screen and (max-width: 768px) {
+  .bigimg{
+    width: 270px !important;
+  }
+  .css-j7qwjs {
+    margin-right: 30% !important;
+  }
+  .usercolumn{
+    width: 70% !important;
+  }
+  .columngrid{
+    margin-left: 37px !important;
+  }
   .BannerTitle{
     font-size: 27px !important;
   }
@@ -457,8 +482,19 @@ nav ul.menu-area ul li Link:hover{
     padding: 2rem;
   } */
 }
+@media only screen and (max-width: 375px) {
+  /* .columngrid{
+    margin-left: 15px !important;
+  } */
+}
 
 @media only screen and (max-width: 425px) {
+  .css-j7qwjs {
+    margin-right: 0 !important;
+  }
+  .usercolumn{
+    margin-left: 20px !important;
+  }
   .itemLoc li{
     width:40%!important;
   }
@@ -473,6 +509,18 @@ min-width: 95px !important;
   }
 }
 @media only screen and (max-width: 320px) {
+  .bigimg{
+    width: 200px !important;
+  }
+  .smallimg{
+    width: 85px !important;
+  }
+  .imgB1{
+    left: 60%;
+  }
+  /* .columngrid{
+    margin-left: 15px !important;
+  } */
   .itemLoc li{
     width:90%!important;
   }

@@ -52,7 +52,7 @@ const randompics =
 
 export default function InnerPageBannerRes() {
   const param = useParams()
-  console.log("param",param.sub_category_name);
+  // console.log("param",param.sub_category_name);
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedIndex, setSelectedIndex] = 
   useState();
@@ -83,7 +83,7 @@ export default function InnerPageBannerRes() {
       }
     });
   });  
-  console.log("//////////",randompics[param.sub_category_name])
+  // console.log("//////////",randompics[param.sub_category_name])
   return (
   <>
 {matches ?(<>

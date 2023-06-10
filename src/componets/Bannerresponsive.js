@@ -21,6 +21,7 @@ import {
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import '../App.css'
+import { Icon } from '@iconify/react';
 // import Bannerresponsive from './Bannerresponsive';
 
 const options = [
@@ -103,7 +104,17 @@ export default function Bannerresponsive() {
         aria-label="Device settings"
         sx={{ bgcolor: 'background.paper',display:'flex'}}>
 {matches ? (<>
-<Button sx={{color:'#fff',
+  <Button sx={{mb:'1.5rem',
+  backgroundColor:'red',
+  backgroundPosition:'center',
+  borderRadius:'.5rem',
+  fontWeight:'600',
+  justifyContent:'center',
+  textAlign:'center',
+  height:"50px",
+  // padding:"10px 20px",
+ borderColor:'#d9d9d9',color:'white',textTransform:'none',width:'max-content'}}><Icon style={{marginRight:"10px"}} icon="fe:search" color="white" />Search vendors</Button>
+{/* <Button sx={{color:'#fff',
 backgroundColor:'red',
 transition:'all .15s',
 backgroundPosition:'center',
@@ -115,7 +126,7 @@ fontWeight:'600',
 width:'300px',
 marginBottom:'0',
 borderRadius:'.5rem',
-border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button>
+border:'1px solid transparent'}}><SearchIcon/>Search vendors</Button> */}
 </>) :(
   <>
         <TextField

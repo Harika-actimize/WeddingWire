@@ -22,6 +22,7 @@ import '../App.css'
 const menu = [
   {
     // icon: <HomeOutlinedIcon />,
+    menuId:1,
     title: "PLANNING TOOLS",
     items: [
         {
@@ -49,7 +50,7 @@ const menu = [
             path: "/profiles/userprofile"
           },
           {
-            title:<Card style={{ display: 'flex',width:'310px'}}>
+            title:<Card style={{ display: 'flex',width:'300px'}}>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <CardContent>
                 <Typography component="div" variant='subtitle2' sx={{fontSize:'10px'}}>
@@ -71,7 +72,7 @@ const menu = [
             path: "/profiles/userprofile"
           },
           {
-              title:    <Card style={{ display: 'flex',width:'310px'}}>
+              title:    <Card style={{ display: 'flex',width:'310px',marginBottom:'1%'}}>
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                 <CardContent>
                   <Typography component="div" variant='subtitle2' sx={{fontSize:'10px'}}>
@@ -93,7 +94,7 @@ const menu = [
           }
     ]
   },
-  {
+  { menuId:2,
     title: "WEDDING VENUES",
     path: "/profiles",
     // icon: <HomeOutlinedIcon />,
@@ -152,6 +153,7 @@ const menu = [
   },
   {
     // icon: <LocalLibraryOutlinedIcon />,
+    menuId:3,
     title: "WEDDING VENDORS",
     items: [
       {
@@ -170,6 +172,7 @@ const menu = [
   },
   {
     // icon: <LocalLibraryOutlinedIcon />,
+    menuId:4,
     title: "BRIDES",
     items: [
       {
@@ -188,6 +191,7 @@ const menu = [
   },
   {
     // icon: <LocalLibraryOutlinedIcon />,
+    menuId:5,
     title: "GROOMS",
     items: [
       {
@@ -206,6 +210,7 @@ const menu = [
   },
   {
     // icon: <LocalLibraryOutlinedIcon />,
+    menuId:6,
     title: "BLOGS",
     items: [
       {
@@ -224,6 +229,7 @@ const menu = [
   },
   {
     // icon: <LocalLibraryOutlinedIcon />,
+    menuId:7,
     title: "COMMUNITY",
     items: [
       {
@@ -244,6 +250,7 @@ const menu = [
 
 const hasChildren = (item) => {
   const { items: children } = item;
+  // console.log("items",item)
 
   if (children === undefined) {
     return false;
@@ -260,46 +267,49 @@ const hasChildren = (item) => {
   return true;
 };
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({item, activeMenuID, handleClick}) => {
+  // console.log(key,"item",item,"index",index)
   const Component = hasChildren(item) ? MultiLevel : SingleLevel;
-  return <Component item={item} />;
+  return <Component item={item} activeMenuID={activeMenuID} handleClick={handleClick}/>;
 };
 
 const SingleLevel = ({ item }) => {
   return (
     <ListItem button>
-      <ListItemIcon>{item.icon}</ListItemIcon>
+      {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
       <ListItemText primary={item.title} />
     </ListItem>
   );
 };
 
-const MultiLevel = ({ item }) => {
+const MultiLevel = ({ item, activeMenuID, handleClick }) => {
   const { items: children } = item;
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen((prev) => !prev);
-  };
-
   return (
     <>
-      <ListItem button onClick={handleClick}>
+      <ListItem button onClick={()=>handleClick(item.menuId)}>
         <ListItemIcon>{item.icon}</ListItemIcon>
         <ListItemText primary={item.title} />
-        {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        {activeMenuID === item.menuId ? <ExpandLessIcon /> : <ExpandMoreIcon  />}
       </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          {children.map((child, key) => (
-            <MenuItem key={key} item={child} />
+      <Collapse style={{minHeight:"auto"}} in={activeMenuID === item.menuId} children={<List component="div" disablePadding>
+          {children.map((child) => (
+            <MenuItem item={child} />
           ))}
-        </List>
+        </List>}>
+       
       </Collapse>
     </>
   );
 };
+
 const SampleMenu = () => {
-  return menu.map((item, key) => <MenuItem key={key} item={item} />);
+  const [activeMenuID, setActiveMenuID] = useState(null);
+
+  const handleClick = (Id) => {
+    let ressult = activeMenuID === Id?null:Id
+    setActiveMenuID(ressult)
+  };
+  return menu.map((item) => <MenuItem item={item} activeMenuID={activeMenuID} handleClick={handleClick}/>);
 };
+
 export default SampleMenu;

@@ -12,10 +12,10 @@ function Couples() {
                 <Grid sx={{marginLeft:'16px'}}>
                     <img src='https://cdn1.weddingwire.in/img/badges/2023/badge-weddingawards_en_IN_small.jpg' height='88px' width='88px'></img>
                 </Grid>
-                <Grid item xs={16} sx={{}}>
+                <Grid item xs={16} className="couples">
                     <Typography variant='h5'sx={{fontSize:'24px',fontFamily:'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif',fontWeight:'700',marginBottom:'20px'}} >Couples’ Choice Awards</Typography>
                     <Typography variant='caption' sx={{fontFamily:'ProximaNova,ProximaNova-fallback-Arial,sans-serif'}}>Explore winners in your area.</Typography>
-                    <Button variant="outlined" className='hidebutton' sx={{borderColor:'#d9d9d9',color:'#222',textTransform:'none',marginRight:'10%',mb:'15px', float:'right'}}>View all winners<Icon icon="tabler:arrow-up" width="24" height="24" rotate={1} /></Button>
+                    <Button variant="outlined" className='hidebutton couplesbtn' sx={{borderColor:'#d9d9d9',color:'#222',textTransform:'none',mb:'15px', float:'right'}}>View all winners<Icon icon="tabler:arrow-up" width="24" height="24" rotate={1} /></Button>
                 </Grid>
                 <Grid item xs={2}>
 

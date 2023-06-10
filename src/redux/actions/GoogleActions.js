@@ -20,7 +20,7 @@ export const googleSignInInitaite = () => {
         dispatch(googleSignInStart());
         signInWithPopup(auth, googleprovider)
             .then(async (res) => {
-                console.log(res);
+                // console.log(res);
                 const user = res.user;
                 dispatch(googleSignInSuccess(user));
             })
