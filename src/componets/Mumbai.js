@@ -93,7 +93,7 @@ return(
            <Typography></Typography>
             <Box sx={{ display: 'flex', marginLeft: '15px', marginBottom: '5px' }}>
               <StarIcon sx={{ color: '#fabb00', fontSize: '18px' }}></StarIcon><Typography variant='caption' >{item.star_rating}</Typography>
-              <Typography variant='caption'>{item.area},{item.cityname}</Typography>
+              <Typography variant='caption' noWrap>{item.area},{item.cityname}</Typography>
             </Box>
             <Box sx={{ display: 'flex', marginLeft: '15px', marginBottom: '15px' }}>
               {/* <BrunchDiningOutlinedIcon sx={{ fontSize: '18px', marginRight: '5px' }}></BrunchDiningOutlinedIcon> */}

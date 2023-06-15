@@ -35,10 +35,17 @@ import Bannerresponsive from './Bannerresponsive';
 import MessageInfo from './message';
 import { useSelector } from 'react-redux';
 import Timer from './Timer';
+import FooterByLocation from './FooterByLocation';
+import FooterTopMobile from './FooterTopMobile';
+import CouplesMobile from './CouplesMobile';
+import FooterTopAvatar from './FooterTopAvatar';
+import FooterHeadding from './FooterHeadding';
+import Test from './Test2';
 
 export default function Pages() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
+  const matche = useMediaQuery(theme.breakpoints.down("sm"));
   const user = useSelector((state)=>state.userData.activeuser)
 
  
@@ -52,8 +59,10 @@ export default function Pages() {
       </>):(<>
         <Banner />
       </>)}
-      <ColumnsGrid/>
-      <Couples/>
+        {matches ? <Test/> :
+       <ColumnsGrid/> }
+      {matche ? <CouplesMobile/> :
+      <Couples/>}
             <MessageInfo />
             <Homepage />
             <Featured/>
@@ -76,6 +85,10 @@ export default function Pages() {
             <Weddingplan/>
             <Seeall/>
             <FooterTop/>
+            <FooterHeadding/>
+            {matche? <FooterTopMobile/> :
+            <FooterByLocation/>}
+            <FooterTopAvatar/>
             <Footer/>
 
     </div>

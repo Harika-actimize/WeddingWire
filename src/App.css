@@ -313,7 +313,7 @@ nav ul.menu-area{
   display: -o-flex; */
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 102%;
   top: -9999px;
   left: 0;
   margin-top: 10px;
@@ -388,9 +388,15 @@ nav ul.menu-area ul li Link:hover{
 margin-right: 10% !important;  
 }
 @media only screen and (max-width: 1024px) {
-  .couples{
-    margin-left: 10% !important;
+  .imgalign{
+    display: flex !important;
   }
+  .rescard{
+    max-width: 250px !important;
+  }
+  /* .couples{
+    margin-left: 10% !important;
+  } */
   .itemLoc li{
     width:20%!important;
   }
@@ -487,7 +493,25 @@ margin-right: 10% !important;
     margin-left: 15px !important;
   } */
 }
-
+.homeChoiceAwards{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.homeChoiceAwards_img{
+  width: 88px;
+  height: 88px;
+  margin-left: 15px;
+}
+.homeChoiceAwards_title{
+  font-size: 22px;
+  line-height: 2rem;
+  font-family: 'Merriweather,Merriweather-fallback-TimesNewRoman,times,serif';
+  font-weight: 700;
+  margin-bottom: 2px;
+}
 @media only screen and (max-width: 425px) {
   .css-j7qwjs {
     margin-right: 0 !important;
@@ -736,3 +760,83 @@ float: left;
 .css-mmbet2{
   margin-bottom: 10px !important;
 }
+.css-mhc70k-MuiGrid-root{
+  margin-left: 0 !important;
+  width: inherit !important;
+}
+.css-ak0rgv-MuiGrid-root {
+  max-width: 32% !important;
+}
+.columnsec{
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-areas: "heading"
+  "cardList"
+  "extraLink";
+}
+.columnsec_tile{
+  grid-area: "heading";
+  text-align: left;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.columnsec_title{
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+    }
+    .columnsec_link{
+      font-size: 1.125rem;
+      line-height: 1.6875rem;
+      color: #fb1b26;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .columnsec_linksvg{
+      height: 12px;
+      fill: #fb1b26;
+      margin-left: 0.5rem;
+      width: 16px;
+      display: inline-block;
+      line-height: 0;
+    }
+    .homeToolsCards__cardList{
+      grid-area: "cardList";
+      margin-bottom: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap:15px;
+      list-style-type: none;
+      padding: 10px !important;
+    }
+    .homeToolsCards__cardItem{
+      font-size: .8125rem;
+      line-height: 1.1875rem;
+      box-shadow: 0 2px 8px #00000026;
+      border: 0.5rem;
+      padding: 1rem .2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .homeToolsCards__icon{
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+    }
+    .homeToolsCards__cardLink{
+      font-weight: 600;
+      text-align: center;
+      margin-top: 0.5rem;
+      display: block;
+      text-decoration: none;
+      color: #000;
+    }

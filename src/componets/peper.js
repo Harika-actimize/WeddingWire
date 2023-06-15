@@ -68,11 +68,11 @@ const goTo = (category) =>{
                 spaceBetween: 0,
               },
               768: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 0,
               },
               1024: {
-                slidesPerView: 5,
+                slidesPerView: 3,
                 spaceBetween: 0,
               },
               1280: {
