@@ -23,7 +23,7 @@ const menu = [
   {
     // icon: <HomeOutlinedIcon />,
     menuId:1,
-    title: "PLANNING TOOLS",
+    title: "Planing Tools",
     items: [
         {
             title: "Checklist",
@@ -50,7 +50,7 @@ const menu = [
             path: "/profiles/userprofile"
           },
           {
-            title:<Card style={{ display: 'flex',width:'300px'}}>
+            title:<Card style={{ display: 'flex',width:'250px'}}>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <CardContent>
                 <Typography component="div" variant='subtitle2' sx={{fontSize:'10px'}}>
@@ -63,7 +63,7 @@ const menu = [
             </Box>
             <CardMedia
               component="img"
-              sx={{ width: 40 ,height:40,padding:'10px'}}
+              sx={{ width: 40 ,height:40,padding:'30px'}}
               image="https://www.weddingwire.in/assets/img/logos/square-icon.svg"
               alt="Live from space album cover"
             />
@@ -72,7 +72,7 @@ const menu = [
             path: "/profiles/userprofile"
           },
           {
-              title:    <Card style={{ display: 'flex',width:'310px',marginBottom:'1%'}}>
+              title:    <Card style={{ display: 'flex',width:'250px',marginBottom:'1%'}}>
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                 <CardContent>
                   <Typography component="div" variant='subtitle2' sx={{fontSize:'10px'}}>
@@ -85,7 +85,7 @@ const menu = [
               </Box>
               <CardMedia
                 component="img"
-                sx={{ width: 40 ,height:40,padding:'10px'}}
+                sx={{ width: 40 ,height:40,padding:'30px'}}
                 image="https://www.weddingwire.in/assets/img/wedshoots/ico_wedshoots.svg"
               />
             </Card>,
@@ -95,7 +95,7 @@ const menu = [
     ]
   },
   { menuId:2,
-    title: "WEDDING VENUES",
+    title: "Wedding Venues",
     path: "/profiles",
     // icon: <HomeOutlinedIcon />,
     items: [
@@ -128,7 +128,7 @@ const menu = [
         path: "/profiles/userprofile"
       },
       {
-        title:          <Card style={{ display: 'flex',width:'310px'}}>
+        title:          <Card style={{ display: 'flex',width:'250px'}}>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
           <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant='subtitle2' sx={{fontSize:'10px'}}>
@@ -141,7 +141,7 @@ const menu = [
         </Box>
         <CardMedia
           component="img"
-          sx={{ width: 60 ,height:60,padding:'20px'}}
+          sx={{ width: 60 ,height:60,padding:'30px'}}
           image="https://cdn1.weddingwire.in/assets/svg/original/illustration/plane_destination.svg"
           alt="Live from space album cover"
         />
@@ -154,7 +154,7 @@ const menu = [
   {
     // icon: <LocalLibraryOutlinedIcon />,
     menuId:3,
-    title: "WEDDING VENDORS",
+    title: "Wedding Vendors",
     items: [
       {
         title: "The Dow Theory",
@@ -173,7 +173,7 @@ const menu = [
   {
     // icon: <LocalLibraryOutlinedIcon />,
     menuId:4,
-    title: "BRIDES",
+    title: "Brides",
     items: [
       {
         title: "The Dow Theory",
@@ -192,7 +192,7 @@ const menu = [
   {
     // icon: <LocalLibraryOutlinedIcon />,
     menuId:5,
-    title: "GROOMS",
+    title: "Grooms",
     items: [
       {
         title: "The Dow Theory",
@@ -211,7 +211,7 @@ const menu = [
   {
     // icon: <LocalLibraryOutlinedIcon />,
     menuId:6,
-    title: "BLOGS",
+    title: "Blogs",
     items: [
       {
         title: "The Dow Theory",
@@ -230,7 +230,7 @@ const menu = [
   {
     // icon: <LocalLibraryOutlinedIcon />,
     menuId:7,
-    title: "COMMUNITY",
+    title: "Community",
     items: [
       {
         title: "The Dow Theory",
@@ -277,7 +277,10 @@ const SingleLevel = ({ item }) => {
   return (
     <ListItem button>
       {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
-      <ListItemText primary={item.title} />
+      <ListItemText style={{fontFamily:'ProximaNova,ProximaNova-fallback-Arial,sans-serif',
+      fontSize:'1.1rem',
+      fontWeight:'600'
+    }} primary={item.title} />
     </ListItem>
   );
 };
@@ -287,8 +290,13 @@ const MultiLevel = ({ item, activeMenuID, handleClick }) => {
   return (
     <>
       <ListItem button onClick={()=>handleClick(item.menuId)}>
-        <ListItemIcon>{item.icon}</ListItemIcon>
-        <ListItemText primary={item.title} />
+        {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
+        <ListItemText
+        style={{fontFamily:'ProximaNova,ProximaNova-fallback-Arial,sans-serif',
+        fontSize:'1.1rem',
+        fontWeight:'600'
+      }}
+         primary={item.title} />
         {activeMenuID === item.menuId ? <ExpandLessIcon /> : <ExpandMoreIcon  />}
       </ListItem>
       <Collapse style={{minHeight:"auto"}} in={activeMenuID === item.menuId} children={<List component="div" disablePadding>

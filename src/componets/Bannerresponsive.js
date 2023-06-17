@@ -104,7 +104,28 @@ export default function Bannerresponsive() {
         aria-label="Device settings"
         sx={{ bgcolor: 'background.paper',display:'flex'}}>
 {matches ? (<>
-  <Button sx={{mb:'1.5rem',
+<div>
+  <button style={{
+    color:"#fff",
+    backgroundColor:"#fb1b26",
+    transition:"all .15s",
+    backgroundPosition:"center",
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center",
+    padding:".69rem 1rem",
+    fontWeight:"600",
+    width:"150%",
+    borderRadius:"0.5rem",
+    border:"1px solid transparent",
+
+  }}>
+    <i style={{marginRight:'0.5rem'}}> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><path fill="white" d="m29 27.586l-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9a9.01 9.01 0 0 1-9-9Z"/></svg>
+    </i> Search vendors
+  </button>
+</div>
+  {/* <Button sx={{mb:'1.5rem',
   backgroundColor:'red',
   backgroundPosition:'center',
   borderRadius:'.5rem',
@@ -113,7 +134,7 @@ export default function Bannerresponsive() {
   textAlign:'center',
   height:"50px",
   // padding:"10px 20px",
- borderColor:'#d9d9d9',color:'white',textTransform:'none',width:'max-content'}}><Icon style={{marginRight:"10px"}} icon="fe:search" color="white" />Search vendors</Button>
+ borderColor:'#d9d9d9',color:'white',textTransform:'none',width:'max-content'}}><Icon style={{marginRight:"10px"}} icon="fe:search" color="white" />Search vendors</Button> */}
 {/* <Button sx={{color:'#fff',
 backgroundColor:'red',
 transition:'all .15s',
