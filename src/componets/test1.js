@@ -10,6 +10,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Icon } from '@iconify/react';
 import Button from '@mui/material/Button';
 import MediaControlCard from './Card';
+import Test from './Test2';
+import {useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/system";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -20,6 +23,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function ColumnsGrid() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
   const token = useSelector((state) => state.userData.activeuser) 
 // console.log("tokennnnnnnnn",token)
 let user =""
@@ -105,6 +110,8 @@ if (token){
         <Grid item xs={2}>
 
         </Grid>
+        {matches ? <Test/> :
+        <>
       <Grid item xs={20} sm={20} md={4}>
       <Item sx={{height:'130px'}}>
             <Typography>Easily Plan Your Wedding</Typography>
@@ -148,6 +155,7 @@ if (token){
           <Typography sx={{fontSize:'13px'}}>Community</Typography>
           </Item>
         </Grid>
+        </>}
       <Grid item xs={2}>
         </Grid>
         </Grid>
