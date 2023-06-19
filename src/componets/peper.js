@@ -3,7 +3,7 @@ import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import { Button, Grid } from "@mui/material";
+import { Button, Grid ,useMediaQuery} from "@mui/material";
 import { useNavigate,useParams} from 'react-router-dom'
 import { FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "../App.css"
 import { BridalMakeupArtists, WeddingCatering, WeddingDecorator, WeddingInvitations, WeddingPhotography, WeddingPlanners, WeddingVenues } from './modalData';
+import { useTheme } from "@mui/system";
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -22,6 +23,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function DirectionStack() {
+  const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const CustomButton = styled(Button)({
   textTransform:'none', paddingLeft:'12px',paddingRight:'12px',color:'black',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9',width:'100%',margin:'5px 10px'
 
@@ -51,7 +54,8 @@ const goTo = (category) =>{
         <Grid item xs={2}>
 
         </Grid>
-        <Grid item xs={16}>
+        { matches ?
+          <Grid item xs={20}>
           <Swiper
           id="sample"
             freeMode={true}
@@ -92,7 +96,49 @@ const goTo = (category) =>{
 <SwiperSlide><Button onClick={()=>goTo(WeddingInvitations)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Invitations</Button></SwiperSlide>
 </Stack>
 </Swiper>
-        </Grid>
+        </Grid>:
+        <Grid item xs={16}>
+        <Swiper
+        id="sample"
+          freeMode={true}
+          grabCursor={true}
+          modules={[FreeMode]}
+          className="mySwiper"
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+            1280: {
+              slidesPerView: 7,
+              spaceBetween: 0,
+            }
+
+          }}
+        >
+<Stack direction="row" spacing={2} >
+<SwiperSlide><Button onClick={()=>goToVenues(WeddingVenues)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Venues</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(WeddingPhotography)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Photographers</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(WeddingPlanners)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Planners</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(BridalMakeupArtists)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Bridal Makeup Artists</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(WeddingDecorator)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Decorators</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(WeddingCatering)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Caterers</Button></SwiperSlide>
+<SwiperSlide><Button onClick={()=>goTo(WeddingInvitations)} sx={{textTransform:'none', paddingLeft:'12px',paddingRight:'12px',width:'auto',color:'black',borderColor:'grey',transition:'all .15s',cursor:'pointer',backgroundPosition:'center',display:'flex',alignItems:'center',justifyContent:'center',padding:'.69rem 1rem',borderRadius:'.5rem',backgroundColor:'transparent',border:'1px solid #d9d9d9'}}>Wedding Invitations</Button></SwiperSlide>
+</Stack>
+</Swiper>
+      </Grid>}
         <Grid item xs={2}>
         </Grid>
       </Grid>

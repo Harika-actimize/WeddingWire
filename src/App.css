@@ -427,6 +427,12 @@ margin-right: 10% !important;
 
 
 @media only screen and (max-width: 768px) {
+  .css-nw74th-MuiGrid-root{
+    width: 143% !important;
+  }
+  .MuiOutlinedInput-input{
+    font-size: 13px !important;
+  }
   .bigimg{
     width: 270px !important;
   }
@@ -489,9 +495,22 @@ margin-right: 10% !important;
   } */
 }
 @media only screen and (max-width: 375px) {
-  /* .columngrid{
-    margin-left: 15px !important;
-  } */
+  .css-1kvt4sv-MuiTypography-root{
+    font-size: 20px !important;
+  }
+  .css-fur0a7-MuiTypography-root{
+    font-size: 22px !important;
+  }
+  .css-1jvqhcc-MuiTypography-root{
+    font-size: 17px !important;
+  }
+  .css-1pserd1-MuiTypography-root{
+    font-size: 19px !important;
+  }
+  .css-1yr309c-MuiTypography-root {
+    font-size: 23px !important;
+  }
+
 }
 .homeChoiceAwards{
   display: flex;
@@ -853,3 +872,4 @@ float: left;
     .css-sncb8{
       flex-basis:unset !important ;
     }
+    

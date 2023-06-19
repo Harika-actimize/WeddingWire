@@ -89,7 +89,7 @@ export default function InnerPageBannerRes() {
 {matches ?(<>
 <Divider></Divider>
 <Grid container columns={20} sx={{flex:1}}>
-<Grid item xs={20} md={10} sm={20} lg={10} xl={10} sx={{textAlign:'-webkit-center'}}>
+<Grid item xs={20} md={10} sm={20} lg={10} xl={10} >
     <BannerContent sx={{marginTop:'15px'}}>
     <Breadcrumbs>
       <Link underline="hover" color="inherit" href="/">
@@ -117,6 +117,7 @@ fontFamily:"Merriweather,Merriweather-fallback-TimesNewRoman,times,serif",margin
 variant="outlined"
 placeholder='Wedding'
 button
+style={{width:"80%"}}
 id="lock-button"
 aria-haspopup="listbox"
 aria-controls="lock-menu"
@@ -134,7 +135,7 @@ InputProps={{
   )
 }}
 />
-<Menu
+{/* <Menu
       id="lock-menu"
       anchorEl={anchorEl}
       open={open}
@@ -164,11 +165,12 @@ InputProps={{
 
         </MenuItem>
       ))}
-    </Menu>
+    </Menu> */}
 
 <TextField
 variant="outlined"
-placeholder='in (E.g.Delhi)' 
+style={{width:"50%"}}
+placeholder={param.sub_category_name}
 />
 </>) :(
 <>

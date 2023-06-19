@@ -76,7 +76,7 @@ const area = [
 ]
 export default function Innerpage() {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("md"));
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <div>
@@ -88,6 +88,24 @@ export default function Innerpage() {
 <Grid xs={2}> 
 
 </Grid>
+{ matches ?
+<Grid xs={20} md={16} sm={16}> 
+<Mumbai/>
+<Promtions/>
+<Exclusive/>
+<SeeAllPromotions/>
+<Paragraphs/>
+<Freqentily/>
+<Questions/>
+{/* <Innerpagereal/> */}
+{/* <grid> */}
+{/* <Mumbaibyarea/> */}
+{/* <CustomImageList/> */}
+<Mumbaibydivider location="Wedding vennus in mumbai by area" data={area}/>
+{/* <Zone/> */}
+<Mumbaibyzone location="Wedding vennus in mumbai by zone" data={data}/>
+<InnerAllWedding heading="Other vendors in Mumbai for your wedding"/>
+</Grid> :
 <Grid xs={18} md={16} sm={16}> 
 <Mumbai/>
 <Promtions/>
@@ -104,7 +122,7 @@ export default function Innerpage() {
 {/* <Zone/> */}
 <Mumbaibyzone location="Wedding vennus in mumbai by zone" data={data}/>
 <InnerAllWedding heading="Other vendors in Mumbai for your wedding"/>
-</Grid>
+</Grid>}
 
 <Grid xs={2}> 
 

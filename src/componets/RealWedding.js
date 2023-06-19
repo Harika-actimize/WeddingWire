@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import { Card, Grid, Typography } from '@mui/material';
+import { Card, Grid, Typography,useMediaQuery } from '@mui/material';
 import { FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
@@ -10,6 +10,7 @@ import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
 import { getYearPickerUtilityClass } from '@mui/x-date-pickers';
 import { SanitizerSharp } from '@mui/icons-material';
+import { useTheme } from "@mui/system";
 
 
 
@@ -22,6 +23,8 @@ function srcset(image, size, rows = 1, cols = 1) {
 }
 
 export default function QuiltedImageList() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
 
@@ -29,7 +32,8 @@ export default function QuiltedImageList() {
         <Grid item xs={2}>
 
         </Grid>
-        <Grid item xs={16} sx={{ display: 'flex' }}>
+        { matches ?
+        <Grid item xs={19} sx={{ display: 'flex' }}>
           <Swiper
             freeMode={true}
             grabCursor={true}
@@ -160,7 +164,139 @@ export default function QuiltedImageList() {
               </Card>
             </SwiperSlide>
           </Swiper>
-        </Grid>
+        </Grid> :
+        <Grid item xs={16} sx={{ display: 'flex' }}>
+        <Swiper
+          freeMode={true}
+          grabCursor={true}
+          modules={[FreeMode]}
+          className="mySwiper"
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 15,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            }
+
+          }}
+        >
+          <SwiperSlide> <Card sx={{ textAlign: '-webkit-center', height: 'auto' }}>
+            <ImageList
+            sx={{margin:0}}
+              variant="quilted"
+              cols={3}
+              rowHeight={90}
+              height='110px'
+            >
+              {itemData.map((item) => (
+                <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+                  <img
+                    {...srcset(item.img, 90, item.rows, item.cols)}
+                    alt={item.title}
+                    loading="lazy"
+                  />
+                </ImageListItem>
+              ))}
+            </ImageList>
+            <CardContent sx={{ textAlign: 'left' }}>
+              <Typography sx={{ fontFamily: 'ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold' }}>Suminder & Deepika</Typography>
+              <Typography variant='caption' noWrap>37 photos · Dera Bassi, Zirakpur</Typography>
+            </CardContent>
+          </Card>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <Card sx={{ textAlign: '-webkit-center' }}>
+              <ImageList
+                sx={{margin:0}}
+                variant="quilted"
+                cols={3}
+                rowHeight={90}
+              >
+                {itemData1.map((item) => (
+                  <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+                    <img
+                      {...srcset(item.img, 90, item.rows, item.cols)}
+                      alt={item.title}
+                      loading="lazy"
+                    />
+                  </ImageListItem>
+                ))}
+              </ImageList>
+              <CardContent sx={{ textAlign: 'left' }}>
+                <Typography sx={{ fontFamily: 'ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold' }}>Sachee & Himanshu</Typography>
+                <Typography variant='caption' noWrap>35 photos · Samalka, South Delhi
+</Typography>
+              </CardContent>
+            </Card>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <Card sx={{ textAlign: '-webkit-center' }}>
+              <ImageList
+                sx={{margin:0}}
+                variant="quilted"
+                cols={3}
+                rowHeight={90}
+              >
+                {itemData2.map((item) => (
+                  <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+                    <img
+                      {...srcset(item.img, 90, item.rows, item.cols)}
+                      alt={item.title}
+                      loading="lazy"
+                    />
+                  </ImageListItem>
+                ))}
+              </ImageList>
+              <CardContent sx={{ textAlign: 'left' }}>
+                <Typography sx={{ fontFamily: 'ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold' }}>Mayuri & Ajit</Typography>
+                <Typography variant='caption' noWrap>30 photos · Akota, Vadodara</Typography>
+              </CardContent>
+            </Card>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <Card sx={{ textAlign: '-webkit-center' }}>
+              <ImageList
+                sx={{margin:0}}
+                variant="quilted"
+                cols={3}
+                rowHeight={90}
+              >
+                {itemData.map((item) => (
+                  <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+                    <img
+                      {...srcset(item.img, 90, item.rows, item.cols)}
+                      alt={item.title}
+                      loading="lazy"
+                    />
+                  </ImageListItem>
+                ))}
+              </ImageList>
+              <CardContent sx={{ textAlign: 'left' }}>
+                <Typography sx={{ fontFamily: 'ProximaNova,ProximaNova-fallback-Arial,sans-serif', fontWeight: 'bold' }}>Varsha & Salil</Typography>
+                <Typography variant='caption' noWrap>16 photos · Rajajinagar - Malleshwaram, Bangalore</Typography>
+              </CardContent>
+            </Card>
+          </SwiperSlide>
+        </Swiper>
+      </Grid>}
         <Grid item xs={2}>
 
         </Grid>

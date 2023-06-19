@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from './Footer';
 import Mumbaibyzone from './Mumbaibyzone';
 import InteractiveList from './Navtest';
-import { Grid } from '@mui/material';
+import { Grid ,useMediaQuery} from '@mui/material';
 import Questions from './Questions';
 import InnerpageQuetions from './InnerpageQuetions';
 import InnerPageBanner from './InnerPageBanner';
@@ -25,6 +25,8 @@ import InnerAllWedding from './InnerAllWedding';
 // import Paragraphs from './Paragraphs';
 import { useParams } from 'react-router-dom';
 import InnerPageBannerRes from './InnerPageBannerRes';
+import { useTheme } from "@mui/system";
+
 
 
 const data = [
@@ -74,6 +76,8 @@ const data = [
     {location:"Malad West",venue_count:10},
   ]
 function Innerpagevennues() {
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.down("sm"));
     const param = useParams()
     // console.log(param)
     return (
@@ -85,6 +89,29 @@ function Innerpagevennues() {
 <Grid xs={2}> 
 
 </Grid>
+{ matches ?
+<Grid xs={19} md={19} sm={19}> 
+<Location/>
+<SmallBanner/>
+<SwiperCard location="hyderabad" heading="Venues in Hyderabad"/>
+<VenuesHydrabad category={param.sub_category_name} location ={"Hyderabad"}/>
+<SwiperCard location="bangalore" heading="Venues in Bangalore"/>
+<VenuesHydrabad category = {param.sub_category_name} location ={"Bangalore"}/>
+<SwiperCard location = "mumbai" heading="Venues in Mumbai" />
+<VenuesHydrabad category = {param.sub_category_name} location ={"Mumbai"}/>
+<SwiperCard location = "chennai" heading="Venues in Chennai"/>
+<VenuesHydrabad category = {param.sub_category_name} location ={"Chennai"}/>
+<Innerpaper/>
+<Promtions/>
+<InnerExclusive/>
+<SeeAllPromotions/>
+{/* <Paragraphs/> */}
+<Factors/>
+<Nearyou/>
+<InnerpageQuetions/>
+<Mumbaibyzone location="Wedding vennus in mumbai by zone" data={data}/>
+<InnerAllWedding heading="All wedding vendors"/>
+</Grid>:
 <Grid xs={16} md={16} sm={16}> 
 <Location/>
 <SmallBanner/>
@@ -106,7 +133,8 @@ function Innerpagevennues() {
 <InnerpageQuetions/>
 <Mumbaibyzone location="Wedding vennus in mumbai by zone" data={data}/>
 <InnerAllWedding heading="All wedding vendors"/>
-</Grid>
+</Grid>}
+
 
 <Grid xs={2}> 
 

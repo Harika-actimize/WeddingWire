@@ -54,7 +54,7 @@ export default function Mumbai() {
       <Grid sx={{ display: 'flex',flexDirection:'row',justifyContent:'center',flexWrap:'wrap' }}>
         {data.map((item) => {
 return(
-          <Card style={{ maxWidth: 330,margin:'15px 15px 15px 0'}} className="rescard" key={item.id}>
+          <Card style={{ maxWidth: 250,margin:'15px 15px 15px 0'}} className="rescard" key={item.id}>
             <Swiper
               spaceBetween={1}
               effect={"fade"}

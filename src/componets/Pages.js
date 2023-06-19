@@ -46,6 +46,7 @@ export default function Pages() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   const matche = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const user = useSelector((state)=>state.userData.activeuser)
 
  

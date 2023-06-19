@@ -2,11 +2,13 @@ import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography,useMediaQuery} from "@mui/material";
 import { FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/free-mode";
+import { useTheme } from "@mui/system";
+
 
 const data = [
   {location:"Before the wedding",venue_count:388,image:'../avatar.jpg'},
@@ -18,13 +20,16 @@ const data = [
 ]
 
 function WeddingAvatar() {
+  const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.down("sm"));
     return (
         <div>
       <Grid container spacing={2} columns={20} sx={{ mt: '5px' }}>
         <Grid item xs={2}>
 
         </Grid>
-        <Grid item xs={16} sx={{ marginLeft: '10px',textAlign:'-webkit-center' }}>
+        { matches ?
+        <Grid item xs={19} sx={{ marginLeft: '10px',textAlign:'-webkit-center' }}>
           <Swiper
             freeMode={true}
             grabCursor={true}
@@ -70,7 +75,54 @@ function WeddingAvatar() {
               ))}
             </Stack>
           </Swiper>
-        </Grid>
+        </Grid> :
+        <Grid item xs={16} sx={{ marginLeft: '10px',textAlign:'-webkit-center' }}>
+        <Swiper
+          freeMode={true}
+          grabCursor={true}
+          modules={[FreeMode]}
+          className="mySwiper"
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 15,
+            },
+            1024: {
+              slidesPerView: 6,
+              spaceBetween: 10,
+            },
+            1280: {
+              slidesPerView: 6,
+              spaceBetween: 10,
+            }
+
+          }}
+        >
+
+          <Stack direction="row" spacing={2} sx={{}}>
+          {data.map((item,index) =>(
+            <SwiperSlide>
+                <Avatar
+       className="avatarimage"
+      src={item.image}
+      sx={{ width: 100, height: 100,":hover":{
+        transform: 'scale(1.0)',
+    }}}
+    />
+    <Typography>{item.location}</Typography> 
+    </SwiperSlide>       
+            ))}
+          </Stack>
+        </Swiper>
+      </Grid>}
         <Grid item xs={2}>
 
         </Grid>
